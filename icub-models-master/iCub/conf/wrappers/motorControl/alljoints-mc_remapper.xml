@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="alljoints-mc_remapper" type="controlboardremapper">
+    <paramlist name="networks">
+        <elem name="head_joints">       (  0   2   0  2  )</elem>
+        <elem name="left_arm_joints">   (  3   9   0  6 )</elem>
+        <elem name="right_arm_joints">  ( 10  16   0  6 )</elem>
+        <elem name="torso_joints">      ( 17  19   0  2  )</elem>
+        <elem name="left_leg_joints">   ( 20  25   0  5  )</elem>
+        <elem name="right_leg_joints">  ( 26  31   0  5  )</elem>
+    </paramlist>
+    <param name="joints"> 32 </param>
+    <action phase="startup" level="10" type="attach">
+        <paramlist name="networks">
+            <elem name="head_joints">       head-mc_remapper </elem>
+            <elem name="left_arm_joints">   left_arm-mc_remapper </elem>
+            <elem name="right_arm_joints">  right_arm-mc_remapper </elem>
+            <elem name="torso_joints">      torso-mc_remapper </elem>
+            <elem name="left_leg_joints">   left_leg-mc_remapper </elem>
+            <elem name="right_leg_joints">  right_leg-mc_remapper </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="20" type="detach" />
+</device>

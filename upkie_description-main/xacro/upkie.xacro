@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!--
+
+SPDX-License-Identifier: Apache-2.0
+Copyright 2022 Stéphane Caron
+Copyright 2023 Inria
+
+This file was generated from `upkie.xacro`.
+
+Conventions in this file are detailed in:
+https://upkie.github.io/upkie/kinematics.html#model-conventions
+
+-->
+<robot name="upkie" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="xacro/utils/box_inertia.xacro" />
+    <xacro:include filename="xacro/utils/cylinder_inertia.xacro" />
+    <xacro:include filename="xacro/utils/materials.xacro" />
+    <xacro:include filename="xacro/utils/virtual_link.xacro" />
+
+    <xacro:include filename="xacro/left_leg.xacro" />
+    <xacro:include filename="xacro/right_leg.xacro" />
+    <xacro:include filename="xacro/torso.xacro" />
+
+    <xacro:torso with_camera="false" with_handle="true" />
+    <xacro:left_leg />
+    <xacro:right_leg />
+</robot>

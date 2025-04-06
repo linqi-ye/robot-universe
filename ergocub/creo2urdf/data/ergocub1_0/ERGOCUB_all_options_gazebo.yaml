@@ -1,0 +1,1 @@
+includes: [base_1_0.yaml, ..\common\gazebo_addon.yaml]

@@ -1,0 +1,14 @@
+<?xml version='1.0'?>
+<sdf version='@ICUB_MODELS_SDF_VERSION@'>
+  <model name="iCub_fixed">
+    <include>
+      <uri>model://@ROBOT_NAME@</uri>
+      <pose>0.0 0 1.0 0 0 3.14</pose>
+    </include>
+
+    <joint name="fixed_base" type="fixed">
+      <parent>world</parent>
+      <child>iCub::root_link</child>
+    </joint>
+  </model>
+</sdf>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<robot name="upkie" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="torso" params="with_camera with_handle">
+        <xacro:virtual_link name="base" />
+
+        <!-- Torso -->
+
+        <link name="torso">
+            <visual>
+                <geometry>
+                    <box size="0.125 0.17 0.25" />
+                </geometry>
+                <material name="terracotta_transparent" />
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.125 0.17 0.25" />
+                </geometry>
+            </collision>
+            <!-- torso mass evaluated as net mass (5.4 [kg]) minus everything else -->
+            <xacro:box_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="1"
+                len_x="0.125" len_y="0.17" len_z="0.25" />
+        </link>
+
+        <joint name="torso_fix" type="fixed">
+            <origin rpy="0 0 0" xyz="0 0 -0.1" />
+            <parent link="base" />
+            <child link="torso" />
+        </joint>
+
+        <!-- IMU -->
+
+        <xacro:virtual_link name="imu" />
+
+        <joint name="imu_fix" type="fixed">
+            <!-- not that the origin frame is not translated -->
+            <origin rpy="3.141592653589793 0 3.141592653589793" xyz="0 0 0" />
+            <parent link="torso" />
+            <child link="imu" />
+        </joint>
+
+        <!-- Battery -->
+
+        <link name="battery">
+            <visual>
+                <geometry>
+                    <box size="0.13 0.074 0.055" />
+                </geometry>
+                <material name="dark_gray" />
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.13 0.074 0.055" />
+                </geometry>
+            </collision>
+            <!-- mass measurement was imprecise -->
+            <xacro:box_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="0.8"
+                len_x="0.13" len_y="0.074" len_z="0.055" />
+        </link>
+
+        <joint name="battery_fix" type="fixed">
+            <origin rpy="1.5707963267948966 0 1.5707963267948966" xyz="-0.04 0 0" />
+            <parent link="torso" />
+            <child link="battery" />
+        </joint>
+
+        <xacro:if value="${with_camera}">
+            <!-- Camera -->
+
+            <link name="camera_support">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://upkie_description/meshes/add-ons/camera_support.stl" />
+                    </geometry>
+                    <material name="terracotta_light" />
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0" />
+                    <geometry>
+                        <box size="0.11 0.12 0.07" />
+                    </geometry>
+                </collision>
+                <!-- mass measured with USB cable -->
+                <xacro:box_inertia
+                    rpy="0 0 0" xyz="0 0 0"
+                    mass="0.167"
+                    len_x="0.120" len_y="0.07" len_z="0.04" />
+            </link>
+
+            <joint name="camera_support_fix" type="fixed">
+                <origin rpy="0 0 0" xyz="0 0 0.16" />
+                <parent link="torso" />
+                <child link="camera_support" />
+            </joint>
+
+            <link name="camera">
+	            <visual>
+                    <geometry>
+                        <box size="0.0175 0.091 0.028"/>
+                    </geometry>
+                    <material name="black"/>
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0"/>
+                    <geometry>
+                        <box size="0.0175 0.091 0.028"/>
+                    </geometry>
+                </collision>
+                <xacro:box_inertia
+                    rpy="0 0 0" xyz="0 0 0"
+                    mass="0.061"
+                    len_x="0.0175" len_y="0.091" len_z="0.028" />
+            </link>
+
+            <joint name="camera_fix" type="fixed">
+                <origin rpy="0 0 0" xyz="0.045 0 0"/>
+                <parent link="camera_support"/>
+                <child link="camera"/>
+            </joint>
+
+            <xacro:virtual_link name="camera_eye" />
+
+            <joint name="camera_eye_fix" type="fixed">
+                <origin rpy="0 0 0" xyz="0.00875 0 0.005"/>
+                <parent link="camera"/>
+                <child link="camera_eye"/>
+            </joint>
+        </xacro:if>
+
+        <xacro:if value="${with_handle}">
+            <!-- Handle -->
+
+            <link name="handle">
+                <visual>
+                    <geometry>
+                        <mesh filename="package://upkie_description/meshes/add-ons/handle.stl" />
+                    </geometry>
+                    <material name="terracotta_light" />
+                </visual>
+                <collision>
+                    <origin rpy="0 0 0" xyz="0 0 0.01" />
+                    <geometry>
+                        <box size="0.120 0.07 0.04" />
+                    </geometry>
+                </collision>
+                <!-- mass measured on a real robot -->
+                <xacro:box_inertia
+                    rpy="0 0 0" xyz="0 0 0.01"
+                    mass="0.0525"
+                    len_x="0.120" len_y="0.07" len_z="0.04" />
+            </link>
+
+            <joint name="handle_fix" type="fixed">
+                <origin rpy="0 0 -1.5707963267948966" xyz="0 0 0.135" />
+                <parent link="torso" />
+                <child link="handle" />
+            </joint>
+        </xacro:if>
+    </xacro:macro>
+</robot>

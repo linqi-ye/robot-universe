@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<robot name="champ" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:include filename="$(find champ_description)/urdf/properties.urdf.xacro" />
+
+    <material name="black"><color rgba="0.15 0.15 0.15 1.0" /></material>
+    
+    <link name="base_link">
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="${base_mesh_path}" scale="0.001 0.001 0.001" />
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://champ_description/meshes/base.stl" scale="0.001 0.001 0.001" />
+            </geometry>
+            <material name="black" />
+        </visual>
+    </link>
+    <link name="base_inertia">    
+        <inertial>
+            <origin xyz="0 0 0" />
+            <mass value="${base_mass}" />
+            <inertia ixx="${(1/12) * base_mass * (base_y_length * base_y_length + base_z_length * base_z_length)}" ixy="0.0" ixz="0.0"
+                     iyy="${(1/12) * base_mass * (base_x_length * base_x_length + base_z_length * base_z_length)}" iyz="0.0"
+                     izz="${(1/12) * base_mass * (base_x_length * base_x_length + base_y_length * base_y_length)}" />
+        </inertial>
+    </link>  
+    <joint name="base_link_to_base_inertia" type="fixed">    
+        <parent link="base_link"/>    
+        <child link="base_inertia"/>    
+        <origin rpy="0 0 0" xyz="0 0 0"/>  
+    </joint>  
+
+    <gazebo reference="base_link">
+        <material>Gazebo/FlatBlack</material>
+    </gazebo>
+
+    <xacro:include filename="$(find champ_description)/urdf/leg.urdf.xacro" />
+
+    <xacro:include filename="$(find champ_description)/urdf/accessories.urdf.xacro" />
+
+    <xacro:accessories 
+        base_name="base_link" 
+        base_length="${base_x_length}"
+        base_height="${base_z_length}"
+    />
+
+    <xacro:champ_leg leg="lf"/>
+    <xacro:champ_leg leg="lh"/>
+    <xacro:champ_leg leg="rf"/>
+    <xacro:champ_leg leg="rh"/>
+
+    <gazebo>
+      <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+            <alwaysOn>true</alwaysOn>
+            <updateRate>10.0</updateRate>
+            <bodyName>base_link</bodyName>
+            <topicName>odom/ground_truth</topicName>
+            <gaussianNoise>0.01</gaussianNoise>
+            <frameName>world</frameName>
+            <xyzOffsets>0 0 0</xyzOffsets>
+            <rpyOffsets>0 0 0</rpyOffsets>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <legacyModeNS>true</legacyModeNS>
+        </plugin>
+    </gazebo>
+</robot>

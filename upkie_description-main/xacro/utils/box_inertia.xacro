@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<robot name="utils" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="box_inertia" params="len_x len_y len_z mass rpy xyz">
+        <inertial>
+            <origin rpy="${rpy}" xyz="${xyz}" />
+            <mass value="${mass}"/>
+            <inertia
+                ixx="${mass * (len_y ** 2 + len_z ** 2) / 12}"
+                ixy="0"
+                ixz="0"
+                iyy="${mass * (len_x ** 2 + len_z ** 2) / 12}"
+                iyz="0"
+                izz="${mass * (len_x ** 2 + len_y ** 2) / 12}"
+                />
+        </inertial>
+    </xacro:macro>
+</robot>

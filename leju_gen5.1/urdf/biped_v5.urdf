@@ -1,0 +1,847 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="biped_s5">
+  <link
+    name="torso">
+    <inertial>
+      <origin 
+        xyz = "-0.01954581 -0.0024237 0.13783251" 
+        rpy="0 0 0" />
+      <mass 
+        value="30.306" />
+      <inertia
+        ixx="0.39641171" 
+        ixy="0.00029286" 
+        ixz="0.05364597" 
+        iyy="0.37105636" 
+        iyz="-0.00016709" 
+        izz="0.16013351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/torso.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/torso.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <link
+    name="l_leg_roll">
+    <inertial>
+      <origin
+        xyz="-0.00362787 0.0 -0.00362787"
+        rpy="0 0 0" />
+      <mass
+        value="1.854" />
+      <inertia       
+        ixx="0.00220007"
+        ixy="-0.00000109"
+        ixz="-0.00001907"
+        iyy="0.00309841"
+        iyz="0.00000000"
+        izz="0.00414137" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_roll.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_roll.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="l_leg_roll_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00249999999964622 0.0869999999999562 -0.0660000000049241"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="l_leg_roll" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_leg_roll_joint" />
+    <actuator name="l_leg_roll_motor" />
+  </transmission>
+  <link
+    name="l_leg_yaw">
+    <inertial>
+      <origin
+        xyz="-0.000000 0.00487083 -0.06699331"
+        rpy="0 0 0" />
+      <mass
+        value="0.358" />
+      <inertia       
+        ixx="0.00299812"
+        ixy="0.00000002"
+        ixz="0.00000002"
+        iyy="0.00217705"
+        iyz="0.00001436"
+        izz="0.00112966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_yaw.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_yaw.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="l_leg_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="l_leg_roll" />
+    <child
+      link="l_leg_yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_leg_yaw_joint" />
+    <actuator name="l_leg_yaw_motor" />
+  </transmission>
+  <link
+    name="l_leg_pitch">
+    <inertial>
+      <origin
+        xyz="0.00593672 0.00193220 -0.09495981"
+        rpy="0 0 0" />
+      <mass
+        value="6.094" />
+      <inertia       
+        ixx="0.13350217"
+        ixy="-0.00032336"
+        ixz="-0.01086639"
+        iyy="0.13643554"
+        iyz="-0.00140170"
+        izz="0.01383057" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_pitch.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_leg_pitch.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="l_leg_pitch"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.124999999999996"
+      rpy="0 0 0" />
+    <parent
+      link="l_leg_yaw" />
+    <child
+      link="l_leg_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_leg_pitch" />
+    <actuator name="l_leg_pitch_motor" />
+  </transmission>
+  <link
+    name="l_knee">
+    <inertial>
+      <origin
+        xyz="0.00131184 -0.00020666 -0.15764775"
+        rpy="0 0 0" />
+      <mass
+        value="1.968" />
+      <inertia       
+        ixx="0.07729951"
+        ixy="-0.00000209"
+        ixz="-0.00005535"
+        iyy="0.07755289"
+        iyz="0.00028214"
+        izz="0.00121468" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_knee.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_knee.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="l_knee"
+    type="continuous">
+    <origin
+      xyz="0.0419999999999991 0 -0.371446748811991"
+      rpy="0 0 0" />
+    <parent
+      link="l_leg_pitch" />
+    <child
+      link="l_knee" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_knee" />
+    <actuator name="l_knee_pitch_motor" />
+  </transmission>
+  <link
+    name="l_foot_pitch">
+    <inertial>
+      <origin
+        xyz="2.20870565816045E-07 2.20870038855625E-07 3.99680288865056E-15"
+        rpy="0 0 0" />
+      <mass
+        value="0.071" />
+      <inertia       
+        ixx="8.65317607419046E-10"
+        ixy="4.38657784850507E-19"
+        ixz="-3.49395618885217E-14"
+        iyy="8.65317607419047E-10"
+        iyz="3.54041160030983E-14"
+        izz="1.52218316128677E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_foot_pitch.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_foot_pitch.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="l_foot_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.446000000000003"
+      rpy="0 0 0" />
+    <parent
+      link="l_knee" />
+    <child
+      link="l_foot_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_foot_pitch_joint" />
+    <actuator name="l_foot_pitch_motor" />
+  </transmission>
+  <link
+    name="l_foot_roll">
+    <inertial>
+      <origin
+        xyz="-0.00253564517573878 -8.27076149374772E-06 -0.0377214610795236"
+        rpy="0 0 0" />
+      <mass
+        value="0.302" />
+      <inertia       
+        ixx="0.000124764774157541"
+        ixy="2.03584836681097E-08"
+        ixz="5.85765890399589E-06"
+        iyy="0.000552202150208444"
+        iyz="1.48966647988658E-08"
+        izz="0.000647202075206351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_foot_roll.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/l_foot_roll.obj" />
+      </geometry>
+    </collision> -->
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+  </link>
+  <frame link="l_foot_roll" name="l_foot_sole" xyz="0 0.0 -0.0465" />
+  <frame link="l_foot_roll" name="l_foot_toe" xyz="0.075 0.0 -0.0465" />
+  <frame link="l_foot_roll" name="l_foot_heel" xyz="-0.075 0.0 -0.0465" />
+  <joint
+    name="l_foot_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="l_foot_pitch" />
+    <child
+      link="l_foot_roll" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="l_foot_roll_joint" />
+    <actuator name="l_foot_roll_motor" />
+  </transmission>
+  <link
+    name="r_leg_roll">
+    <inertial>
+      <origin
+        xyz="-0.00483930 -0.00000000 -0.00362787"
+        rpy="0 0 0" />
+      <mass
+        value="1.854" />
+      <inertia       
+        ixx="0.00362787"
+        ixy="0.00000109"
+        ixz="0.00001393"
+        iyy="0.00316718"
+        iyz="0.00000000"
+        izz="0.00418540" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_roll.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_roll.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="r_leg_roll_joint"
+    type="continuous">
+    <origin
+      xyz="-0.00250000000035087 -0.0870000000000446 -0.066000000004924"
+      rpy="0 0 0" />
+    <parent
+      link="torso" />
+    <child
+      link="r_leg_roll" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_leg_roll_joint" />
+    <actuator name="r_leg_roll_motor" />
+  </transmission>
+  <link
+    name="r_leg_yaw">
+    <inertial>
+      <origin
+        xyz="-0.00000000 -0.00487081 -0.06699333"
+        rpy="0 0 0" />
+      <mass
+        value="0.358" />
+      <inertia       
+        ixx="0.00299812"
+        ixy="-0.00000002"
+        ixz="0.00000003"
+        iyy="0.00217705"
+        iyz="-0.00009995"
+        izz="0.00112966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_yaw.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_yaw.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="r_leg_yaw_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="r_leg_roll" />
+    <child
+      link="r_leg_yaw" />
+    <axis
+      xyz="0 0 1" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_leg_yaw_joint" />
+    <actuator name="r_leg_yaw_motor" />
+  </transmission>
+  <link
+    name="r_leg_pitch">
+    <inertial>
+      <origin
+        xyz="0.00593676 -0.00197199 -0.09495983"
+        rpy="0 0 0" />
+      <mass
+        value="6.094" />
+      <inertia       
+        ixx="0.13349179"
+        ixy="0.00031558"
+        ixz="-0.01086640"
+        iyy="0.13643568"
+        iyz="0.00145346"
+        izz="0.01382005" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_pitch.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_leg_pitch.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="r_leg_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.125000000000001"
+      rpy="0 0 0" />
+    <parent
+      link="r_leg_yaw" />
+    <child
+      link="r_leg_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_leg_pitch_joint" />
+    <actuator name="r_leg_pitch_motor" />
+  </transmission>
+  <link
+    name="r_knee">
+    <inertial>
+      <origin
+        xyz="0.00131187 -0.00020666 -0.15764341"
+        rpy="0 0 0" />
+      <mass
+        value="1.968" />
+      <inertia       
+        ixx="0.07729702"
+        ixy="0.00000207"
+        ixz="-0.00005536"
+        iyy="0.07755038"
+        iyz="-0.00028214"
+        izz="0.00121467" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_knee.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_knee.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="r_knee"
+    type="continuous">
+    <origin
+      xyz="0.0419999999999999 0 -0.371446748811989"
+      rpy="0 0 0" />
+    <parent
+      link="r_leg_pitch" />
+    <child
+      link="r_knee" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_knee" />
+    <actuator name="r_knee_pitch_motor" />
+  </transmission>
+  <link
+    name="r_foot_pitch">
+    <inertial>
+      <origin
+        xyz="-2.20869654975198E-07 2.20870146810936E-07 4.44089209850063E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.071" />
+      <inertia       
+        ixx="8.65317607419045E-10"
+        ixy="-4.38657646635503E-19"
+        ixz="-3.49395618891317E-14"
+        iyy="8.65317607419045E-10"
+        iyz="-3.447500777446E-14"
+        izz="1.52218316128676E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_foot_pitch.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_foot_pitch.obj" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="r_foot_pitch_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.445999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="r_knee" />
+    <child
+      link="r_foot_pitch" />
+    <axis
+      xyz="0 1 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_foot_pitch_joint" />
+    <actuator name="r_foot_pitch_motor" />
+  </transmission>
+  <link
+    name="r_foot_roll">
+    <inertial>
+      <origin
+        xyz="-0.00253560414136999 8.23854037115823E-06 -0.0377214649834521"
+        rpy="0 0 0" />
+      <mass
+        value="0.302" />
+      <inertia       
+        ixx="0.000124764742478312"
+        ixy="-2.08372197394019E-08"
+        ixz="5.85764784216475E-06"
+        iyy="0.000552202126631586"
+        iyz="-1.48804312214361E-08"
+        izz="0.000647202029682914" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_foot_roll.obj" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <!-- <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="../meshes/r_foot_roll.obj" />
+      </geometry>
+    </collision> -->
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin rpy="0 0 0" xyz="0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.075 0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.075 -0.03 -0.0465" />
+      <geometry>
+        <sphere radius="0.005" />
+      </geometry>
+    </collision>
+  </link>
+  <frame link="r_foot_roll" name="r_foot_sole" xyz="0 -0.0 -0.0465" />
+  <frame link="r_foot_roll" name="r_foot_toe" xyz="0.075 -0.0 -0.0465" />
+  <frame link="r_foot_roll" name="r_foot_heel" xyz="-0.075 -0.0 -0.0465" />
+  <joint
+    name="r_foot_roll_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="r_foot_pitch" />
+    <child
+      link="r_foot_roll" />
+    <axis
+      xyz="1 0 0" />
+    <limit lower="-3.14" upper="3.14" effort="100" velocity="25" />
+  </joint>
+  <transmission type="SimpleTransmission">
+    <joint name="r_foot_roll_joint" />
+    <actuator name="r_foot_roll_motor" />
+  </transmission>  
+</robot>

@@ -1,0 +1,118 @@
+<robot name="SIM_L_WRIST">
+  <link name="SIM_I_WRIST_FOREARM">
+    <inertial>
+      <origin xyz="0.080013 0.00692386 -0.000122126" rpy="0 0 0"/>
+      <mass value="0.847834"/>
+      <inertia ixx="0.000642193" ixy="-5.50228e-05" ixz="8.43781e-06" iyy="0.000791101" iyz="6.75903e-07" izz="0.000848022"/>
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_i_wrist_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_i_wrist_forearm_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="SIM_I_WRIST_LEVERAGE">
+    <inertial>
+      <origin xyz="-0.2178613 -0.000276848 -0.000854" rpy="0 0 0"/>
+      <mass value="0.0424441"/>
+      <inertia ixx="1.35051e-05" ixy="-6.05726e-07" ixz="-1.32907e-06" iyy="1.47037e-05" iyz="-5.46701e-07" izz="1.67511e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="-0.22890000000000002 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_i_wrist_leverage_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="-0.22890000000000002 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_i_wrist_leverage_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_prosup" type="revolute">
+    <origin xyz="0.22890000000000002 0 0" rpy="0 0 0"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <parent link="SIM_I_WRIST_FOREARM"/>
+    <child link="SIM_I_WRIST_LEVERAGE"/>
+    <limit effort="50000" lower="-1.5707963267948966" upper="1.5707963267948966" velocity="50000"/>
+    <dynamics damping="1.0"/>
+  </joint>
+  <link name="l_platform">
+    <inertial>
+      <origin xyz="-0.004509214837221243 -0.00012143109120533514 -0.002406867256157157" rpy="0 0 0"/>
+      <mass value="0.00610347"/>
+      <inertia ixx="0.01" ixy="2.0761e-09" ixz="-3.6146e-09" iyy="0.01" iyz="1.01098e-09" izz="0.01"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.010450000000000004 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_l_wrist_platform_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.010450000000000004 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_l_wrist_platform_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_pitch" type="revolute">
+    <origin xyz="-0.23935 0 0" rpy="-6.2349118285911565e-06 -7.429468190675887e-06 -2.508157683764559e-05"/>
+    <axis xyz="2.5081576834323626e-05 -0.999999999666019 -6.235098169366874e-06"/>
+    <parent link="SIM_I_WRIST_LEVERAGE"/>
+    <child link="l_platform"/>
+    <limit effort="50000" lower="-1.0471975511965976" upper="0.8726646259971648" velocity="50000"/>
+    <dynamics damping="1.0"/>
+  </joint>
+  <link name="SIM_L_WRIST_HAND">
+    <inertial>
+      <origin xyz="0.07466359999971112 -0.006066090003458604 -0.0015653900003557914" rpy="0 0 0"/>
+      <mass value="0.247727"/>
+      <inertia ixx="0.000180927" ixy="-5.62305e-05" ixz="-1.397e-05" iyy="0.000326195" iyz="-6.04989e-06" izz="0.000486092"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.08899999999996983 0 -0.0060000000004278" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_l_wrist_hand_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0.08899999999996983 0 -0.0060000000004278" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://iCub/meshes/simmechanics/sim_l_wrist_hand_prt.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_wrist_yaw" type="revolute">
+    <origin xyz="0 0 0" rpy="3.141586418491624 -7.429306784133327e-06 -3.141567572012956"/>
+    <axis xyz="5.022929999999999e-12 -1.1633733746249997e-22 0.9999999999999996"/>
+    <parent link="l_platform"/>
+    <child link="SIM_L_WRIST_HAND"/>
+    <limit effort="50000" lower="-0.5235987755982988" upper="0.5235987755982988" velocity="50000"/>
+    <dynamics damping="1.0"/>
+  </joint>
+  <gazebo> <plugin name="controlboard_wrist" filename="libgazebo_yarp_controlboard.so"> <yarpConfigurationFile>model://iCub/conf_left_wrist_mk2/left_wrist.ini</yarpConfigurationFile> </plugin> <plugin name="world_interface" filename="libgazebo_yarp_worldinterface.so"> <yarpConfigurationFile>model://iCub/conf_left_wrist_mk2/worldInterface.ini</yarpConfigurationFile> </plugin> </gazebo>
+  <gazebo>
+    <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+  </gazebo>
+</robot>

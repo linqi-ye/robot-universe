@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<devices robot="ergoCubGazeboV1" build="1">
+   <device name="wholebodydynamics" type="wholebodydynamics">
+        <param name="axesNames">(torso_roll,torso_pitch,torso_yaw,l_shoulder_pitch,l_shoulder_roll,l_shoulder_yaw,l_elbow,l_wrist_pitch,l_wrist_yaw,r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow,r_wrist_pitch,r_wrist_yaw,l_hip_pitch,l_hip_roll,l_hip_yaw,l_knee,l_ankle_pitch,l_ankle_roll,r_hip_pitch,r_hip_roll,r_hip_yaw,r_knee,r_ankle_pitch,r_ankle_roll)</param>
+        <param name="modelFile">model.urdf</param>
+        <param name="fixedFrameGravity">(0,0,-9.81)</param>
+        <param name="defaultContactFrames">(l_hand_palm,r_hand_palm,root_link,l_foot_front,l_foot_rear,r_foot_front,r_foot_rear,l_upper_leg,r_upper_leg)</param>
+        <param name="imuFrameName">head_imu_0</param>
+        <param name="useJointVelocity">true</param>
+        <param name="useJointAcceleration">false</param>
+        <param name="imuFilterCutoffInHz">3.0</param>
+        <param name="forceTorqueFilterCutoffInHz">3.0</param>
+        <param name="jointVelFilterCutoffInHz">3.0</param> <!-- used if useJointVelocity is set to true -->
+        <param name="jointAccFilterCutoffInHz">3.0</param> <!-- used if useJointAcceleration is set to true -->
+        <param name="startWithZeroFTSensorOffsets">true</param> <!-- bypass using resetOffset of FT sensors in simulation -->
+        <param name="useSkinForContacts">false</param>
+        <param name="publishNetExternalWrenches">true</param>
+        <param name="disableSensorReadCheckAtStartup">true</param>
+
+        <group name="GRAVITY_COMPENSATION">
+            <param name="enableGravityCompensation">true</param>
+            <param name="gravityCompensationBaseLink">root_link</param>
+            <param name="gravityCompensationAxesNames">(torso_roll,torso_pitch,torso_yaw,l_shoulder_pitch,l_shoulder_roll,l_shoulder_yaw,l_elbow,r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow)</param>
+        </group>
+
+        <group name="HW_USE_MAS_IMU">
+            <param name="accelerometer">head_imu_0</param>
+            <param name="gyroscope">head_imu_0</param>
+        </group>
+
+        <group name="WBD_OUTPUT_EXTERNAL_WRENCH_PORTS">
+            <param name="/wholeBodyDynamics/left_foot_front/cartesianEndEffectorWrench:o">(l_foot_front,l_sole,l_sole)</param>
+            <param name="/wholeBodyDynamics/left_foot_rear/cartesianEndEffectorWrench:o">(l_foot_rear,l_sole,l_sole)</param>
+            <param name="/wholeBodyDynamics/right_foot_front/cartesianEndEffectorWrench:o">(r_foot_front,r_sole,r_sole)</param>
+            <param name="/wholeBodyDynamics/right_foot_rear/cartesianEndEffectorWrench:o">(r_foot_rear,r_sole,r_sole)</param>
+            <param name="/wholeBodyDynamics/left_arm/cartesianEndEffectorWrench:o">(l_hand_palm,l_hand_palm,root_link)</param>
+            <param name="/wholeBodyDynamics/right_arm/cartesianEndEffectorWrench:o">(r_hand_palm,r_hand_palm,root_link)</param>
+        </group>
+
+
+
+         <group name="multipleAnalogSensorsNames">
+            <param name="SixAxisForceTorqueSensorsNames">("l_arm_ft", "r_arm_ft", "l_leg_ft", "r_leg_ft", "l_foot_front_ft", "r_foot_front_ft", "l_foot_rear_ft", "r_foot_rear_ft")</param>
+            <!-- <param name="TemperatureSensorsNames">("l_arm_ft", "r_arm_ft", "l_leg_ft", "r_leg_ft")</param> -->
+        </group>
+
+
+        <action phase="startup" level="15" type="attach">
+            <paramlist name="networks">
+                <!-- motorcontrol -->
+                <elem name="left_leg">left_leg_mc</elem>
+                <elem name="right_leg">right_leg_mc</elem>
+                <elem name="torso">torso_mc</elem>
+                <elem name="right_arm">right_arm_mc</elem>
+                <elem name="left_arm">left_arm_mc</elem>
+                <!--elem name="right_lower_arm">right_arm-mc_wrapper</elem>
+                <elem name="left_lower_arm">left_arm-mc_wrapper</elem-->
+                <!-- imu -->
+                <elem name="imu">head_inertial_hardware_device</elem>
+                <elem name="waist_imu">waist_inertial_hardware_device</elem>
+                <!-- ft -->
+                <elem name="left_arm_ft_sensor">ergocub_left_arm_ft</elem>
+                <elem name="right_arm_ft_sensor">ergocub_right_arm_ft</elem>
+                <elem name="left_leg_ft_sensor">ergocub_left_leg_ft</elem>
+                <elem name="right_leg_ft_sensor">ergocub_right_leg_ft</elem>
+            </paramlist>
+        </action>
+
+        <action phase="shutdown" level="2" type="detach" />
+
+    </device>
+</devices>

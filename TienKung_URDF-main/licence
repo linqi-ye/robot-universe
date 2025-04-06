@@ -1,0 +1,162 @@
+开放原子开放硬件许可证 第一版
+OpenAtom Open Hardware License, Version 1.0
+一、定义
+
+SectionⅠ Definitions
+
+1.1 本许可证：是指本开放原子开放硬件许可证第一版。任何人均可在不对本许可证进行修改的前提下对其进行复制、分发和使用。本许可证的管理人是开放原子开源基金会，开放原子开源基金会保留对本许可证进行修订和发布新版本的权利。
+
+1.1 “License” means this OpenAtom Open Hardware License, Version1.0. Anyone is permitted to copy, distribute and use this License in its unmodified form only. The steward of the License is the OpenAtom Foundation, which reserves rights to modify and to release new version(s) of this License.
+
+1.2 硬件源信息：是指在本许可证下许可的设计材料或数字代码等信息，不论其置于任何载体上或以任何方式表达，例如机械制图、流程图、设计文档、网表、配方、原理图、电路或电路板布线图、集成电路布图设计（包括拓扑图/掩模作品）、元器件排列图、FPGA位流文件、硬件描述语言文件等。
+
+1.2 “Hardware Source” means information such as design materials or digital code that is made available under this License, regardless of its medium or how it is expressed, such as mechanical drawings, flow charts, design documents, netlists, recipes, schematic diagrams, circuit or circuit board layouts, integrated circuit layout designs (including topology/mask work), component arrangement diagrams, FPGA bitstream files, hardware description language files, etc. 
+
+1.3 硬件：是指基于（包括但不限于使用、应用、处理、编译、加载等）“硬件源信息”或其修改而获得的成品或半成品形式的设备、组件、电路板、集成电路、芯片等有形物件或物质。如果与使用、商业利用、复制“硬件”等相关的任何活动需要任何贡献者许可的，则硬件也可被视为“硬件源信息”或“补充材料”。
+
+1.3 “Hardware” means any physical object or substance such as devices, components, circuit boards, integrated circuits and chips, whether in finished or intermediate form, based on (including but not limited to using, applying, processing, compiling and loading) the Hardware Source or modifications thereof. Hardware may also qualify as Hardware Source or Complementary Material where any activity related to the use, commercial exploitation, reproduction etc. of such Hardware requires a license from any Contributor.
+
+1.4 补充材料：是指通过本许可证许可的旨在与任何“硬件源信息”及其修改或任何“硬件”结合使用的任何材料（如有），例如模型参数、数据、可加载到可编程设备中的关联软件如驱动、接口文档、固件或代码等。
+
+1.4 “Complementary Material” means any materials that are made available under this License and intended to be used in conjunction with any Hardware Source and modifications thereof or any Hardware, if any, such as Model Parameters, Data, related software like drivers, interface documentation, firmware or code that can be loaded into programmable devices, etc.  
+
+1.5 模型参数：是指旨在与“硬件源信息”及其修改或任何“硬件”结合使用的任何基于机器学习技术的参数（如有），包括但不限于权重、偏置及训练关键中间阶段的检查点及最终优化器状态（如适用）。
+
+1.5 “Model Parameters” means any machine-learning based parameters intended to be used in conjunction with any Hardware Source and modifications thereof or any Hardware, if any, including but not limited to weights, biases and checkpoints from key intermediate stages of training as well as the final optimizer state where applicable.
+
+1.6 数据：是指旨在与“硬件源信息”及其修改或任何“硬件”结合使用的任何信息和内容。
+
+1.6 “Data” means any information and content intended to be used in conjunction with any Hardware Source and modifications thereof or any Hardware.
+
+1.7 许可方：基于本许可证将其就“硬件源信息”“补充材料”所拥有的知识产权进行许可的知识产权权利人或由其授权进行前述许可的自然人或法人实体。
+
+1.7 “Licensor” means the intellectual property right owner of the Hardware Source and Complementary Material, as well as any individual or legal entity authorized by such intellectual property right owner that is granting this License.
+
+1.8 贡献：是指知识产权权利人或被其授权的自然人或法人实体（合称“提交方”）自愿向许可方提交的包括“硬件源信息”“补充材料”的初始版本及对“硬件源信息”“补充材料”的所有修改或增补在内的任何材料。就此定义而言，“提交”是指以电子、口头或书面等任意形式向许可方或其代表发送的通信内容，但提交方明确标记或以其他形式书面指定为“非贡献”的除外。
+
+1.8 “Contribution” means any material, including the original version of the Hardware Source and the Complementary Material, and any modifications of or additions to that Hardware Source or Complementary Material, that is intentionally submitted to Licensor by the intellectual property right owner, or by an individual or legal entity authorized to submit on behalf of such intellectual property right owner (together, the “Submitter”). For the purposes of this definition, “submitted” means any form of electronic, verbal, or written communication sent to the Licensor or its representatives, but excluding communication that is conspicuously marked or otherwise designated in writing by the Submitter as “Not a Contribution”.
+
+1.9 贡献者：是指许可方及许可方代表接收其贡献并随后将其贡献合入“硬件源信息”“补充材料”的自然人或法人实体。
+
+1.9 “Contributor” means Licensor and any individual or legal entity on behalf of whom a Contribution has been received by Licensor and subsequently incorporated within the Hardware Source and the Complementary Material.
+
+1.10 您或（您的）：是实施本许可证授予的许可的自然人或法人实体。
+
+1.10 “You” (or “Your”) means an individual or legal entity exercising permissions granted by this License.
+
+1.11 关联主体：是指控制行为主体、由行为主体控制或受行为主体共同控制的所有其他主体。就本定义而言，“控制”是指（i）通过合同或其他方式直接或间接领导或管理该主体的权力；或（ii）拥有该主体至少50%流通股份；或（iii）拥有该主体的实益所有权。
+
+1.11 “Affiliated Entities” means all entities that control, are controlled by, or are under common control with the acting entity. For the purposes of this definition, “control” means (i) the power, direct or indirect, to cause the direction or management of such an entity, whether by contract or otherwise, or (ii) ownership of fifty percent (50%) or more of the outstanding shares, or (iii) beneficial ownership of such an entity.
+
+1.12 分发：是指通过任何媒介向第三方传输、发布、提供或以其他方式传递“硬件源信息”“补充材料”的行为。
+
+1.12 “Distribution” or “Distribute” means any transmission, publication, making available or transfer of the Hardware Source and/or the Complementary Material to a third party in any medium.
+
+1.13 修改：是指对“硬件源信息”“补充材料”进行改造、改编、翻译、组合等。
+
+1.13 “Modify” or “Modification” means any alteration, adaptation, translation, assembly, etc. of the Hardware Source and/or the Complementary Material.
+
+1.14 商业利用：是指为商业目的进口、销售或者以其他方式提供受保护的布图设计、含有该布图设计的集成电路或者含有该集成电路的物品的行为。
+
+1.14 “Commercially Exploit”means the act of importing, selling or otherwise providing for commercial purposes a protected layout-design, or an integrated circuit in which a protected layout-design is incorporated, or items in which such integrated circuit is incorporated.
+
+二、知识产权
+
+SectionⅡ Intellectual Property Rights
+
+2.1 著作权许可：在符合本许可证条款和条件的前提下，每个贡献者根据本许可证授予您永久的、全球范围的、免费的、非排他的、不可撤销的（根据第2.3款及4.5款规定撤销许可的特定情形除外）著作权许可，以使用、复制、修改、再许可、分发“硬件源信息”“补充材料”及其修改及行使适用的著作权法赋予权利人的任何其他权利。
+
+2.1 Grant of Copyright License
+
+Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive and irrevocable (except as stated in Sections 2.3 and 4.5) copyright license to use, reproduce, modify, sublicense and distribute the Hardware Source, the Complementary Material and modifications thereof and to exercise any other right reserved to the rights owner under applicable copyright law.
+
+2.2 授予集成电路布图设计专有权许可：在符合本许可证条款和条件的前提下，每个贡献者根据本许可证授予您永久的、全球范围的、免费的、非排他的、不可撤销的（根据第2.3款及4.5款规定撤销许可的特定情形除外）集成电路布图设计专有权许可，以复制、使用、商业利用“硬件源信息”“补充材料”及其修改或“硬件”，行使权利人根据适用法律所享有的与半导体掩模或拓扑权相关的任何其他权利。
+
+2.2 Grant of Integrated Circuit Layout-Design License
+
+Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive and irrevocable (except as stated in Sections 2.3 and 4.5) license under the exclusive right of integrated circuit layout-design to reproduce，to make use of or to commercially exploit the Hardware Source, the Complementary Material and modifications thereof or the Hardware and to exercise any other right reserved to the rights owner under applicable law pertaining to semiconductor mask or topographies rights.
+
+2.3 专利许可：在符合本许可证条款和条件的前提下，每个贡献者根据本许可证授予您永久的、全球范围的、免费的、非排他的、不可撤销的（根据本款及4.5款规定撤销许可的特定情形除外）专利权许可，以使用、复制、修改、再许可、分发“硬件源信息”“补充材料”及其修改及制造、委托制造、使用、销售、许诺销售、进口“硬件”。前述专利权许可仅限于贡献者现在或将来拥有或控制的其贡献本身或其贡献与其提交该贡献时的“硬件源信息”或“补充材料”的结合而将必然会侵犯的专利权利要求。如果您或您的关联主体对任何人发起专利侵权诉讼（包括诉讼中的反诉或交叉诉讼）或其他专利维权行动，主张“硬件源信息”“补充材料”或其中所含的贡献构成直接或间接专利侵权，则贡献者根据本许可证授予您的知识产权许可自您或您的关联主体提起该诉讼或发起该维权行动之日起终止。
+
+2.3 Grant of Patent License
+
+Subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive, and irrevocable (except as stated in this section and section 4.5) patent license to use, reproduce, modify, sublicense and distribute the Hardware Source, the Complementary Material and modifications thereof, and to make, have made, use, sell, offer to sell, and import the Hardware, where such licenses apply only to those patent claims owned or controlled now or in the future by such Contributor that are necessarily infringed by their Contribution(s) alone or by combination of their Contribution(s) with the Hardware Source or the Complementary Material to which such Contribution(s) was submitted. If You or Your Affiliated Entities institute patent litigation (including a cross-claim or counterclaim in a lawsuit) or otherwise seek for enforcement of patent right, alleging that the Hardware, the Complementary Material or a Contribution thereto constitutes direct or contributory patent infringement, then any licenses of intellectual property right granted to You under this License shall terminate as of the date such litigation is instituted or such enforcement is sought by You or Your Affiliated Entities.
+
+2.4 其他知识产权许可：除本条前述许可外，在符合本许可证条款和条件的前提下，每个贡献者就您在使用、复制、修改、再许可、分发“硬件源信息”“补充材料”及其修改及制造、委托制造、使用、销售、许诺销售、进口、转让、出租、展览“硬件”时所必然侵犯的、其所拥有或控制的其他知识产权（本许可证明确不授予的商标及其他标志除外），进一步授予您永久的、全球范围的、免费的、非排他的、不可撤销的许可（根据第2.3款及4.5款规定撤销许可的特定情形除外）。
+
+2.4 Grant of Other Intellectual Property Rights License
+
+In addition to aforestated licenses granted in this Section, subject to the terms and conditions of this License, each Contributor hereby grants to You a perpetual, worldwide, no-charge, royalty-free, non-exclusive and irrevocable (except as stated in Sections 2.3 and 4.5) license of any other intellectual property rights (except trademark or other marks as explicitly excluded from this License) owned or controlled by such Contributor that are necessarily infringed when You use, reproduce, modify, sublicense and distribute the Hardware Source, the Complementary Material and modifications thereof, and make, have made, use, sell, offer to sell, import, transfer, lease and exhibit the Hardware.
+
+2.5 知识产权声明及附加许可：在符合第3.1款条件的前提下，您可以在您的修改中添加知识产权（包括但不限于著作权）声明，并可以为您的修改或将任何经修改的“硬件源信息”“补充材料”整体的复制和分发提供附加的或不同的许可条款和条件，但该等许可条款和条件不得与本许可证的条款和条件相冲突。
+
+2.5 Intellectual Property Right Notice and Additional License
+
+Subject to the conditions set forth in Section 3.1, You may add Your own intellectual property right notices, including but not limited to copyright notices, to Your modifications and may provide additional or different license terms and conditions for reproduction and distribution of Your modifications, or for the modified Hardware Source and the modified Complementary Material as a whole, provided that such terms and conditions do not conflict with the terms and conditions of this License.
+
+三、分发条件
+
+Section Ⅲ CONDITIONS OF DISTRIBUTION
+
+3.1 分发条件：在遵从以下条件的前提下，您可以在任何媒介中复制、分发“硬件源信息”“补充材料”和/或其修改：
+
+1) 您必须向“硬件源信息”“补充材料”的接收者提供本许可证的副本；
+
+2) 您必须保留“硬件源信息”“补充材料”中的所有著作权、集成电路布图设计专有权、专利、商标及归属声明，但与“硬件源信息”“补充材料”任何部分均无关的除外；
+
+3) 如您对“硬件源信息”或“补充材料”进行修改，您必须以显著方式向接收者提供修改说明，说明您对其进行了修改。
+
+3.1 Conditions of Distribution
+
+You may reproduce and distribute the Hardware Source and the Complementary Material and/or modifications thereof in any medium, with or without modifications, provided that You meet the following conditions:
+
+1) You must provide any recipients of the Hardware Source and the Complementary Material with a copy of this License;
+
+2) You must retain all copyright, exclusive right of integrated circuit layout-design, patent, trademark and attribution notices contained in the Hardware Source and the Complementary Material excluding those not pertaining to any parts of the Hardware Source or the Complementary Material;
+
+3) If You modified the Hardware Source or the Complementary Material, You must provide recipients of the modified Hardware Source or the modified Complementary Material with prominent notices stating that You modified the files.
+
+3.2 您可以通过向您的下游接收者提供可访问到第3.1款第1）至3）项相关信息的有效URL或二维码的形式来满足第3.1款的要求，尤其在“硬件”本身被视为“硬件源信息”或“补充材料”的情况下。URL或二维码“有效”是指您在分发时合理相信在至少3年内该URL或二维码可正常访问并获取前述相关信息。
+
+3.2 You may comply with item 1) in Section 3.1 by providing your downstream recipients with a valid URL or QR code linking to relevant information, especially where a Hardware itself qualifies as Hardware Source or Complementary Material. A URL or QR code is “valid” only if You reasonably believe, at the time of distribution, such URL or QR code can be accessed to obtain aforestated relevant information for at least 3 years thereafter.
+
+
+四、其他
+
+Section Ⅳ Miscellaneous
+
+4.1 无商标许可：本许可证不提供对任何贡献者的商标及其他标志（包括但不限于服务标志、商号、产品名称或图形标识、包装、装潢）的许可，但您为描述“硬件源信息”“补充材料”及其修改及“硬件”或为遵从第3.1款规定的声明条件而必须使用的情形除外。
+
+4.1 No Trademark License
+
+This License does not grant any license to use any trademarks and other signs of any Contributor, including but not limited to service marks, trade names, product names, logos, packaging and decoration, except for using in indicating the origin of the Hardware Source, the Complementary Material and modifications thereof or the Hardware, or in complying with conditions on notices as set forth in Section 3.1.
+
+4.2 无担保声明：除非根据适用的法律要求或经事先书面同意，许可方按“原样”提供“硬件源信息”“补充材料”（每个贡献方按“原样”提供其贡献），不提供任何明示或默示的担保，包括但不限于任何所有权、不侵权、质量合格、适销性、特定用途适用性的担保。您应自行对您使用、复制、修改、分发“硬件源信息”“补充材料”及其修改或制造、委托制造、使用、销售、许诺销售、进口、转让、出租、展览“硬件”的适当性进行判断，并自行承担与之相关的所有风险，以及行使本许可证授予您的权利相关的其他所有风险。
+
+4.2 DISCLAIMER OF WARRANTY
+
+UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING IN ADVANCE, THE HARDWARE SOURCE, THE COMPLEMENTARY MATERIAL, AND CONTRIBUTIONS THEREOF ARE PROVIDED ON AN "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING, WITHOUT LIMITATION, ANY WARRANTIES OR CONDITIONS OF TITLE, NON-INFRINGEMENT, SATISFACTORY QUALITY, MERCHANTABILITY, OR FITNESS FOR A PARTICULAR PURPOSE. YOU ARE SOLELY RESPONSIBLE FOR DETERMINING THE APPROPRIATENESS OF USING, REPRODUCING, MODIFYING AND DISTRIBUTING THE HARDWARE SOURCE, THE COMPLEMENTARY MATERIAL AND MODIFICATIONS THEREOF, OR MAKING, HAVING MADE, USING, SELLING, OFFERING TO SELL, IMPORTING, TRANSFERRING, LEASING AND EXHIBITING THE HARDWARE AND ASSUME ANY RISKS ASSOCIATED THEREWITH, AND ANY OTHER RISKS ASSOCIATED WITH YOUR EXERCISE OF PERMISSIONS UNDER THIS LICENSE.
+
+4.3 责任限制：除非根据适用的法律要求或经事先书面同意，否则在任何情况下，无论基于任何法律依据，任何贡献者（即使其曾被建议有损害发生的可能性） 均不对您因使用、复制、修改、分发“硬件源信息”“补充材料”及其修改或其中的贡献或制造、委托制造、使用、销售、许诺销售、进口、转让、出租、展览“硬件”而引发的任何损害（包括但不限于直接的、间接的、附带的、特殊的、继发性、惩罚性的损害或任何类型的利益损失）承担任何责任。
+
+4.3 LIMITATION OF LIABILITY
+
+IN NO EVENT AND UNDER NO LEGAL THEORY, UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING IN ADVANCE, SHALL ANY CONTRIBUTOR BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR PUNITIVE DAMAGES, OR LOST PROFITS OF ANY KIND ARISING OUT OF YOUR USING, REPRODUCING, MODIFYING AND DISTRIBUTING THE HARDWARE SOURCE, COMPLEMENTARY MATERIAL AND MODIFICATIONS THEREOF, AND CONTRIBUTIONS THEREIN, OR MAKING, HAVING MADE, USING, SELLING, OFFERING TO SELL, IMPORTING, TRANSFERRING, LEASING AND EXHIBITING THE HARDWARE, EVEN IF SUCH CONTRIBUTOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+4.4 承担担保或其他责任：在分发“硬件源信息”“补充材料”或其修改时，您可以选择提供与本许可证不相冲突的支持、保障、担保以及承担其他责任、义务及权利，并就此收取费用。但在此情况下，您仅代表您自己（而不能代表任何其他贡献者）并独自承担责任，且您必须同意为每个贡献者进行抗辩、提供赔偿，以确保其不会因您提供此类支持、保障、担保或承担其他责任、义务而受到任何损失或被追究任何责任。
+
+4.4 Accepting Warranty or Additional Liability
+
+While distributing the Hardware Source, Complementary Material or modifications thereof, You may choose to offer, and charge a fee for, acceptance of support, indemnity, warranty or other liability, obligations and rights consistent with this License. However, by acceptance You may act only on Your own behalf and on Your sole responsibility, not on behalf of any other Contributors, and You shall agree to defend, indemnify, and hold each Contributor harmless for any liabilities incurred by, or claims asserted against, such Contributor by reason of Your accepting any such support, indemnity, warranty or additional liabilities and obligations.
+
+4.5 终止：如果您违反本许可证，则您基于本许可证所获得的所有许可将自动终止，您应立即删除并停止使用“硬件源信息”“补充材料”及其修改。本许可证终止后，第4.2、4.3、4.4款继续有效。如果您系首次违反本许可证并且在您首次收到基于本许可证许可权利的任何知识产权权利人告知您违反本协议并要求您采取补救措施的合理书面通知之日起30天内停止所有违约行为，则所有知识产权权利人在本许可证下授予您的权利将自您停止所有违约行为之时起自动恢复。如您基于本许可证所获得的许可按本款规定终止的，不影响从您处取得副本或权利的下游接收者在本许可证下的授权。
+
+4.5 Termination
+
+Your violation of this License will automatically terminate Your rights under this License and You shall promptly delete and cease use of the Hardware Source, the Complementary Material and modifications thereof. Section 4.2, 4.3 and 4.4 shall survive the termination of this License. Moreover, if You violate the License for the first time and cease all violation of this License within 30 days after receiving for the first time a reasonable written notice from any intellectual property right holders of rights licensed under this License notifying You of the breach and requiring You to remedy it, then Your license from all intellectual property right holders under this License is reinstated once You cease all violation. Termination of Your rights under this section does not affect the licenses of recipients who have received copies or rights from You under this License.
+
+4.6 语言：本许可证以中英双语拟制，中英文版本具有同等法律效力。当本许可证适用中国法律（包括港、澳、台地区法律）解释时，须以中文文本为准。
+
+4.6 Language
+
+This License is written in both Chinese and English, and the Chinese version and English version shall have the same legal effect. The Chinese version shall prevail where the laws of China (including the laws of Hong Kong, Macao and Taiwan) apply to the interpretation of this License.

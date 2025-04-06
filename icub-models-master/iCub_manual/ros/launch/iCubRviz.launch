@@ -1,0 +1,14 @@
+<launch>
+    <arg name="Robot"/>
+    <arg name="gui" default="False"/>
+    <arg name="vel" default="True"/>
+    <arg name="eff" default="True"/>
+    <arg name="YARP_ROBOT_NAME" default="$(env YARP_ROBOT_NAME)"/>
+    <arg name="robotModel" default="$(find iCub)/robots/$(arg YARP_ROBOT_NAME)/model.urdf  "/>
+    <arg name="rvizconfig" default="$(find iCub)/ros/rviz/iCubRviz.rviz"/>
+
+    <param name="robot_description" command="$(find xacro)/xacro $(arg robotModel)" />
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
+</launch>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+    <device xmlns:xi="http://www.w3.org/2001/XInclude" name="cbw_ros2" type="controlBoard_nws_ros2">
+        <param name="node_name"> ros2_cb_node </param>
+        <param name="topic_name"> /joint_states </param>
+        <param name="period"> 0.010 </param>
+        <action phase="startup" level="10" type="attach">
+            <param name="device"> alljoints_mc </param>
+        </action>
+        <action phase="shutdown" level="15" type="detach" />
+    </device>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude"  name="depthWrapR" type="rgbdSensor_nws_ros2">
+    <param name="period">0.033</param>
+    <param name="node_name">rgbdsensor_ros2_node</param>
+    <param name="color_topic_name">/camera_rgbd/color/image_rect_color</param>
+    <param name="depth_topic_name">/camera_rgbd/depth/image_rect</param>
+    <param name="color_frame_id">realsense_rgb_frame</param>
+    <param name="depth_frame_id">realsense_rgb_frame</param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device"> rgbdCamera </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>

@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "If you use this description, please cite it as below."
+title: "Upkie wheeled biped description"
+version: 2.1.0
+date-released: 2024-07-31
+url: "https://github.com/upkie/upkie_description"
+license: "Apache-2.0"
+authors:
+- family-names: "Caron"
+  given-names: "Stéphane"
+  orcid: "https://orcid.org/0000-0003-2906-692X"
+- family-names: "Tordjman--Levavasseur"
+  given-names: "Valentin"

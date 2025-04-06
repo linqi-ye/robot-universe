@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!--
+   hrp4 URDF model
+
+   FIXME: fill missing data: sole, gripper and sensors
+  -->
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hrp4">
+  <xacro:include filename="$(find hrp4_description)/urdf/hrp4_common.xacro" /> 
+  <xacro:include filename="$(find hrp4_description)/urdf/hrp4_fingers.xacro" /> 
+  <xacro:include filename="$(find hrp4_description)/urdf/hrp4_feet_fixed.xacro" />
+</robot>

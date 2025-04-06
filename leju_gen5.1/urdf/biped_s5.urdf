@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="biped_s5">
+  <link name="torso">
+    <inertial>
+      <origin xyz="-0.00926192059836969 0.000103716283616165 0.149674290235952"
+        rpy="0 0 0" />
+      <mass value="20.4789" />
+      <inertia ixx="0.0457275331736898"
+        ixy="-8.31996786443554E-06"
+        ixz="0.00103885803020517"
+        iyy="0.0258769215868152"
+        iyz="-1.10916795943315E-05"
+        izz="0.0328521133986681" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/torso.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/torso.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="l_leg_roll">
+    <inertial>
+      <origin xyz="-0.00983140955589672 1.46546048351848E-08 -0.00752906911596193"
+        rpy="0 0 0" />
+      <mass value="1.88012076" />
+      <inertia ixx="0.000310482146694734"
+        ixy="1.10460174147508E-07"
+        ixz="-3.95485784261699E-06"
+        iyy="0.000410855799625318"
+        iyz="3.64451804999842E-11"
+        izz="0.000640306281274875" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_roll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_leg_roll"
+    type="continuous">
+    <origin xyz="-0.00250000000000006 0.087000000000001 -0.066000000004924"
+      rpy="0 0 0" />
+    <parent link="torso" />
+    <child link="l_leg_roll" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="l_leg_yaw">
+    <inertial>
+      <origin xyz="6.49207275004587E-09 0.00487083715123539 -0.0669932988877589"
+        rpy="0 0 0" />
+      <mass value="0.35029322" />
+      <inertia ixx="0.000173081702301821"
+        ixy="-6.12238313661354E-09"
+        ixz="-8.83759526517385E-09"
+        iyy="0.000156207523798851"
+        iyz="-8.20020299425649E-07"
+        izz="0.000126692449683295" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_yaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_leg_yaw"
+    type="continuous">
+    <origin xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent link="l_leg_roll" />
+    <child link="l_leg_yaw" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="l_leg_pitch">
+    <inertial>
+      <origin xyz="0.00818081948263902 0.00139470555805055 -0.108058059604907"
+        rpy="0 0 0" />
+      <mass value="5.99660176" />
+      <inertia ixx="0.0107682915792747"
+        ixy="4.66461290234016E-05"
+        ixz="0.00120678947491235"
+        iyy="0.0125295600634726"
+        iyz="-0.000273188367841014"
+        izz="0.00217634995112629" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_leg_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_leg_pitch"
+    type="continuous">
+    <origin xyz="0 0 -0.125"
+      rpy="0 0 0" />
+    <parent link="l_leg_yaw" />
+    <child link="l_leg_pitch" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="l_knee">
+    <inertial>
+      <origin xyz="0.00150263455607352 -0.000132189365573007 -0.171582875265133"
+        rpy="0 0 0" />
+      <mass value="1.96753033" />
+      <inertia ixx="0.00545594736773867"
+        ixy="2.2816576189442E-07"
+        ixz="-8.65275726043976E-05"
+        iyy="0.0056377139735192"
+        iyz="-1.62887227808401E-07"
+        izz="0.000243000176682585" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_knee.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_knee"
+    type="continuous">
+    <origin xyz="0.042000000000039 0 -0.371446748811985"
+      rpy="0 0 0" />
+    <parent link="l_leg_pitch" />
+    <child link="l_knee" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="l_foot_pitch">
+    <inertial>
+      <origin xyz="-2.20870108300075E-07 2.20870109285398E-07 8.88178419700125E-16"
+        rpy="0 0 0" />
+      <mass value="0.071" />
+      <inertia ixx="8.65317607419045E-10"
+        ixy="-4.38658038078086E-19"
+        ixz="-3.49395618889252E-14"
+        iyy="8.65317607419048E-10"
+        iyz="-3.44750077755479E-14"
+        izz="1.52218316128677E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_foot_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_foot_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_foot_pitch"
+    type="continuous">
+    <origin xyz="0 0 -0.446000000000004"
+      rpy="0 0 0" />
+    <parent link="l_knee" />
+    <child link="l_foot_pitch" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="l_foot_roll">
+    <inertial>
+      <origin xyz="-0.0047853750253796 8.65790840155756E-06 -0.0384395997806626"
+        rpy="0 0 0" />
+      <mass value="0.58724649" />
+      <inertia ixx="0.000122090677728357"
+        ixy="-2.08279359290272E-08"
+        ixz="5.52005985795743E-06"
+        iyy="0.000549586671174372"
+        iyz="-1.48806261791215E-08"
+        izz="0.000646435899349208" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_foot_roll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_foot_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_foot_roll"
+    type="continuous">
+    <origin xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent link="l_foot_pitch" />
+    <child link="l_foot_roll" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="l_l_bar">
+    <inertial>
+      <origin xyz="-0.016696577536994 0.00762572419608111 0.00446868612723172"
+        rpy="0 0 0" />
+      <mass value="0.024" />
+      <inertia ixx="3.76481952404686E-06"
+        ixy="-1.60270296900998E-06"
+        ixz="2.75575425004243E-06"
+        iyy="1.63437308536675E-05"
+        iyz="4.29151893657148E-07"
+        izz="1.33192051124489E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_l_bar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_l_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_l_bar"
+    type="continuous">
+    <origin xyz="0 0.0250000000000088 -0.0900000000000168"
+      rpy="0 0 0" />
+    <parent link="l_knee" />
+    <child link="l_l_bar" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="l_l_tendon">
+    <inertial>
+      <origin xyz="-0.000597102791892887 -5.48291770866016E-05 -0.182364861842155"
+        rpy="0 0 0" />
+      <mass value="0.88" />
+      <inertia ixx="0.000364214863678753"
+        ixy="-1.91906334838917E-10"
+        ixz="-1.19066202709381E-06"
+        iyy="0.000363638660244105"
+        iyz="-5.87409025874148E-08"
+        izz="1.35173004348159E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_l_tendon.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_l_tendon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_l_tendon"
+    type="continuous">
+    <origin xyz="-0.0560272920021761 0 0.0149980849078144"
+      rpy="0 0 0" />
+    <parent link="l_l_bar" />
+    <child link="l_l_tendon" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="l_r_bar">
+    <inertial>
+      <origin xyz="-0.0166961642476258 -0.0076257277222136 0.00447015233990733"
+        rpy="0 0 0" />
+      <mass value="0.024" />
+      <inertia ixx="3.76418592776542E-06"
+        ixy="1.60276817374093E-06"
+        ixz="2.75465106195161E-06"
+        iyy="1.63437457405512E-05"
+        iyz="-4.28916580449837E-07"
+        izz="1.33198543732556E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_r_bar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_r_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_r_bar"
+    type="continuous">
+    <origin xyz="0 -0.0249999999999929 -0.155000000000017"
+      rpy="0 0 0" />
+    <parent link="l_knee" />
+    <child link="l_r_bar" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="l_r_tendon">
+    <inertial>
+      <origin xyz="-0.000605902956738801 6.3248961663584E-05 -0.150985512649844"
+        rpy="0 0 0" />
+      <mass value="0.102" />
+      <inertia ixx="0.000208074906724013"
+        ixy="1.96089157462971E-10"
+        ixz="-8.30439669728637E-07"
+        iyy="0.000207622314355351"
+        iyz="4.82859767955594E-08"
+        izz="1.17452177633771E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_r_tendon.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_r_tendon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_r_tendon"
+    type="continuous">
+    <origin xyz="-0.0560274063891436 0 0.0149976575939391"
+      rpy="0 0 0" />
+    <parent link="l_r_bar" />
+    <child link="l_r_tendon" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="r_leg_roll">
+    <inertial>
+      <origin xyz="-0.00983144503226487 -1.59766537360939E-08 -0.00752906931000215"
+        rpy="0 0 0" />
+      <mass value="1.88012060" />
+      <inertia ixx="0.000310482145761377"
+        ixy="-1.10417749091897E-07"
+        ixz="-3.95482991073784E-06"
+        iyy="0.000410855771675693"
+        iyz="-3.75194963580718E-11"
+        izz="0.000640306201286987" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_roll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_leg_roll"
+    type="continuous">
+    <origin xyz="-0.00250000000000007 -0.0870000000000011 -0.066000000004924"
+      rpy="0 0 0" />
+    <parent link="torso" />
+    <child link="r_leg_roll" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="r_leg_yaw">
+    <inertial>
+      <origin xyz="-7.82661562451908E-08 -0.00487173749949509 -0.0669935103335309"
+        rpy="0 0 0" />
+      <mass value="0.35029279 " />
+      <inertia ixx="0.000173081546262985"
+        ixy="6.1237846574784E-09"
+        ixz="-8.82870863467378E-09"
+        iyy="0.000156207533807824"
+        iyz="8.19994621230491E-07"
+        izz="0.000126692266939742" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_yaw.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_leg_yaw"
+    type="continuous">
+    <origin xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent link="r_leg_roll" />
+    <child link="r_leg_yaw" />
+    <axis xyz="0 0 1" />
+  </joint>
+  <link name="r_leg_pitch">
+    <inertial>
+      <origin xyz="0.00818089342969289 -0.00146116954668174 -0.108058139309493"
+        rpy="0 0 0" />
+      <mass value="5.99660478" />
+      <inertia ixx="0.0107682730836938"
+        ixy="-4.66397891366283E-05"
+        ixz="0.00120677481485532"
+        iyy="0.0125295391522262"
+        iyz="0.000273178978574909"
+        izz="0.00217634756400763" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_leg_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_leg_pitch"
+    type="continuous">
+    <origin xyz="0 0 -0.125"
+      rpy="0 0 0" />
+    <parent link="r_leg_yaw" />
+    <child link="r_leg_pitch" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="r_knee">
+    <inertial>
+      <origin xyz="0.00150681306498557 0.000132566063981251 -0.170878096372675"
+        rpy="0 0 0" />
+      <mass value="1.96753012" />
+      <inertia ixx="0.00545573829631068"
+        ixy="-2.21724311680564E-07"
+        ixz="-8.65259061069078E-05"
+        iyy="0.00563749079010491"
+        iyz="1.62960724433321E-07"
+        izz="0.00024298065657869" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_knee.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_knee"
+    type="continuous">
+    <origin xyz="0.0420000000000047 0 -0.37144674881199"
+      rpy="0 0 0" />
+    <parent link="r_leg_pitch" />
+    <child link="r_knee" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="r_foot_pitch">
+    <inertial>
+      <origin xyz="-2.20870110485827E-07 2.20870110437255E-07 0"
+        rpy="0 0 0" />
+      <mass value="0.071" />
+      <inertia ixx="8.65317607419047E-10"
+        ixy="-4.38657087304055E-19"
+        ixz="-3.49395618893653E-14"
+        iyy="8.65317607419048E-10"
+        iyz="-3.44750077747074E-14"
+        izz="1.52218316128677E-09" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_foot_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_foot_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_foot_pitch"
+    type="continuous">
+    <origin xyz="0 0 -0.446"
+      rpy="0 0 0" />
+    <parent link="r_knee" />
+    <child link="r_foot_pitch" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="r_foot_roll">
+    <inertial>
+      <origin xyz="-0.00478537507849297 8.65783726147762E-06 -0.0384395997489031"
+        rpy="0 0 0" />
+      <mass value="0.58724649" />
+      <inertia ixx="0.000122090677759343"
+        ixy="-2.08279492286943E-08"
+        ixz="5.52005983843941E-06"
+        iyy="0.000549586671181352"
+        iyz="-1.48805222972027E-08"
+        izz="0.000646435899360507" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_foot_roll.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_foot_roll.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_foot_roll"
+    type="continuous">
+    <origin xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent link="r_foot_pitch" />
+    <child link="r_foot_roll" />
+    <axis xyz="-1 0 0" />
+  </joint>
+  <link name="r_r_bar">
+    <inertial>
+      <origin xyz="-0.0166961301538468 -0.00762572772220105 0.00447027967945968"
+        rpy="0 0 0" />
+      <mass value="0.024" />
+      <inertia ixx="3.76422794708375E-06"
+        ixy="1.60276490239528E-06"
+        ixz="2.7547239415526E-06"
+        iyy="1.63437457405164E-05"
+        iyz="-4.28928804553255E-07"
+        izz="1.33198123539002E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_r_bar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_r_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_r_bar"
+    type="continuous">
+    <origin xyz="0 -0.0250000000000014 -0.0900000000000001"
+      rpy="0 0 0" />
+    <parent link="r_knee" />
+    <child link="r_r_bar" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="r_r_tendon">
+    <inertial>
+      <origin xyz="-0.00059924692764958 5.48292509237186E-05 -0.182364888889061"
+        rpy="0 0 0" />
+      <mass value="0.102" />
+      <inertia ixx="0.000364214752887265"
+        ixy="1.93459647860792E-10"
+        ixz="-1.18981437662517E-06"
+        iyy="0.000363638543865863"
+        iyz="5.87409298625015E-08"
+        izz="1.35172444313312E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_r_tendon.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_r_tendon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_r_tendon"
+    type="continuous">
+    <origin xyz="-0.0560272920021874 0 0.014998084907814"
+      rpy="0 0 0" />
+    <parent link="r_r_bar" />
+    <child link="r_r_tendon" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="r_l_bar">
+    <inertial>
+      <origin xyz="-0.0166966116186186 0.00762572419609349 0.00446855878429042"
+        rpy="0 0 0" />
+      <mass value="0.0241" />
+      <inertia ixx="3.76477748898739E-06"
+        ixy="-1.602706242056E-06"
+        ixz="2.75568137956866E-06"
+        iyy="1.63437308536785E-05"
+        iyz="4.291396700212E-07"
+        izz="1.33192471475204E-05" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_l_bar.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="0.890196078431372 0.890196078431372 0.913725490196078 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_l_bar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_l_bar"
+    type="continuous">
+    <origin xyz="0 0.025 -0.155"
+      rpy="0 0 0" />
+    <parent link="r_knee" />
+    <child link="r_l_bar" />
+    <axis xyz="0 1 0" />
+  </joint>
+  <link name="r_l_tendon">
+    <inertial>
+      <origin xyz="-0.000605719776714354 -6.32487927361494E-05 -0.150985505397343"
+        rpy="0 0 0" />
+      <mass value="0.088" />
+      <inertia ixx="0.000208074889035202"
+        ixy="-1.91367205731612E-10"
+        ixz="-8.29913043888436E-07"
+        iyy="0.000207622292440245"
+        iyz="-4.82855774028806E-08"
+        izz="1.17451753232422E-06" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_l_tendon.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_l_tendon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_l_tendon"
+    type="continuous">
+    <origin xyz="-0.0560274063891502 0 0.0149976575939389"
+      rpy="0 0 0" />
+    <parent link="r_l_bar" />
+    <child link="r_l_tendon" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="l_arm_pitch">
+    <inertial>
+      <origin xyz="0.0112466586076474 -0.254835019859232 -0.426207737830046"
+        rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_arm_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/l_arm_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="l_arm_pitch"
+    type="continuous">
+    <origin xyz="-0.0174999999994838 0.254700000000017 0.3245"
+      rpy="0 0 0" />
+    <parent link="torso" />
+    <child link="l_arm_pitch" />
+    <axis xyz="0 -1 0" />
+  </joint>
+  <link name="r_arm_pitch">
+    <inertial>
+      <origin xyz="0.0112466586076474 0.254564980140802 -0.426207737830046"
+        rpy="0 0 0" />
+      <mass value="0.001" />
+      <inertia ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_arm_pitch.STL" />
+      </geometry>
+      <material name="">
+        <color rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh filename="package://biped_s5/meshes/r_arm_pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="r_arm_pitch"
+    type="continuous">
+    <origin xyz="-0.0174999999994838 -0.254700000000017 0.3245"
+      rpy="0 0 0" />
+    <parent link="torso" />
+    <child link="r_arm_pitch" />
+    <axis xyz="0 1 0" />
+  </joint>
+</robot>

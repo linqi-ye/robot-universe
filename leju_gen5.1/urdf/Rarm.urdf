@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<robot 
+  name="right_arm">
+  <!-- right arm -->
+  <link 
+    name="base_link">
+    <inertial>
+      <origin 
+        xyz="-0.00399571587295026 -2.98574044384492E-05 -0.0656134416270269"
+        rpy="0 0 0"/>
+      <mass 
+        value="0.413"/>
+      <inertia      
+        ixx="7.01871005830262E-05" 
+        ixy="1.62591814390724E-07" 
+        ixz="-4.54374332575993E-07" 
+        iyy="7.29165016216887E-05" 
+        iyz="7.3578843890099E-09" 
+        izz="6.87978478315219E-05"/>
+    </inertial>
+    <visual>
+      <origin 
+        xyz="0 0 0" 
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh 
+          filename="../meshes/r_forearm_yaw.obj"/>
+      </geometry>
+      <material 
+        name="">
+        <color 
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  <link 
+    name="r_hand_roll">
+    <inertial>
+      <origin 
+        xyz="0.0166010838484253 -1.21914575379467E-07 -1.70258151493963E-07" 
+        rpy="0 0 0"/>
+      <mass 
+        value="0.0071"/>
+      <inertia      
+        ixx="1.93486938959377E-07" 
+        ixy="-1.35418412773771E-12" 
+        ixz="9.16670576988079E-13" 
+        iyy="1.36599402900294E-07" 
+        iyz="2.34295717847431E-12" 
+        izz="3.17250989285096E-07"/>
+    </inertial>
+    <visual>
+      <origin 
+        xyz="0 0 0" 
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh 
+          filename="../meshes/r_hand_roll.obj"/>
+      </geometry>
+      <material 
+        name="">
+        <color 
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint 
+    name="r_hand_roll" 
+    type="continuous">
+    <origin 
+      xyz="-0.025322 0 -0.1575" 
+      rpy="0 0 0"/>
+    <parent 
+      link="base_link"/>
+    <child 
+      link="r_hand_roll"/>
+    <axis 
+      xyz="1 0 0"/>
+  </joint>
+  <link 
+    name="r_hand_pitch">
+    <inertial>
+      <origin 
+        xyz="0.00214702310217297 -7.83584216464961E-05 -0.0852818706514631" 
+        rpy="0 0 0"/>
+      <mass 
+        value="0.6789"/>
+      <inertia        
+        ixx="1.14121247582596E-05" 
+        ixy="1.76471512895622E-10" 
+        ixz="2.91544422581543E-07" 
+        iyy="1.11095803968485E-05" 
+        iyz="7.83308829804773E-10" 
+        izz="8.19797394000677E-06"/>
+    </inertial>
+    <visual>
+      <origin 
+        xyz="0 0 0" 
+        rpy="0 0 0"/>
+      <geometry>
+        <mesh 
+          filename="../meshes/r_hand_pitch.obj"/>
+      </geometry>
+      <material 
+        name="">
+        <color 
+          rgba="1 1 1 1"/>
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="r_hand_pitch" 
+    type="continuous">
+    <origin 
+      xyz="0.02137 0 0" 
+      rpy="0 0 0"/>
+    <parent 
+      link="r_hand_roll"/>
+    <child 
+      link="r_hand_pitch"/>
+    <axis 
+      xyz="0 1 0"/>
+  </joint>
+</robot>

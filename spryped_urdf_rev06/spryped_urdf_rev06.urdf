@@ -1,0 +1,511 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="spryped_urdf_rev06">
+  <link
+    name="body">
+    <inertial>
+      <origin
+        xyz="0.047181 -3.0609E-06 0.076165"
+        rpy="0 0 0" />
+      <mass
+        value="3.7038" />
+      <inertia
+        ixx="0.0033545"
+        ixy="-3.2672E-09"
+        ixz="8.3384E-06"
+        iyy="0.0042956"
+        iyz="-2.3336E-06"
+        izz="0.0059126" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left femur">
+    <inertial>
+      <origin
+        xyz="0.00069777 0.056842 0.0014637"
+        rpy="0 0 0" />
+      <mass
+        value="0.30999" />
+      <inertia
+        ixx="0.00070116"
+        ixy="3.5726E-05"
+        ixz="9.483E-08"
+        iyy="0.00059024"
+        iyz="-3.5642E-05"
+        izz="0.00069104" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="1"
+    type="revolute">
+    <origin
+      xyz="0.051822 0.144 0.055904"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="left femur" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left tibiotarsus">
+    <inertial>
+      <origin
+        xyz="-0.0535 0.08423 -0.00048074"
+        rpy="0 0 0" />
+      <mass
+        value="2.8773" />
+      <inertia
+        ixx="0.0034958"
+        ixy="0.0014826"
+        ixz="-8.2901E-08"
+        iyy="0.0022584"
+        iyz="1.2361E-07"
+        izz="0.0053351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left tibiotarsus.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left tibiotarsus.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="2"
+    type="revolute">
+    <origin
+      xyz="0 0.114 0"
+      rpy="0 0 0" />
+    <parent
+      link="left femur" />
+    <child
+      link="left tibiotarsus" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left tarsometatarsus">
+    <inertial>
+      <origin
+        xyz="0.053129 0.093369 0.015338"
+        rpy="0 0 0" />
+      <mass
+        value="0.38839" />
+      <inertia
+        ixx="0.00096573"
+        ixy="-0.00056636"
+        ixz="-1.259E-05"
+        iyy="0.0010982"
+        iyz="4.5106E-05"
+        izz="0.0015965" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left tarsometatarsus.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left tarsometatarsus.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="3"
+    type="revolute">
+    <origin
+      xyz="-0.105453933582408 0.168761571135129 0"
+      rpy="0 0 0.558505360638189" />
+    <parent
+      link="left tibiotarsus" />
+    <child
+      link="left tarsometatarsus" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="left toe">
+    <inertial>
+      <origin
+        xyz="-0.015193 0.029454 -8.5534E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.11189" />
+      <inertia
+        ixx="4.0659E-05"
+        ixy="-3.5337E-05"
+        ixz="7.6361E-13"
+        iyy="0.00018716"
+        iyz="7.4475E-14"
+        izz="0.00021756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left toe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/left toe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="4"
+    type="revolute">
+    <origin
+      xyz="0.348429623081206 0.358603956697683 -0.000249999999999057"
+      rpy="0 0 -0.771008986271208" />
+    <parent
+      link="left tarsometatarsus" />
+    <child
+      link="left toe" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right femur">
+    <inertial>
+      <origin
+        xyz="0.00069773 0.056842 -0.0014638"
+        rpy="0 0 0" />
+      <mass
+        value="0.30999" />
+      <inertia
+        ixx="0.00070116"
+        ixy="3.5726E-05"
+        ixz="-9.5179E-08"
+        iyy="0.00059025"
+        iyz="3.5642E-05"
+        izz="0.00069104" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right femur.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right femur.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="5"
+    type="revolute">
+    <origin
+      xyz="0.051822 -0.144 0.055904"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="body" />
+    <child
+      link="right femur" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right tibiotarsus">
+    <inertial>
+      <origin
+        xyz="-0.053501 0.08423 0.00041314"
+        rpy="0 0 0" />
+      <mass
+        value="2.8772" />
+      <inertia
+        ixx="0.0034958"
+        ixy="0.0014826"
+        ixz="7.9551E-08"
+        iyy="0.0022584"
+        iyz="-1.374E-07"
+        izz="0.0053351" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right tibiotarsus.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right tibiotarsus.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="6"
+    type="revolute">
+    <origin
+      xyz="0 0.114000000000013 0"
+      rpy="0 0 0" />
+    <parent
+      link="right femur" />
+    <child
+      link="right tibiotarsus" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right tarsometatarsus">
+    <inertial>
+      <origin
+        xyz="0.053129 0.093369 -0.015837"
+        rpy="0 0 0" />
+      <mass
+        value="0.38839" />
+      <inertia
+        ixx="0.00096573"
+        ixy="-0.00056636"
+        ixz="1.2589E-05"
+        iyy="0.0010982"
+        iyz="-4.5106E-05"
+        izz="0.0015965" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right tarsometatarsus.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right tarsometatarsus.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="7"
+    type="revolute">
+    <origin
+      xyz="-0.105453933582408 0.168761571135127 0"
+      rpy="0 0 0.55850536063819" />
+    <parent
+      link="right tibiotarsus" />
+    <child
+      link="right tarsometatarsus" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="right toe">
+    <inertial>
+      <origin
+        xyz="-0.015193 0.029454 -8.5534E-11"
+        rpy="0 0 0" />
+      <mass
+        value="0.11189" />
+      <inertia
+        ixx="4.0659E-05"
+        ixy="-3.5337E-05"
+        ixz="7.6361E-13"
+        iyy="0.00018716"
+        iyz="7.4475E-14"
+        izz="0.00021756" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right toe.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/right toe.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="8"
+    type="revolute">
+    <origin
+      xyz="0.348429623081197 0.358603956697689 -0.000250000000000111"
+      rpy="0 0 -0.771008986271209" />
+    <parent
+      link="right tarsometatarsus" />
+    <child
+      link="right toe" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

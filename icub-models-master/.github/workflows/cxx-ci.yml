@@ -1,0 +1,133 @@
+name: C++ CI Workflow
+
+on:
+  push:
+  pull_request:
+  schedule:
+  # * is a special character in YAML so you have to quote this string
+  # Execute a "nightly" build at 2 AM UTC
+  - cron:  '0 2 * * *'
+
+jobs:
+  build-with-conda-dependencies:
+    name: '[conda:${{ matrix.os }}]'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release]
+        os: [ubuntu-20.04, macos-latest, windows-2019]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - uses: conda-incubator/setup-miniconda@v3
+      with:
+        miniforge-version: latest
+        channels: conda-forge
+
+    - name: Dependencies [Conda]
+      shell: bash -l {0}
+      run: |
+        # Workaround for https://github.com/conda-incubator/setup-miniconda/issues/186
+        conda config --remove channels defaults
+        # Build and test dependencies (ROS packages to test that resouces are find correctly by ROS/ROS2)
+        # ros-noetic-catkin is required otherwised ROS_PACKAGE_PATH is not defined and rospack list does not return anything
+        conda install -c conda-forge -c robostack -c robostack-humble cmake compilers make ninja pkg-config python ros-noetic-rospack ros-noetic-catkin ros-humble-ros2pkg
+
+    - name: Print used environment [Conda]
+      shell: bash -l {0}
+      run: |
+        conda list
+        env
+
+    - name: Configure [Conda/Linux&macOS]
+      if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+      shell: bash -l {0}
+      run: |
+        mkdir build
+        cd build
+        cmake -GNinja -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} -DICUB_MODELS_USES_PYTHON:BOOL=ON -DCMAKE_INSTALL_PREFIX=${CONDA_PREFIX} ..
+
+    - name: Configure [Conda/Windows]
+      if: contains(matrix.os, 'windows')
+      shell: bash -l {0}
+      run: |
+        mkdir build
+        cd build
+        cmake -G"Visual Studio 16 2019" -DCMAKE_INSTALL_PREFIX=${CONDA_PREFIX}/Library  -DICUB_MODELS_USES_PYTHON:BOOL=ON -DCMAKE_BUILD_TYPE=${{ matrix.build_type }} ..
+
+    - name: Build [Conda]
+      shell: bash -l {0}
+      run: |
+        cd build
+        cmake --build . --config ${{ matrix.build_type }}
+
+    - name: Install [Conda]
+      shell: bash -l {0}
+      run: |
+        cd build
+        cmake --install . --config ${{ matrix.build_type }}
+
+    - name: Test ROS Package can be found [Conda/Linux&macOS]
+      if: contains(matrix.os, 'macos') || contains(matrix.os, 'ubuntu')
+      shell: bash -l {0}
+      run: |
+        # Test ROS
+        rospack find iCub
+        # Test ROS2
+        ros2 pkg prefix iCub
+
+    - name: Test ROS Package can be found [Conda/Windows]
+      if: contains(matrix.os, 'windows')
+      shell: cmd /C CALL {0}
+      run: |
+        rospack find iCub
+        ros2 pkg prefix iCub
+
+  build-with-apt-dependencies:
+    name: '[apt:${{ matrix.docker_image }}@${{ matrix.build_type }}]'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        build_type: [Release]
+        os:
+          - ubuntu-latest
+        docker_image:
+          - "ubuntu:20.04"
+          - "ubuntu:22.04"
+          - "debian:sid"
+    container:
+      image: ${{ matrix.docker_image }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # Print environment variables to simplify development and debugging
+    - name: Environment Variables
+      shell: bash
+      run: env
+
+    - name: Dependencies [apt]
+      run: |
+        # See  https://stackoverflow.com/questions/44331836/apt-get-install-tzdata-noninteractive,
+        # only required by Ubuntu 20.04
+        export DEBIAN_FRONTEND=noninteractive
+        apt-get -y update
+        apt-get -y install \
+            git build-essential cmake
+
+    - name: Configure [apt]
+      shell: bash
+      run: |
+        mkdir -p build
+        cd build
+        cmake -DCMAKE_INSTALL_PREFIX=${GITHUB_WORKSPACE}/install ..
+
+    - name: Build
+      shell: bash
+      run: |
+        cd build
+        cmake --build . --config ${{ matrix.build_type }}
+

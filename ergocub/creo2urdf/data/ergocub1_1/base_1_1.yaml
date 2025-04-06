@@ -1,0 +1,1693 @@
+# Robot name
+robotName: ergoCub
+
+# Model base origin
+originXYZ: [0.0,0.0,0.80]
+originRPY: [0.0,0.0,0.0]
+# Meshes options
+scale: [0.001,0.001,0.001]
+filenameformat: "package://ergoCub/meshes/simmechanics/%s.obj"
+epsilon: 2e-4
+
+forcelowercase: Yes
+
+rename:
+    # upperbody
+    SIM_ECUB_1-1_CHEST: chest
+    SIM_ECUB_1-1_L_SHOULDER_1: l_shoulder_1
+    SIM_ECUB_1-1_CHEST--SIM_ECUB_1-1_L_SHOULDER_1: l_shoulder_pitch
+    SIM_ECUB_1-1_L_SHOULDER_2: l_shoulder_2
+    SIM_ECUB_1-1_L_SHOULDER_1--SIM_ECUB_1-1_L_SHOULDER_2: l_shoulder_roll
+    SIM_ECUB_1-1_L_SHOULDER_3: l_shoulder_3
+    SIM_ECUB_1-1_L_SHOULDER_2--SIM_ECUB_1-1_L_SHOULDER_3: l_arm_ft_sensor
+    SIM_ECUB_1-1_L_UPPERARM: l_upper_arm
+    SIM_ECUB_1-1_L_SHOULDER_3--SIM_ECUB_1-1_L_UPPERARM: l_shoulder_yaw
+    SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_1
+    SIM_ECUB_1-1_CHEST--SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_pitch
+    SIM_ECUB_1-1_R_SHOULDER_2: r_shoulder_2
+    SIM_ECUB_1-1_R_SHOULDER_1--SIM_ECUB_1-1_R_SHOULDER_2: r_shoulder_roll
+    SIM_ECUB_1-1_R_SHOULDER_3: r_shoulder_3
+    SIM_ECUB_1-1_R_SHOULDER_2--SIM_ECUB_1-1_R_SHOULDER_3: r_arm_ft_sensor
+    SIM_ECUB_1-1_R_UPPERARM: r_upper_arm
+    SIM_ECUB_1-1_R_SHOULDER_3--SIM_ECUB_1-1_R_UPPERARM: r_shoulder_yaw
+    SIM_ECUB_1-1_TORSO_2: torso_2
+    SIM_ECUB_1-1_TORSO_2--SIM_ECUB_1-1_CHEST: torso_yaw
+    SIM_ECUB_1-1_TORSO_1: torso_1
+    SIM_ECUB_1-1_TORSO_1--SIM_ECUB_1-1_TORSO_2:  torso_pitch
+    SIM_ECUB_1-1_ROOT_LINK: root_link
+    SIM_ECUB_1-1_ROOT_LINK--SIM_ECUB_1-1_TORSO_1: torso_roll
+    SIM_ECUB_1-1_CHEST--SIM_HEAD_NECK_1: neck_fixed_joint
+    # left leg
+    SIM_ECUB_1-1_L_HIP_1: l_hip_1
+    SIM_ECUB_1-1_L_HIP_2: l_hip_2
+    SIM_ECUB_1-1_L_HIP_3: l_hip_3
+    SIM_ECUB_1-1_L_UPPER_LEG: l_upper_leg
+    SIM_ECUB_1-1_L_LOWER_LEG: l_lower_leg
+    SIM_ECUB_1-1_L_ANKLE_1: l_ankle_1
+    SIM_ECUB_1-1_L_ANKLE_2: l_ankle_2
+    SIM_ECUB_1-1_L_FOOT_FRONT: l_foot_front
+    SIM_ECUB_1-1_L_FOOT_REAR: l_foot_rear
+    SIM_ECUB_1-1_ROOT_LINK--SIM_ECUB_1-1_L_HIP_1: l_hip_pitch
+    SIM_ECUB_1-1_L_HIP_1--SIM_ECUB_1-1_L_HIP_2: l_hip_roll
+    SIM_ECUB_1-1_L_HIP_2--SIM_ECUB_1-1_L_HIP_3: l_leg_ft_sensor
+    SIM_ECUB_1-1_L_HIP_3--SIM_ECUB_1-1_L_UPPER_LEG: l_hip_yaw
+    SIM_ECUB_1-1_L_UPPER_LEG--SIM_ECUB_1-1_L_LOWER_LEG: l_knee
+    SIM_ECUB_1-1_L_LOWER_LEG--SIM_ECUB_1-1_L_ANKLE_1: l_ankle_pitch
+    SIM_ECUB_1-1_L_ANKLE_1--SIM_ECUB_1-1_L_ANKLE_2: l_ankle_roll
+    SIM_ECUB_1-1_L_ANKLE_2--SIM_ECUB_1-1_L_FOOT_FRONT: l_foot_front_ft_sensor
+    SIM_ECUB_1-1_L_ANKLE_2--SIM_ECUB_1-1_L_FOOT_REAR: l_foot_rear_ft_sensor
+    # right leg
+    SIM_ECUB_1-1_R_HIP_1: r_hip_1
+    SIM_ECUB_1-1_R_HIP_2: r_hip_2
+    SIM_ECUB_1-1_R_HIP_3: r_hip_3
+    SIM_ECUB_1-1_R_UPPER_LEG: r_upper_leg
+    SIM_ECUB_1-1_R_LOWER_LEG: r_lower_leg
+    SIM_ECUB_1-1_R_ANKLE_1: r_ankle_1
+    SIM_ECUB_1-1_R_ANKLE_2: r_ankle_2
+    SIM_ECUB_1-1_R_FOOT_FRONT: r_foot_front
+    SIM_ECUB_1-1_R_FOOT_REAR: r_foot_rear
+    SIM_ECUB_1-1_ROOT_LINK--SIM_ECUB_1-1_R_HIP_1: r_hip_pitch
+    SIM_ECUB_1-1_R_HIP_1--SIM_ECUB_1-1_R_HIP_2: r_hip_roll
+    SIM_ECUB_1-1_R_HIP_2--SIM_ECUB_1-1_R_HIP_3: r_leg_ft_sensor
+    SIM_ECUB_1-1_R_HIP_3--SIM_ECUB_1-1_R_UPPER_LEG: r_hip_yaw
+    SIM_ECUB_1-1_R_UPPER_LEG--SIM_ECUB_1-1_R_LOWER_LEG: r_knee
+    SIM_ECUB_1-1_R_LOWER_LEG--SIM_ECUB_1-1_R_ANKLE_1: r_ankle_pitch
+    SIM_ECUB_1-1_R_ANKLE_1--SIM_ECUB_1-1_R_ANKLE_2: r_ankle_roll
+    SIM_ECUB_1-1_R_ANKLE_2--SIM_ECUB_1-1_R_FOOT_FRONT: r_foot_front_ft_sensor
+    SIM_ECUB_1-1_R_ANKLE_2--SIM_ECUB_1-1_R_FOOT_REAR: r_foot_rear_ft_sensor
+    # head
+    SIM_ECUB_1-1_HEAD_NECK_1: neck_1
+    SIM_ECUB_1-1_HEAD_NECK_2: neck_2
+    SIM_ECUB_1-1_HEAD_NECK_3: neck_3
+    SIM_ECUB_1-1_HEAD: head
+    SIM_ECUB_1-1_REALSENSE: realsense
+    SIM_ECUB_1-1_CHEST--SIM_ECUB_1-1_HEAD_NECK_2: neck_pitch # It will be fixed
+    SIM_ECUB_1-1_HEAD_NECK_2--SIM_ECUB_1-1_HEAD_NECK_3: neck_roll
+    SIM_ECUB_1-1_HEAD_NECK_3--SIM_ECUB_1-1_HEAD: neck_yaw
+    SIM_ECUB_1-1_HEAD--SIM_ECUB_1-1_REALSENSE: camera_tilt
+    # left forearm
+    SIM_ECUB_1-1_L_UPPERARM: l_upper_arm
+    SIM_ECUB_1-1_L_FOREARM: l_forearm
+    SIM_ECUB_1-1_L_WRIST_1: l_wrist_1
+    SIM_ECUB_1-1_L_WRIST_2: l_wrist_2
+    SIM_ECUB_1-1_L_HAND_PALM: l_hand_palm
+    SIM_ECUB_1-1_L_HAND_THUMB_1: l_hand_thumb_1
+    SIM_ECUB_1-1_L_HAND_THUMB_2: l_hand_thumb_2
+    SIM_ECUB_1-1_L_HAND_THUMB_3: l_hand_thumb_3
+    SIM_ECUB_1-1_L_HAND_INDEX_1: l_hand_index_1
+    SIM_ECUB_1-1_L_HAND_INDEX_2: l_hand_index_2
+    SIM_ECUB_1-1_L_HAND_INDEX_3: l_hand_index_3
+    SIM_ECUB_1-1_L_HAND_MIDDLE_1: l_hand_middle_1
+    SIM_ECUB_1-1_L_HAND_MIDDLE_2: l_hand_middle_2
+    SIM_ECUB_1-1_L_HAND_RING_1: l_hand_ring_1
+    SIM_ECUB_1-1_L_HAND_RING_2: l_hand_ring_2
+    SIM_ECUB_1-1_L_HAND_PINKIE_1: l_hand_pinkie_1
+    SIM_ECUB_1-1_L_HAND_PINKIE_2: l_hand_pinkie_2
+    SIM_ECUB_1-1_L_UPPERARM--SIM_ECUB_1-1_L_FOREARM: l_elbow
+    SIM_ECUB_1-1_L_FOREARM--SIM_ECUB_1-1_L_WRIST_1: l_wrist_yaw
+    SIM_ECUB_1-1_L_WRIST_1--SIM_ECUB_1-1_L_WRIST_2: l_wrist_roll
+    SIM_ECUB_1-1_L_WRIST_2--SIM_ECUB_1-1_L_HAND_PALM: l_wrist_pitch
+    SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_THUMB_1: l_thumb_add
+    SIM_ECUB_1-1_L_HAND_THUMB_1--SIM_ECUB_1-1_L_HAND_THUMB_2: l_thumb_prox
+    SIM_ECUB_1-1_L_HAND_THUMB_2--SIM_ECUB_1-1_L_HAND_THUMB_3: l_thumb_dist
+    SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_INDEX_1: l_index_add
+    SIM_ECUB_1-1_L_HAND_INDEX_1--SIM_ECUB_1-1_L_HAND_INDEX_2: l_index_prox
+    SIM_ECUB_1-1_L_HAND_INDEX_2--SIM_ECUB_1-1_L_HAND_INDEX_3: l_index_dist
+    SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_MIDDLE_1: l_middle_prox
+    SIM_ECUB_1-1_L_HAND_MIDDLE_1--SIM_ECUB_1-1_L_HAND_MIDDLE_2: l_middle_dist
+    SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_RING_1: l_ring_prox
+    SIM_ECUB_1-1_L_HAND_RING_1--SIM_ECUB_1-1_L_HAND_RING_2: l_ring_dist
+    SIM_ECUB_1-1_L_HAND_PALM--SIM_ECUB_1-1_L_HAND_PINKIE_1: l_pinkie_prox
+    SIM_ECUB_1-1_L_HAND_PINKIE_1--SIM_ECUB_1-1_L_HAND_PINKIE_2: l_pinkie_dist
+    # right forearm
+    SIM_ECUB_1-1_R_UPPERARM: r_upper_arm
+    SIM_ECUB_1-1_R_FOREARM: r_forearm
+    SIM_ECUB_1-1_R_WRIST_1: r_wrist_1
+    SIM_ECUB_1-1_R_WRIST_2: r_wrist_2
+    SIM_ECUB_1-1_R_HAND_PALM: r_hand_palm
+    SIM_ECUB_1-1_R_HAND_THUMB_1: r_hand_thumb_1
+    SIM_ECUB_1-1_R_HAND_THUMB_2: r_hand_thumb_2
+    SIM_ECUB_1-1_R_HAND_THUMB_3: r_hand_thumb_3
+    SIM_ECUB_1-1_R_HAND_INDEX_1: r_hand_index_1
+    SIM_ECUB_1-1_R_HAND_INDEX_2: r_hand_index_2
+    SIM_ECUB_1-1_R_HAND_INDEX_3: r_hand_index_3
+    SIM_ECUB_1-1_R_HAND_MIDDLE_1: r_hand_middle_1
+    SIM_ECUB_1-1_R_HAND_MIDDLE_2: r_hand_middle_2
+    SIM_ECUB_1-1_R_HAND_RING_1: r_hand_ring_1
+    SIM_ECUB_1-1_R_HAND_RING_2: r_hand_ring_2
+    SIM_ECUB_1-1_R_HAND_PINKIE_1: r_hand_pinkie_1
+    SIM_ECUB_1-1_R_HAND_PINKIE_2: r_hand_pinkie_2
+    SIM_ECUB_1-1_R_UPPERARM--SIM_ECUB_1-1_R_FOREARM: r_elbow
+    SIM_ECUB_1-1_R_FOREARM--SIM_ECUB_1-1_R_WRIST_1: r_wrist_yaw
+    SIM_ECUB_1-1_R_WRIST_1--SIM_ECUB_1-1_R_WRIST_2: r_wrist_roll
+    SIM_ECUB_1-1_R_WRIST_2--SIM_ECUB_1-1_R_HAND_PALM: r_wrist_pitch
+    SIM_ECUB_1-1_R_HAND_PALM--SIM_ECUB_1-1_R_HAND_THUMB_1: r_thumb_add
+    SIM_ECUB_1-1_R_HAND_THUMB_1--SIM_ECUB_1-1_R_HAND_THUMB_2: r_thumb_prox
+    SIM_ECUB_1-1_R_HAND_THUMB_2--SIM_ECUB_1-1_R_HAND_THUMB_3: r_thumb_dist
+    SIM_ECUB_1-1_R_HAND_PALM--SIM_ECUB_1-1_R_HAND_INDEX_1: r_index_add
+    SIM_ECUB_1-1_R_HAND_INDEX_1--SIM_ECUB_1-1_R_HAND_INDEX_2: r_index_prox
+    SIM_ECUB_1-1_R_HAND_INDEX_2--SIM_ECUB_1-1_R_HAND_INDEX_3: r_index_dist
+    SIM_ECUB_1-1_R_HAND_PALM--SIM_ECUB_1-1_R_HAND_MIDDLE_1: r_middle_prox
+    SIM_ECUB_1-1_R_HAND_MIDDLE_1--SIM_ECUB_1-1_R_HAND_MIDDLE_2: r_middle_dist
+    SIM_ECUB_1-1_R_HAND_PALM--SIM_ECUB_1-1_R_HAND_RING_1: r_ring_prox
+    SIM_ECUB_1-1_R_HAND_RING_1--SIM_ECUB_1-1_R_HAND_RING_2: r_ring_dist
+    SIM_ECUB_1-1_R_HAND_PALM--SIM_ECUB_1-1_R_HAND_PINKIE_1: r_pinkie_prox
+    SIM_ECUB_1-1_R_HAND_PINKIE_1--SIM_ECUB_1-1_R_HAND_PINKIE_2: r_pinkie_dist
+
+# Frames options
+exportAllUseradded: No
+linkFrames:
+  # upperbody
+  - linkName: root_link
+    frameName: SCSYS_ROOT
+  - linkName: chest
+    frameName: SCSYS_CHEST
+  - linkName: l_shoulder_1
+    frameName: SCSYS_L_SHOULDER_1
+  - linkName: l_shoulder_2
+    frameName: SCSYS_L_SHOULDER_2
+  - linkName: l_shoulder_3
+    frameName: SCSYS_L_SHOULDER_3
+  - linkName: l_upper_arm
+    frameName: SCSYS_L_UPPERARM
+  - linkName: r_shoulder_2
+    frameName: SCSYS_R_SHOULDER_2_FT
+  - linkName: r_shoulder_1
+    frameName: SCSYS_R_SHOULDER_1
+  - linkName: r_shoulder_2
+    frameName: SCSYS_R_SHOULDER_2
+  - linkName: r_shoulder_3
+    frameName: SCSYS_R_SHOULDER_3
+  - linkName: r_upper_arm
+    frameName: SCSYS_R_UPPERARM
+  - linkName: torso_1
+    frameName: SCSYS_TORSO_1
+  - linkName: torso_2
+    frameName: SCSYS_TORSO_2
+  # left leg
+  - linkName: l_hip_1
+    frameName: SCSYS_L_HIP_1
+  - linkName: l_hip_2
+    frameName: SCSYS_L_HIP_2
+  - linkName: l_hip_3
+    frameName: SCSYS_L_HIP_3
+  - linkName: l_upper_leg
+    frameName: SCSYS_L_UPPER_LEG
+  - linkName: l_lower_leg
+    frameName: SCSYS_L_LOWER_LEG
+  - linkName: l_ankle_1
+    frameName: SCSYS_L_ANKLE_1
+  - linkName: l_ankle_2
+    frameName: SCSYS_L_ANKLE_2
+  - linkName: l_foot_front
+    frameName: SCSYS_L_FOOT_FRONT
+  - linkName: l_foot_rear
+    frameName: SCSYS_L_FOOT_REAR
+  # right leg
+  - linkName: r_hip_1
+    frameName: SCSYS_R_HIP_1
+  - linkName: r_hip_2
+    frameName: SCSYS_R_HIP_2
+  - linkName: r_hip_3
+    frameName: SCSYS_R_HIP_3
+  - linkName: r_upper_leg
+    frameName: SCSYS_R_UPPER_LEG
+  - linkName: r_lower_leg
+    frameName: SCSYS_R_LOWER_LEG
+  - linkName: r_ankle_1
+    frameName: SCSYS_R_ANKLE_1
+  - linkName: r_ankle_2
+    frameName: SCSYS_R_ANKLE_2
+  - linkName: r_foot_front
+    frameName: SCSYS_R_FOOT_FRONT
+  - linkName: r_foot_rear
+    frameName: SCSYS_R_FOOT_REAR
+  # head
+  - linkName: neck_1
+    frameName: SCSYS_NECK_1
+  - linkName: neck_2
+    frameName: SCSYS_NECK_2
+  - linkName: neck_3
+    frameName: SCSYS_NECK_3
+  - linkName: head
+    frameName: SCSYS_HEAD
+  - linkName: realsense
+    frameName: SCSYS_REALSENSE
+  # left forearm
+  - linkName: l_upper_arm
+    frameName: SCSYS_L_UPPERARM
+  - linkName: l_forearm
+    frameName: SCSYS_L_FOREARM
+  - linkName: l_wrist_1
+    frameName: SCSYS_L_WRIST_1
+  - linkName: l_wrist_2
+    frameName: SCSYS_L_WRIST_2
+  - linkName: l_hand_palm
+    frameName: SCSYS_L_HAND_PALM
+  - linkName: l_hand_thumb_1
+    frameName: SCSYS_L_HAND_THUMB_1
+  - linkName: l_hand_thumb_2
+    frameName: SCSYS_L_HAND_THUMB_2
+  - linkName: l_hand_thumb_3
+    frameName: SCSYS_L_HAND_THUMB_3
+  - linkName: l_hand_index_1
+    frameName: SCSYS_L_HAND_INDEX_1
+  - linkName: l_hand_index_2
+    frameName: SCSYS_L_HAND_INDEX_2
+  - linkName: l_hand_index_3
+    frameName: SCSYS_L_HAND_INDEX_3
+  - linkName: l_hand_middle_1
+    frameName: SCSYS_L_HAND_MIDDLE_1
+  - linkName: l_hand_middle_2
+    frameName: SCSYS_L_HAND_MIDDLE_2
+  - linkName: l_hand_ring_1
+    frameName: SCSYS_L_HAND_RING_1
+  - linkName: l_hand_ring_2
+    frameName: SCSYS_L_HAND_RING_2
+  - linkName: l_hand_pinkie_1
+    frameName: SCSYS_L_HAND_PINKIE_1
+  - linkName: l_hand_pinkie_2
+    frameName: SCSYS_L_HAND_PINKIE_2
+    # right forearm
+  - linkName: r_upper_arm
+    frameName: SCSYS_R_UPPERARM
+  - linkName: r_forearm
+    frameName: SCSYS_R_FOREARM
+  - linkName: r_wrist_1
+    frameName: SCSYS_R_WRIST_1
+  - linkName: r_wrist_2
+    frameName: SCSYS_R_WRIST_2
+  - linkName: r_hand_palm
+    frameName: SCSYS_R_HAND_PALM
+  - linkName: r_hand_thumb_1
+    frameName: SCSYS_R_HAND_THUMB_1
+  - linkName: r_hand_thumb_2
+    frameName: SCSYS_R_HAND_THUMB_2
+  - linkName: r_hand_thumb_3
+    frameName: SCSYS_R_HAND_THUMB_3
+  - linkName: r_hand_index_1
+    frameName: SCSYS_R_HAND_INDEX_1
+  - linkName: r_hand_index_2
+    frameName: SCSYS_R_HAND_INDEX_2
+  - linkName: r_hand_index_3
+    frameName: SCSYS_R_HAND_INDEX_3
+  - linkName: r_hand_middle_1
+    frameName: SCSYS_R_HAND_MIDDLE_1
+  - linkName: r_hand_middle_2
+    frameName: SCSYS_R_HAND_MIDDLE_2
+  - linkName: r_hand_ring_1
+    frameName: SCSYS_R_HAND_RING_1
+  - linkName: r_hand_ring_2
+    frameName: SCSYS_R_HAND_RING_2
+  - linkName: r_hand_pinkie_1
+    frameName: SCSYS_R_HAND_PINKIE_1
+  - linkName: r_hand_pinkie_2
+    frameName: SCSYS_R_HAND_PINKIE_2
+
+
+exportedFrames:
+  - frameName: SCSYS_HEAD_IMU
+    frameReferenceLink: head
+    exportedFrameName: imu_frame
+  - frameName: SCSYS_HEAD_DEPTH
+    frameReferenceLink: realsense
+    exportedFrameName: realsense_depth_frame
+  - frameName: SCSYS_HEAD_RGB
+    frameReferenceLink: realsense
+    exportedFrameName: realsense_rgb_frame
+  - frameName: SCSYS_HEAD_S2_LASER
+    frameReferenceLink: head
+    exportedFrameName: head_laser_frame
+  - frameName: SCSYS_L_SOLE
+    frameReferenceLink: l_foot_rear
+    exportedFrameName: l_sole
+  - frameName: SCSYS_R_SOLE
+    frameReferenceLink: r_foot_rear
+    exportedFrameName: r_sole
+  # Fingertip scsys
+  # l_thumb
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_0
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_1
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_2
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_3
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_4
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_5
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_6
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_7
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_8
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_9
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_10
+  - frameName: SCSYS_L_THUMB_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_thumb_3
+    exportedFrameName: l_hand_thumb_skin_11
+  # l_index
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_0
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_1
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_2
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_3
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_4
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_5
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_6
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_7
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_8
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_9
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_10
+  - frameName: SCSYS_L_INDEX_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_index_3
+    exportedFrameName: l_hand_index_skin_11
+  # l_middle
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_0
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_1
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_2
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_3
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_4
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_5
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_6
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_7
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_8
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_9
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_10
+  - frameName: SCSYS_L_MIDDLE_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_middle_2
+    exportedFrameName: l_hand_middle_skin_11
+  # l_ring
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_0
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_1
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_2
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_3
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_4
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_5
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_6
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_7
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_8
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_9
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_10
+  - frameName: SCSYS_L_RING_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_ring_2
+    exportedFrameName: l_hand_ring_skin_11
+  # l_pinkie
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_0
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_0
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_1
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_1
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_2
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_2
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_3
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_3
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_4
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_4
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_5
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_5
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_6
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_6
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_7
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_7
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_8
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_8
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_9
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_9
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_10
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_10
+  - frameName: SCSYS_L_PINKY_SKIN_TAXEL_11
+    frameReferenceLink: l_hand_pinkie_2
+    exportedFrameName: l_hand_pinkie_skin_11
+  # r_thumb
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_0
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_1
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_2
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_3
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_4
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_5
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_6
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_7
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_8
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_9
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_10
+  - frameName: SCSYS_R_THUMB_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_thumb_3
+    exportedFrameName: r_hand_thumb_skin_11
+  # r_index
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_0
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_1
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_2
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_3
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_4
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_5
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_6
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_7
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_8
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_9
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_10
+  - frameName: SCSYS_R_INDEX_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_index_3
+    exportedFrameName: r_hand_index_skin_11
+  # r_middle
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_0
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_1
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_2
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_3
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_4
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_5
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_6
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_7
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_8
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_9
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_10
+  - frameName: SCSYS_R_MIDDLE_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_middle_2
+    exportedFrameName: r_hand_middle_skin_11
+  # r_ring
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_0
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_1
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_2
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_3
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_4
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_5
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_6
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_7
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_8
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_9
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_10
+  - frameName: SCSYS_R_RING_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_ring_2
+    exportedFrameName: r_hand_ring_skin_11
+  # r_pinkie
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_0
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_0
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_1
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_1
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_2
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_2
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_3
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_3
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_4
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_4
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_5
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_5
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_6
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_6
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_7
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_7
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_8
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_8
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_9
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_9
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_10
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_10
+  - frameName: SCSYS_R_PINKY_SKIN_TAXEL_11
+    frameReferenceLink: r_hand_pinkie_2
+    exportedFrameName: r_hand_pinkie_skin_11
+
+
+
+
+
+# Sensors options
+forceTorqueSensors:
+    - jointName: l_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_L_SHOULDER_2_FT
+      linkName: l_shoulder_2
+      sensorName: l_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_arm_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      frameName: SCSYS_R_SHOULDER_2_FT
+      linkName: r_shoulder_2
+      sensorName: r_arm_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_arm_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
+          </plugin>
+    # left leg
+    - jointName: l_leg_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: l_hip_2
+      frameName: SCSYS_L_HIP_2_FT
+      sensorName: l_leg_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: l_foot_front_ft_sensor
+      directionChildToParent: No
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: l_ankle_2
+      frameName: SCSYS_L_ANKLE_2_FT_FRONT
+      sensorName: l_foot_front_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: l_foot_rear_ft_sensor
+      directionChildToParent: No
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: l_ankle_2
+      frameName: SCSYS_L_ANKLE_2_FT_REAR
+      sensorName: l_foot_rear_ft
+      sensorBlobs:
+      - |
+          <plugin name="left_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
+          </plugin>
+    # right leg
+    - jointName: r_leg_ft_sensor
+      directionChildToParent: Yes
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: r_hip_2
+      frameName: SCSYS_R_HIP_2_FT
+      sensorName: r_leg_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_leg_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_foot_front_ft_sensor
+      directionChildToParent: No
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: r_ankle_2
+      frameName: SCSYS_R_ANKLE_2_FT_FRONT
+      sensorName: r_foot_front_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_foot_front_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
+          </plugin>
+    - jointName: r_foot_rear_ft_sensor
+      directionChildToParent: No
+      exportFrameInURDF: Yes
+      frame: sensor
+      linkName: r_ankle_2
+      frameName: SCSYS_R_ANKLE_2_FT_REAR
+      sensorName: r_foot_rear_ft
+      sensorBlobs:
+      - |
+          <plugin name="right_foot_rear_ft_plugin" filename="libgazebo_yarp_forcetorque.so">
+            <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
+          </plugin>
+
+
+sensors:
+  - frameName: SCSYS_HEAD_IMU
+    linkName: head
+    sensorName: head_imu_0
+    exportFrameInURDF: Yes
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_HEAD_RGB
+    linkName: realsense
+    sensorName: realsense_head_depth
+    sensorType: "depth"
+    updateRate: "30"
+    sensorBlobs:
+    - |
+        <camera name="intel_realsense_depth_camera">
+          <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
+          <horizontal_fov>1.2217</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.175</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+    - |
+        <visualize>false</visualize>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_depthCamera" filename="libgazebo_yarp_depthCamera.so">
+            <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_rgbd_camera.ini</yarpConfigurationFile>
+        </plugin>
+
+  - frameName: SCSYS_HEAD_RGB
+    linkName: realsense
+    sensorName: realsense_head_rgb
+    sensorType: "camera"
+    updateRate: "30"
+    sensorBlobs:
+    - |
+        <camera name="intel_realsense_rgb_camera">
+          <pose>0 0 0 -1.57079 -1.57079 3.14159</pose>
+          <horizontal_fov>1.2217</horizontal_fov>
+          <distortion>
+            <k1>0</k1>
+            <k2>0</k2>
+            <k3>0</k3>
+            <p1>0</p1>
+            <p2>0</p2>
+            <center>319.5 239.5</center>
+          </distortion>
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.02</near>
+            <far>3000</far>
+          </clip>
+        </camera>
+    - |
+        <visualize>false</visualize>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_camera" filename="libgazebo_yarp_camera.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_rgb_camera.ini</yarpConfigurationFile>
+        </plugin>
+  # According to https://github.com/IntelRealSense/realsense-ros/issues/927 in the realsense
+  # the imu measurements are referred to the depth frame.
+  - frameName: SCSYS_HEAD_DEPTH
+    linkName: realsense
+    sensorName: realsense_imu_0
+    exportFrameInURDF: Yes
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_HEAD_S2_LASER
+    linkName: head
+    sensorName: lasersensor_head
+    sensorType: "ray"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <always_on>1</always_on>
+    - |
+        <visualize>true</visualize>
+    - |
+        <update_rate>40</update_rate>
+    - |
+        <ray>
+          <scan>
+            <horizontal>
+              <samples>360</samples>
+              <resolution>2</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>6.28</max_angle>
+            </horizontal>
+          </scan>
+          <range>
+            <min>0.04</min>
+            <max>5</max>
+            <resolution>0.01</resolution>
+          </range>
+          <noise>
+            <type>gaussian</type>
+            <mean>0</mean>
+            <stddev>0.005</stddev>
+          </noise>
+        </ray>
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_laser" filename="libgazebo_yarp_lasersensor.so">
+          <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_L_ANKLE_2_FT_FRONT
+    linkName: l_foot_front
+    sensorName: l_foot_front_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_L_ANKLE_2_FT_REAR
+    linkName: l_foot_rear
+    sensorName: l_foot_rear_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_ANKLE_2_FT_FRONT
+    linkName: r_foot_front
+    sensorName: r_foot_front_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_ANKLE_2_FT_REAR
+    linkName: r_foot_rear
+    sensorName: r_foot_rear_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_L_SHOULDER_2_FT
+    linkName: l_shoulder_3
+    sensorName: l_arm_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_SHOULDER_2_FT
+    linkName: r_shoulder_3
+    sensorName: r_arm_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_L_HIP_2_FT
+    linkName: l_hip_3
+    sensorName: l_leg_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+  - frameName: SCSYS_R_HIP_2_FT
+    linkName: r_hip_3
+    sensorName: r_leg_ft_imu
+    exportFrameInURDF: No
+    sensorType: "accelerometer"
+    updateRate: "100"
+    sensorBlobs:
+    - |
+        <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+        </plugin>
+assignedCollisionGeometry:
+    - linkName: r_foot_front
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: r_foot_rear
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: l_foot_front
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: l_foot_rear
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+
+assignedMasses:
+ torso_1   : 2.0645667
+
+assignedInertias:
+  # This is due to https://github.com/robotology/icub-models/issues/33
+  - linkName: torso_1
+    xx: 0.0074060860
+    yy: 0.0059470733
+    zz: 0.0031780111
+
+assignedColors:
+  root_link   : [0.6, 0.6, 0.6, 1]
+  torso_1     : [0.6, 0.6, 0.6, 1]
+  torso_2     : [0.6, 0.6, 0.6, 1]
+  chest       : [1.0, 1.0, 1.0, 1]
+  l_shoulder_1: [0.6, 0.6, 0.6, 1]
+  r_shoulder_1: [0.6, 0.6, 0.6, 1]
+  l_shoulder_2: [0.6, 0.6, 0.6, 1]
+  r_shoulder_2: [0.6, 0.6, 0.6, 1]
+  r_shoulder_3: [0.6, 0.6, 0.6, 1]
+  l_shoulder_3: [0.6, 0.6, 0.6, 1]
+  l_upper_arm : [1.0, 1.0, 1.0, 1]
+  r_upper_arm : [1.0, 1.0, 1.0, 1]
+  l_hand_palm : [1.0, 1.0, 1.0, 1]
+  r_hand_palm : [1.0, 1.0, 1.0, 1]
+  r_hip_1     : [0.6, 0.6, 0.6, 1]
+  r_hip_2     : [0.6, 0.6, 0.6, 1]
+  r_hip_3     : [1.0, 1.0, 1.0, 1]
+  r_upper_leg : [0.6, 0.6, 0.6, 1]
+  r_lower_leg : [1.0, 1.0, 1.0, 1]
+  r_ankle_1   : [0.6, 0.6, 0.6, 1]
+  r_ankle_2   : [1.0, 1.0, 1.0, 1]
+  r_foot_front: [1, 0.51, 0.0, 1]
+  r_foot_rear : [1, 0.51, 0.0, 1]
+  l_hip_1     : [0.6, 0.6, 0.6, 1]
+  l_hip_2     : [0.6, 0.6, 0.6, 1]
+  l_hip_3     : [1.0, 1.0, 1.0, 1]
+  l_upper_leg : [0.6, 0.6, 0.6, 1]
+  l_lower_leg : [1.0, 1.0, 1.0, 1]
+  l_ankle_1   : [0.6, 0.6, 0.6, 1]
+  l_ankle_2   : [1.0, 1.0, 1.0, 1]
+  l_foot_front: [1, 0.51, 0.0, 1]
+  l_foot_rear : [1, 0.51, 0.0, 1]
+  l_forearm   : [1.0, 1.0, 1.0, 1]
+  r_elbow_1   : [1.0, 1.0, 1.0, 1]
+  l_forearm   : [1.0, 1.0, 1.0, 1]
+  r_forearm   : [1.0, 1.0, 1.0, 1]
+  l_wrist_1   : [0.6, 0.6, 0.6, 1]
+  r_wrist_1   : [0.6, 0.6, 0.6, 1]
+  l_hand      : [0.6, 0.6, 0.6, 1]
+  r_hand      : [0.6, 0.6, 0.6, 1]
+  neck_1      : [0.6, 0.6, 0.6, 1]
+  neck_2      : [0.6, 0.6, 0.6, 1]
+  neck_3      : [0.6, 0.6, 0.6, 1]
+  head        : [1.0, 1.0, 1.0, 1]
+  realsense   : [0.6, 0.6, 0.6, 1]
+
+reverseRotationAxis:
+    r_shoulder_roll
+    r_shoulder_pitch
+    r_shoulder_yaw
+    l_elbow
+    r_hip_pitch
+    l_ankle_roll
+    l_hip_pitch
+    l_hip_roll
+    l_hip_yaw
+    neck_pitch
+    neck_roll
+    r_knee
+    r_ankle_pitch
+    l_wrist_roll
+    l_wrist_yaw
+    l_thumb_add
+    l_thumb_prox
+    l_thumb_dist
+    l_index_prox
+    l_index_dist
+    l_index_add
+    l_middle_prox
+    l_middle_dist
+    l_pinkie_prox
+    l_pinkie_dist
+    r_thumb_dist
+    r_thumb_prox
+    r_index_prox
+    r_index_dist
+    r_middle_prox
+    r_middle_dist
+    r_ring_dist
+    r_ring_prox
+    r_pinkie_dist
+    r_pinkie_prox
+
+XMLBlobs:
+    # imu waist (workaround since simmechanics was not updated)
+    - |
+            <link name="waist_imu_0"/>
+    - |
+            <joint name="waist_imu_0_fixed_joint" type="fixed">
+              <origin xyz="0.0606 -0.00639428 0.01745" rpy="1.5708 -0.000105208 -1.5708"/>
+              <parent link="torso_1"/>
+              <child link="waist_imu_0"/>
+              <dynamics damping="0.1"/>
+            </joint>
+    - |
+            <gazebo>
+            <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="torso_1">
+            <sensor name="waist_imu_0" type="imu">
+            <always_on>1</always_on>
+            <update_rate>100</update_rate>
+            <pose>0.0606 -0.00639428 0.01745 1.5708 -0.000105208 -1.5708</pose>
+            <plugin name="ergocub_yarp_gazebo_plugin_IMU" filename="libgazebo_yarp_imu.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </sensor>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_waist_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <sensor name="waist_imu_0" type="accelerometer">
+            <parent link="torso_1"/>
+            <origin xyz="0.0606 -0.00639428 0.01745" rpy="1.5708 -0.000105208 -1.5708"/>
+            </sensor>
+    # upperbody
+    - |
+            <link name="base_link" />
+    - |
+            <joint name="base_link_fixed_joint" type="fixed">
+              <origin xyz="0 0 0" rpy="0 -0 0" />
+              <axis xyz="0 0 0" />
+              <parent link="root_link" />
+              <child link="base_link" />
+            </joint>
+    - |
+            <gazebo reference="r_arm_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="l_arm_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_arm_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_arm_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_torso" filename="libgazebo_yarp_controlboard.so">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_torso.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_torso.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="torso_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="torso_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="torso_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    # left leg
+    - |
+            <gazebo reference="l_leg_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="l_foot_front_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="l_foot_rear_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+
+    - |
+            <gazebo reference="l_foot_front">
+              <collision> <surface> <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>100000</threshold>
+              </bounce> </surface> </collision>
+              <maxContacts>4</maxContacts>
+              <kp>18000000</kp>
+              <kd>100</kd>
+              <maxVel>100</maxVel>
+              <minDepth>0.0001</minDepth>
+              <mu1>1</mu1>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </gazebo>
+    - |
+            <gazebo reference="l_foot_rear">
+              <collision> <surface> <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>100000</threshold>
+              </bounce> </surface> </collision>
+              <maxContacts>4</maxContacts>
+              <kp>18000000</kp>
+              <kd>100</kd>
+              <maxVel>100</maxVel>
+              <minDepth>0.0001</minDepth>
+              <mu1>1</mu1>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_leg_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_front_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_left_foot_rear_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_l_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_left_leg" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_leg.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+
+    - |
+            <gazebo reference="l_hip_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_hip_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_hip_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_knee">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_ankle_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_ankle_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    # right leg
+    - |
+            <gazebo reference="r_leg_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="r_foot_front_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="r_foot_rear_ft_sensor">
+            <preserveFixedJoint>true</preserveFixedJoint>
+            <!-- For compatibility with SDFormat < 4.4 -->
+            <disableFixedJointLumping>true</disableFixedJointLumping>
+            </gazebo>
+    - |
+            <gazebo reference="r_foot_front">
+              <collision> <surface> <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>100000</threshold>
+              </bounce> </surface> </collision>
+              <maxContacts>4</maxContacts>
+              <kp>18000000</kp>
+              <kd>100</kd>
+              <maxVel>100</maxVel>
+              <minDepth>0.0001</minDepth>
+              <mu1>1</mu1>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </gazebo>
+    - |
+            <gazebo reference="r_foot_rear">
+              <collision> <surface> <bounce>
+                <restitution_coefficient>0</restitution_coefficient>
+                <threshold>100000</threshold>
+              </bounce> </surface> </collision>
+              <maxContacts>4</maxContacts>
+              <kp>18000000</kp>
+              <kd>100</kd>
+              <maxVel>100</maxVel>
+              <minDepth>0.0001</minDepth>
+              <mu1>1</mu1>
+              <mu2>1</mu2>
+              <fdir1>0 0 0</fdir1>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_leg_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_front_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ForceTorque" filename="gz-sim-yarp-forcetorque-system">
+              <yarpConfigurationFile>model://ergoCub/conf/FT/gazebo_ergocub_right_foot_rear_ft.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_front_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_foot_rear_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_r_leg_ft_sensor_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_leg" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_leg.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_leg.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="r_hip_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_hip_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_hip_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_knee">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_ankle_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_ankle_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+
+    # head
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Imu" filename="gz-sim-yarp-imu-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_realsense_inertial.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::Laser" filename="gz-sim-yarp-laser-system">
+              <yarpConfigurationFile>model://ergoCub/conf/sensors/gazebo_ergocub_lidar.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_head" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_head.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_head.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="neck_pitch">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="neck_roll">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="neck_yaw">
+                <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+
+    # left arm
+    - |
+            <gazebo>
+            <plugin name="controlboard_left_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_arm.ini</yarpConfigurationFile>
+            <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_arm.ini</yarpConfigurationFile>
+              <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_left_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_left_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_shoulder_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_elbow">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="l_wrist_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    # right arm
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_arm_no_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_arm.ini</yarpConfigurationFile>
+            <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+              <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_arm.ini</yarpConfigurationFile>
+              <initialConfiguration>-0.52 0.52 0 0.785 0 0 0.0</initialConfiguration>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="controlboard_right_hand" filename="libgazebo_yarp_controlboard.so">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+            <plugin name="gzyarp::ControlBoard" filename="gz-sim-yarp-controlboard-system">
+            <yarpConfigurationFile>model://ergoCub/conf/gazebo_ergocub_right_hand_mk5_1.ini</yarpConfigurationFile>
+            </plugin>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_shoulder_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_elbow">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_roll">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_pitch">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo reference="r_wrist_yaw">
+              <implicitSpringDamper>1</implicitSpringDamper>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="robotinterface" filename="libgazebo_yarp_robotinterface.so">
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
+    - |
+            <gazebo>
+              <plugin name="gzyarp::RobotInterface" filename="gz-sim-yarp-robotinterface-system">
+                <yarpRobotInterfaceConfigurationFile>model://ergoCub/conf/ergocub_gz_sim.xml</yarpRobotInterfaceConfigurationFile>
+              </plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-forcetorque-system" name="gz::sim::systems::ForceTorque"></plugin>
+            </gazebo>
+
+    - |
+            <gazebo>
+              <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu"></plugin>
+            </gazebo>

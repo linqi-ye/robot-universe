@@ -1,0 +1,113 @@
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="hrp4">
+  <joint name="R_F22" type="fixed">
+    <origin xyz="0.0253 0 -0.045" rpy="0 -0 3.1415926535"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_HAND_J1_LINK"/>
+    <child link="R_F22_LINK"/>
+  </joint>
+
+  <joint name="R_F23" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_F22_LINK"/>
+    <child link="R_F23_LINK"/>
+  </joint>
+
+  <joint name="R_F32" type="fixed">
+    <origin xyz="0.0051 0 -0.045" rpy="0 -0 3.1415926535"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_HAND_J1_LINK"/>
+    <child link="R_F32_LINK"/>
+  </joint>
+
+  <joint name="R_F33" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_F32_LINK"/>
+    <child link="R_F33_LINK"/>
+  </joint>
+
+  <joint name="R_F42" type="fixed">
+    <origin xyz="-0.0151 0 -0.045" rpy="0 -0 3.1415926535"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_HAND_J1_LINK"/>
+    <child link="R_F42_LINK"/>
+  </joint>
+
+  <joint name="R_F43" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_F42_LINK"/>
+    <child link="R_F43_LINK"/>
+  </joint>
+
+  <joint name="R_F52" type="fixed">
+    <origin xyz="-0.0353 0 -0.045" rpy="0 -0 3.1415926535"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_HAND_J1_LINK"/>
+    <child link="R_F52_LINK"/>
+  </joint>
+
+  <joint name="R_F53" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="R_F52_LINK"/>
+    <child link="R_F53_LINK"/>
+  </joint>
+
+  <joint name="L_F22" type="fixed">
+    <origin xyz="0.0253 0 -0.045" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_HAND_J1_LINK"/>
+    <child link="L_F22_LINK"/>
+  </joint>
+
+  <joint name="L_F23" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_F22_LINK"/>
+    <child link="L_F23_LINK"/>
+  </joint>
+
+  <joint name="L_F32" type="fixed">
+    <origin xyz="0.0051 0 -0.045" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_HAND_J1_LINK"/>
+    <child link="L_F32_LINK"/>
+  </joint>
+
+  <joint name="L_F33" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_F32_LINK"/>
+    <child link="L_F33_LINK"/>
+  </joint>
+
+  <joint name="L_F42" type="fixed">
+    <origin xyz="-0.0151 0 -0.045" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_HAND_J1_LINK"/>
+    <child link="L_F42_LINK"/>
+  </joint>
+
+  <joint name="L_F43" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_F42_LINK"/>
+    <child link="L_F43_LINK"/>
+  </joint>
+
+  <joint name="L_F52" type="fixed">
+    <origin xyz="-0.0353 0 -0.045" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_HAND_J1_LINK"/>
+    <child link="L_F52_LINK"/>
+  </joint>
+
+  <joint name="L_F53" type="fixed">
+    <origin xyz="0 0 -0.024" rpy="0 0 0"/>
+    <axis xyz="1 0 0"/>
+    <parent link="L_F52_LINK"/>
+    <child link="L_F53_LINK"/>
+  </joint>
+</robot>

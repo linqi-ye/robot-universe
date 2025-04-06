@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="tita">
+  <xacro:arg name="prefix" default="" />
+  <xacro:arg name="use_tower" default="false" />
+  
+  <xacro:property name="sim_env" value="$(arg sim_env)" />
+  <xacro:property name="ctrl_mode" value="$(arg ctrl_mode)" />
+  <xacro:arg name="yaml_path" default="" />
+
+  <xacro:include filename="$(find tita_description)/tita/xacro/materials.xacro" />
+  <xacro:include filename="$(find tita_description)/tita/xacro/description.xacro" />
+  <xacro:include filename="$(find tita_description)/tita/xacro/ros2control.xacro" />
+
+  <xacro:if value="$(arg use_tower)">
+    <xacro:include filename="$(find tita_description)/tower/xacro/tower.urdf.xacro" />
+    <joint name="tower_joint" type="fixed">
+      <parent link="base_link" />
+      <child link="tower_base_link" />
+      <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0" />
+    </joint>
+    <xacro:tita_tower />
+  </xacro:if>
+
+  <xacro:if value="${sim_env == 'none'}">
+    <xacro:property name="name" value="HardwareControl" />
+  </xacro:if>
+
+  <xacro:if value="${sim_env == 'gazebo'}">
+    <xacro:property name="name" value="GazeboControl" />
+  </xacro:if>
+
+  <xacro:if value="${sim_env == 'webots'}">
+    <xacro:property name="name" value="WebotsControl" />
+  </xacro:if>
+
+  <xacro:description />
+  <xacro:ros2control name="${name}" ctrl_mode="$(arg ctrl_mode)" sim_env="$(arg sim_env)" yaml_path="$(arg yaml_path)" />
+
+</robot>

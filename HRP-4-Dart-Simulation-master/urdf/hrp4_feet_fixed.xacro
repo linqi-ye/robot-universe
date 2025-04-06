@@ -1,0 +1,58 @@
+<robot name="hrp4_feet_fixed" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- right foot -->
+  <joint name="R_FOOT" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <parent link="R_ANKLE_R_LINK"/>
+    <child link="r_ankle"/>
+  </joint>
+
+  <link name="r_ankle">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01130279 -0.01139641 -0.07868422"/>
+      <mass value="0.57831553"/>
+      <inertia ixx="0.00121526" ixy="8.51e-06" ixz="2.787e-05" iyy="0.00254705" iyz="-2.1e-06" izz="0.00362666"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://hrp4_description/meshes/R_FOOT.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://hrp4_description/meshes/R_FOOT.dae"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <!-- left foot -->
+  <joint name="L_FOOT" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <axis xyz="0 0 0"/>
+    <parent link="L_ANKLE_R_LINK"/>
+    <child link="l_ankle"/>
+  </joint>
+
+  <link name="l_ankle">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.01130279 0.01139641 -0.07868422"/>
+      <mass value="0.57831553"/>
+      <inertia ixx="0.00121526" ixy="-8.51e-06" ixz="2.787e-05" iyy="0.00254705" iyz="2.1e-06" izz="0.00362666"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://hrp4_description/meshes/L_FOOT.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://hrp4_description/meshes/L_FOOT.dae"/>
+      </geometry>
+    </collision>
+  </link>
+</robot>

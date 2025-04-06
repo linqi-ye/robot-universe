@@ -1,0 +1,74 @@
+<mujoco>
+<asset>
+    <material name="red" specular="0.5" shininess="0.25" rgba="0.9 0.0 0.0 0.5"/>
+</asset>
+
+<default>
+ <default class="visual">
+  <geom type="mesh" rgba="0.79216 0.81961 0.93333 1" contype="0" conaffinity="0" group="2"/>
+ </default>
+
+ <default class="collision_rod">
+  <geom type="cylinder" material="red" group="1"/>
+ </default>
+
+ <default class="collision_box">
+   <geom type="box" material="red" group="1"/>
+ </default>
+ <default class="collision_sphere">
+   <geom type="sphere" material="red" group="1"/>
+ </default>
+ <default class="collision_motor">
+  <geom type="cylinder" material="red" size="0.05 0.02" group="1"/>
+ </default>
+
+ <default class="collision">
+  <geom type="mesh" material="red" group="1"/>
+ </default>
+
+ <default class="active">
+  <!--tested good param with low sim-to-real gap -->
+  <joint armature="1e-4" damping="0.02" frictionloss="0.02"/>
+ </default>
+
+ <default class="passive">
+  <joint armature="1e-3" damping="0.01" frictionloss="0.01"/>
+ </default>
+</default>
+
+
+<!-- terrain-->
+<!-- stairs-->
+<worldbody>
+    <geom type="box" pos= "1 0 0" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "1.2 0 0.05" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "1.4 0 0.1" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "1.6 0 0.15" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "1.8 0 0.2" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "2.0 0 0.25" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "2.2 0 0.3" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+
+
+    <geom type="box" pos= "2.4 0 0.3" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "2.6 0 0.25" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "2.8 0 0.2" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "3.0 0 0.15" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "3.2 0 0.1" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "3.4 0 0.05" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+    <geom type="box" pos= "3.6 0 0.0" size="0.1 0.5 0.05" rgba="0.79216 0.81961 0.93333 0.5" solref="1e-3 1"/>
+
+</worldbody>
+
+
+<!-- platform-->
+<worldbody>
+    <geom type="box" pos= "-1 1 0" size="0.2 0.2 0.05" rgba="0.79216 0.81961 0.93333 1" solref="1e-3 1"/>
+</worldbody>
+
+
+<!-- slope-->
+<worldbody>
+    <geom type="box" pos= "0 4 0" quat="1 0 0.1 0" size="2 2 0.05" rgba="0.79216 0.81961 0.93333 1" solref="1e-3 1"/>
+</worldbody>
+
+</mujoco>

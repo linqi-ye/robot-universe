@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="alljoints-inertials_remapper" type="multipleanalogsensorsremapper">
+    <param name="OrientationSensorsNames">
+        (head_imu_0 l_arm_ft_imu l_leg_ft_imu l_foot_front_ft_imu l_foot_rear_ft_imu r_arm_ft_imu r_leg_ft_imu r_foot_front_ft_imu r_foot_rear_ft_imu)
+    </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="head_imu">  head_inertial_hardware_device </elem>
+            <elem name="left_arm_imu">  l_arm_ft_sensor_inertial_hardware_device </elem>
+            <elem name="left_leg_imu">  l_leg_ft_sensor_inertial_hardware_device </elem>
+            <elem name="left_foot_front_imu">  l_foot_front_ft_sensor_inertial_hardware_device </elem>
+            <elem name="left_foot_rear_imu">  l_foot_rear_ft_sensor_inertial_hardware_device </elem>
+            <elem name="right_arm_imu">  r_arm_ft_sensor_inertial_hardware_device </elem>
+            <elem name="right_leg_imu">  r_leg_ft_sensor_inertial_hardware_device </elem>
+            <elem name="right_foot_front_imu">  r_foot_front_ft_sensor_inertial_hardware_device </elem>
+            <elem name="right_foot_rear_imu">  r_foot_rear_ft_sensor_inertial_hardware_device </elem>
+        </paramlist>
+    </action>
+
+    <action phase="shutdown" level="20" type="detach" />
+</device>

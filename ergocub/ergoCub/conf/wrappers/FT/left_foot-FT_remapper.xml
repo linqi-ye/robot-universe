@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="left_foot-FT_remapper" type="multipleanalogsensorsremapper">
+    <param name="SixAxisForceTorqueSensorsNames">
+          (l_foot_rear_ft
+           l_foot_front_ft)
+    </param>
+    <param name="TemperatureSensorsNames">
+            (l_foot_rear_ft
+             l_foot_front_ft)
+    </param>
+    <action phase="startup" level="5" type="attach">
+         <paramlist name="networks">
+             <elem name="FirstStrain"> ergocub_left_foot_rear_ft </elem>
+             <elem name="SecondStrain"> ergocub_left_foot_front_ft </elem>
+         </paramlist>
+     </action>
+    <action phase="shutdown" level="20" type="detach" />
+</device>

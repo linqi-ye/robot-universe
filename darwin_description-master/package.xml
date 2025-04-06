@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package>
+  <name>darwin_description</name>
+  <version>1.0.0</version>
+  <description>Describes DarwinOP robot model with camera plugin and accelerometer plugin (hector) for Gazebo</description>
+
+  <maintainer email="pc@humarobotics.com">Philippe Capdepuy</maintainer>
+
+
+  <license>BSD</license>
+
+
+  <url type="website">http://wiki.ros.org/darwin_description</url>
+
+
+  <author email="tk375@drexel.edu">Taegoo Kim, Bharadwaj Ramesh</author>
+  <author email="pc@humarobotics.com">Philippe Capdepuy</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <export>
+  </export>
+</package>

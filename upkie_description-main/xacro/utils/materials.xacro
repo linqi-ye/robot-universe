@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<robot name="utils" xmlns:xacro="http://ros.org/wiki/xacro">
+    <material name="black">
+        <color rgba="0.1 0.1 0.1 1" />
+    </material>
+    <material name="chalky_blue">
+        <color rgba="0.65 0.76 0.91 1" />
+    </material>
+    <material name="dark_gray">
+        <color rgba="0.3 0.3 0.3 1" />
+    </material>
+    <material name="light_gray">
+        <color rgba="0.8 0.8 0.8 1" />
+    </material>
+    <material name="light_wood">
+        <color rgba="1 0.77 0.48 1" />
+    </material>
+    <material name="mj5208_rotor">
+        <color rgba="0.5 0.55 0.6 1.0" />
+    </material>
+    <material name="mj5208_stator">
+        <color rgba="0.22 0.22 0.25 1.0" />
+    </material>
+    <material name="terracotta_light">
+        <color rgba="0.93 0.64 0.52 1" />
+    </material>
+    <material name="terracotta_transparent">
+        <color rgba="0.93 0.64 0.52 0.8" />
+    </material>
+</robot>

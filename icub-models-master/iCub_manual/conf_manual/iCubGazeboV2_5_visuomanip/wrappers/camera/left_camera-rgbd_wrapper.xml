@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="left_camera_rgbd_nws_yarp" type="rgbdSensor_nws_yarp">
+    <param name="period">0.033</param>
+    <param name="name"> ${portprefix}/cam/left </param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="the_device"> icub_left_camera_rgbd </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="5" type="detach" />
+</device>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="right_hand-coupling_handler" type="controlBoardCouplingHandler">
+    <param name="coupling_device"> couplingXCubHandMk5 </param>
+    <param name="jointNames"> (r_thumb_add r_thumb_prox r_thumb_dist r_index_add r_index_prox r_index_dist r_middle_prox r_middle_dist r_ring_prox r_ring_dist r_pinkie_prox r_pinkie_dist) </param>
+    <group name="LIMITS">
+        <param name="jntVelMax"> (100.0   100.0 100.0 100.0 100.0 100.0  100.0 100.0  100.0 100.0   100.0 100.0) </param>
+        <param name="jntPosMax"> (100.0   90.0  101.4 15.0  90.0  103.1  90.0  103.1  90.0  103.1   90.0  98.7 ) </param>
+        <param name="jntPosMin"> (-100.0 -90.0 -101.4 -15.0 -90.0 -103.1 -90.0 -103.1 -90.0  -103.1 -90.0 -98.7) </param>
+    </group>
+    <group name="COUPLING">
+        <param name="actuatedAxesNames">  (r_thumb_add r_thumb_oc r_index_add r_index_oc r_middle_oc r_ring_pinky_oc) </param>
+        <param name="actuatedAxesPosMin"> (0.0 0.0 0.0 0.0 0.0 0.0) </param>
+        <param name="actuatedAxesPosMax"> (100.0 90.0 15.0 90.0 90.0 90.0) </param>
+    </group>
+    <group name="COUPLING_PARAMS">
+        <param name="L0x">    (-0.0050 -0.0050 -0.0050 -0.0050 -0.0050) </param>
+        <param name="L0y">    (0.0040 0.0040 0.0040 0.0040 0.0040)      </param>
+        <param name="q2bias"> (-173.35 -173.35 -173.35 -173.35 -170.53) </param>
+        <param name="q1off">  (2.45 2.15 2.15 2.15 2.46)                </param>
+        <param name="k">      (0.03415 0.03913 0.03913 0.03913 0.03418) </param>
+        <param name="d">      (0.03503 0.04003 0.04003 0.04003 0.03503) </param>
+        <param name="l">      (0.00604 0.00604 0.00604 0.00604 0.00608) </param>
+        <param name="b">      (0.00640 0.00640 0.00640 0.00640 0.00640) </param>
+    </group>
+    <action phase="startup" level="5" type="attach">
+        <param name="device"> right_hand_hardware_device </param>
+    </action>
+    <action phase="shutdown" level="15" type="detach" />
+</device>

@@ -1,0 +1,68 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Webhook trigger for blender-robotics-utils repository
+
+# Controls when the workflow will run
+on:
+  push:
+    # Triggers the workflow on push or pull request events but only for the master branch
+    branches:
+        - master
+    paths:
+        - 'iCub/robots/iCubGazeboV**'
+
+jobs:
+    BRU_dispatch:
+      runs-on: ubuntu-latest
+      steps:
+      - id: file_changes
+        uses: trilom/file-changes-action@v1.2.4
+      - name: Files Changed
+        run: |
+          cat $HOME/files.json
+          cat $HOME/files_modified.json
+          cat $HOME/files_added.json
+          echo '${{ steps.file_changes.outputs.files}}'
+          echo '${{ steps.file_changes.outputs.files_modified}}'
+          echo '${{ steps.file_changes.outputs.files_added}}'
+      - name: Find urdf names
+        id: set_model_list
+        run: |
+          parsed_list=($(echo '${{ steps.file_changes.outputs.files}}' | tr ',' '\n'))
+          model_name_list=""
+          iter_model_list=0
+          for i in "${parsed_list[@]}"
+          do
+            if [ $(echo $i | awk '/iCubGazeboV/') ]
+            then
+              model_name=$(echo $i | tr -d '"')
+              echo $model_name
+              if [ $iter_model_list == 0 ]
+              then
+                model_name_list="$model_name"
+                iter_model_list=$(($iter_model_list+1))
+              else
+                model_name_list="$model_name_list $model_name"
+              fi
+            fi
+          done
+          echo "models=${model_name_list[@]}" >> $GITHUB_OUTPUT
+
+      - name: Get Token
+        id: get_workflow_token
+        uses: tibdex/github-app-token@v1
+        with:
+          private_key: ${{ secrets.ICUB_TECH_CODE_KEY  }}
+          app_id: ${{ secrets.ICUB_TECH_CODE_ID  }}
+          repository: robotology/blender-robotics-utils
+
+      - name: Repository dispatch to blender-robotics-utils
+        uses: peter-evans/repository-dispatch@v3
+        if:  steps.set_model_list.outputs.models != ''
+        env:
+          GITHUB_APPS_TOKEN: ${{ steps.get_workflow_token.outputs.token }}
+        with:
+          token: ${{ env.GITHUB_APPS_TOKEN }}
+          repository: robotology/blender-robotics-utils
+          event-type: repository_trigger
+          client-payload: '{"type": "repository_trigger", "models_list": "${{ steps.set_model_list.outputs.models }}"}'

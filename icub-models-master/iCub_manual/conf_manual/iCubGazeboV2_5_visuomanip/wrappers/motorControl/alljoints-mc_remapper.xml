@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="alljoints-mc_remapper" type="controlboardremapper">
+    <param name="axesNames">(neck_pitch neck_roll neck_yaw l_shoulder_pitch l_shoulder_roll l_shoulder_yaw l_elbow l_wrist_prosup l_wrist_pitch l_wrist_yaw r_shoulder_pitch r_shoulder_roll r_shoulder_yaw r_elbow r_wrist_prosup r_wrist_pitch r_wrist_yaw torso_yaw torso_roll torso_pitch)</param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="head_joints">       head_hardware_device </elem>
+            <elem name="left_arm_joints">   left_arm_hardware_device</elem>
+            <elem name="right_arm_joints">  right_arm_hardware_device </elem>
+            <elem name="torso_joints">      torso_hardware_device </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="20" type="detach"/>
+</device>

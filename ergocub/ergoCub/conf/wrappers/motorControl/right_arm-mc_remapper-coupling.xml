@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="right_arm-mc_remapper-coupling" type="controlboardremapper">
+    <param name="axesNames">(r_shoulder_pitch,r_shoulder_roll,r_shoulder_yaw,r_elbow,r_wrist_yaw,r_wrist_roll,r_wrist_pitch,r_thumb_add,r_thumb_prox,r_thumb_dist,r_index_add,r_index_prox,r_index_dist,r_middle_prox,r_middle_dist,r_ring_prox,r_ring_dist,r_pinkie_prox,r_pinkie_dist)</param>
+    <param name="joints"> 19 </param>
+    <action phase="startup" level="6" type="attach">
+        <paramlist name="networks">
+            <elem name="right_arm_joints1"> right_arm_hardware_device </elem>
+            <elem name="right_arm_joints2"> right_hand-coupling_handler </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="20" type="detach" />
+</device>

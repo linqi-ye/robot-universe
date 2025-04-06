@@ -1,0 +1,331 @@
+assignedCollisionGeometry:
+    - linkName: r_foot_front
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: r_foot_rear
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: l_foot_front
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: l_foot_rear
+      geometricShape:
+        shape: box
+        size: [0.117, 0.100, 0.006]
+        origin: [0.0,0.0,-0.0193,0.0,0.0,0.0]
+    - linkName: r_hip_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hip_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hip_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_upper_leg
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_lower_leg
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_ankle_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_ankle_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hip_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hip_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hip_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_upper_leg
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_lower_leg
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_ankle_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_ankle_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: torso_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: torso_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: chest
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: neck_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: neck_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: head
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_shoulder_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_shoulder_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_shoulder_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_upper_arm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_forearm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_wrist_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_wrist_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_palm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_pinkie_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_pinkie_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_thumb_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_thumb_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_thumb_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_middle_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_middle_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_ring_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_ring_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_index_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_index_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: r_hand_index_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_shoulder_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_shoulder_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_shoulder_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_upper_arm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_forearm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_wrist_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_wrist_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_palm
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_pinkie_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_pinkie_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_thumb_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_thumb_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_thumb_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_middle_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_middle_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_ring_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_ring_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_index_1
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_index_2
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: l_hand_index_3
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: realsense
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]
+    - linkName: root_link
+      geometricShape:
+        shape: box
+        size: [0.0,0.0,0.0]
+        origin: [0.0,0.0,0.0,0.0,0.0,0.0]

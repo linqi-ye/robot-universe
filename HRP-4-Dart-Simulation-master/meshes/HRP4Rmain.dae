@@ -1,0 +1,20 @@
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.70.0 commit date:2014-04-10, commit time:11:49, hash:f93bc76</authoring_tool>
+    </contributor>
+    <created>2014-06-06T13:18:35</created>
+    <modified>2014-06-06T13:18:35</modified>
+    <unit meter="1" name="meter" />
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images />
+  <library_controllers />
+  <library_visual_scenes>
+    <visual_scene id="Scene_001" name="Scene.001" />
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene_001" />
+  </scene>
+</COLLADA>

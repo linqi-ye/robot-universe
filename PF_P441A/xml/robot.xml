@@ -1,0 +1,121 @@
+<mujoco model="pointfoot">
+    <compiler angle="radian" meshdir="../meshes/" />
+    <size njmax="500" nconmax="100" />
+
+    <default>
+        <light castshadow="false" diffuse="1 1 1" />
+        <camera fovy="60"/>
+        <default class="visual">
+            <geom contype="0" conaffinity="0" group="1" type="mesh" rgba="0.9 0.9 0.9 1.0"/>
+        </default>
+        <joint armature="0.01" damping="0.01"/>
+        <geom contype="1" conaffinity="1" condim="3" friction="0.6 0.005 0.0001" rgba="0.5 0.6 0.7 0.0" margin="0.001" group="0" />
+    </default>
+    <visual>
+        <rgba com="0.502 1.0 0 0.5" contactpoint="1.0 1.0 0.6 0.4" contactforce="0.2 0.98 0.2 0.8"/>
+        <scale com="0.2" forcewidth="0.05" contactwidth="0.10" contactheight="0.04"/>
+    </visual>
+
+    <asset>
+        <mesh name="base_Link" file="base_Link.STL" />
+        <mesh name="abad_L_Link" file="abad_L_Link.STL" />
+        <mesh name="hip_L_Link" file="hip_L_Link.STL" />
+        <mesh name="knee_L_Link" file="knee_L_Link.STL" />
+        <mesh name="foot_L_Link" file="foot_L_Link.STL" />
+        <mesh name="abad_R_Link" file="abad_R_Link.STL" />
+        <mesh name="hip_R_Link" file="hip_R_Link.STL" />
+        <mesh name="knee_R_Link" file="knee_R_Link.STL" />
+        <mesh name="foot_R_Link" file="foot_R_Link.STL" />
+    </asset>
+
+    <asset>
+        <texture type='skybox' builtin='gradient' width='512' height='512' rgb1="1.0 1.0 1.0" rgb2="1.0 1.0 1.0"/>
+        <texture name="texplane" type="2d" builtin="checker" rgb1="0.35 0.35 0.35" rgb2="0.55 0.55 0.55" width="512" height="512" mark="cross" markrgb=".8 .8 .8"/>
+        <material name="matplane" reflectance="0.0" texture="texplane" texrepeat="1 1" texuniform="true"/>
+    </asset>
+        <option timestep="0.001"/>
+
+    <worldbody>
+        <geom name="floor" rgba="0.5 0.6 0.7 1" pos="0 0 0" size="0 0 0.25" type="plane" material="matplane" condim="3"/>
+        <camera name="track" mode="trackcom" pos="0 -2.3 1.6" xyaxes="1 0 0 0 0.707 0.707"/>
+        <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
+
+        <body name="base_Link" pos="0 0 0.65">
+            <inertial pos="-0.00982508 0.00235738 -0.015272" quat="0.937658 -0.0331911 -0.345796 -0.0109741" mass="9.006" diaginertia="0.141063 0.103771 0.0804952" />
+            <joint type="free" limited="false" damping="0.0000" stiffness="0.0000" armature="0"/>
+            <site name="imu" pos="0 0 0"/>
+            <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="base_Link" />
+            <geom name="base_collision" size="0.185 0.13 0.07" pos="-0.04 0 0.06969" type="box" rgba="0 0 1 0"/>
+
+            <body name="abad_L_Link" pos="0.0042 0.105 -0.09876">
+                <inertial pos="-0.06785 0.045853 0.001067" quat="0.598022 0.577826 0.406677 0.378287" mass="1.622" diaginertia="0.00291922 0.00244686 0.00163892" />
+                <joint name="abad_L_Joint" pos="0 0 0" axis="1 0 0" limited="true" range="-0.38397 1.39626" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="abad_L_Link" />
+                <geom name="abad_L_collision" size="0.05 0.025" pos="-0.08 0 0" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0 0 1 0" />
+
+                <body name="hip_L_Link" pos="-0.077 0.0205 0">
+                    <inertial pos="-0.029468 -0.045739 -0.041923" quat="0.854303 0.19497 0.222006 0.42763" mass="2.401" diaginertia="0.0250687 0.0248125 0.00290381" />
+                    <joint name="hip_L_Joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.01229 1.39626" />
+                    <geom class="visual" rgba="1 1 1 1" mesh="hip_L_Link" />
+                    <geom name="hip_L_collision" size="0.035 0.075" pos="-0.1 -0.03 -0.14" quat="0.965093 0 0.261909 0" type="cylinder" rgba="0 0 1 0" />
+
+                    <body name="knee_L_Link" pos="-0.15 -0.0205 -0.25981">
+                        <inertial pos="0.0684888 -3.1771e-05 -0.113858" quat="0.676994 -0.189727 -0.187539 0.685938" mass="0.734001" diaginertia="0.0109274 0.0108773 0.000216052" />
+                        <joint name="knee_L_Joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-0.872665 1.36136" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="knee_L_Link" />
+                        <geom name="knee_L_collision" size="0.015 0.13" pos="0.078 0 -0.12" quat="0.962425 0 -0.271547 0" type="cylinder" rgba="0 0 1 0"/>
+
+                        <geom class="visual" pos="0.150 0 -0.2598" rgba="0.26667 0.26667 0.26667 1" mesh="foot_L_Link" />
+                        <geom name="foot_L_collision" type="sphere" pos="0.14929 0 -0.26014" size="0.032" rgba="0 0 1 0" />
+                    </body>
+                </body>
+            </body>
+
+            <body name="abad_R_Link" pos="0.0042 -0.105 -0.09876">
+                <inertial pos="-0.06785 -0.045853 0.001067" quat="0.378287 0.406677 0.577826 0.598022" mass="1.622" diaginertia="0.00291922 0.00244686 0.00163892" />
+                <joint name="abad_R_Joint" pos="0 0 0" axis="1 0 0" limited="true" range="-1.39626 0.38397" />
+                <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="abad_R_Link" />
+                <geom name="abad_R_collision" size="0.05 0.025" pos="-0.08 0 0" quat="0.707388 0.706825 0 0" type="cylinder" rgba="0 0 1 0" />
+
+                <body name="hip_R_Link" pos="-0.077 -0.0205 0">
+                    <inertial pos="-0.029468 0.045739 -0.041923" quat="0.42763 0.222006 0.19497 0.854303" mass="2.401" diaginertia="0.0250687 0.0248125 0.00290381" />
+                    <joint name="hip_R_Joint" pos="0 0 0" axis="0 -1 0" limited="true" range="-1.39626 1.01229" />
+                    <geom class="visual" rgba="1 1 1 1" mesh="hip_R_Link" />
+                    <geom name="hip_R_collision" size="0.035 0.075" pos="-0.1 0.03 -0.14" quat="0.965093 0 0.261909 0" type="cylinder" rgba="0 0 1 0" />
+
+                    <body name="knee_R_Link" pos="-0.15 0.0205 -0.25981">
+                        <inertial pos="0.0684888 3.17711e-05 -0.113858" quat="0.685938 -0.187539 -0.189727 0.676994" mass="0.734001" diaginertia="0.0109274 0.0108773 0.000216052" />
+                        <joint name="knee_R_Joint" pos="0 0 0" axis="0 1 0" limited="true" range="-1.36136 0.872665" />
+                        <geom class="visual" rgba="0.79216 0.81961 0.93333 1" mesh="knee_R_Link" />
+                        <geom name="knee_R_collision" size="0.015 0.13" pos="0.078 0 -0.12" quat="0.962425 0 -0.271547 0" type="cylinder" rgba="0 0 1 0"/>
+
+                        <geom class="visual" pos="0.14929 0 -0.26014" rgba="0.26667 0.26667 0.26667 1" mesh="foot_R_Link" />
+                        <geom name="foot_R_collision" type="sphere" pos="0.14929 0 -0.26014" size="0.032" rgba="0 0 1 0" />
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <motor name="abad_L_Joint"  gear="1"  joint="abad_L_Joint" ctrllimited='true' ctrlrange='-80 80'/>
+        <motor name="hip_L_Joint"   gear="1"  joint="hip_L_Joint" ctrllimited='true' ctrlrange='-80 80'/>
+        <motor name="knee_L_Joint"  gear="1"  joint="knee_L_Joint" ctrllimited='true' ctrlrange='-80 80'/>
+        <motor name="abad_R_Joint"  gear="1"  joint="abad_R_Joint" ctrllimited='true' ctrlrange='-80 80' />
+        <motor name="hip_R_Joint"   gear="1"  joint="hip_R_Joint" ctrllimited='true' ctrlrange='-80 80' />
+        <motor name="knee_R_Joint"  gear="1"  joint="knee_R_Joint" ctrllimited='true' ctrlrange='-80 80'/>
+    </actuator>
+
+    <sensor>
+        <framequat name="quat" objtype="site" objname="imu"/>
+        <gyro name="gyro" site="imu"/>
+        <accelerometer name="acc" site="imu"/>
+        <jointpos name="abad_L_Joint"    joint="abad_L_Joint" />
+        <jointpos name="hip_L_Joint"     joint="hip_L_Joint" />
+        <jointpos name="knee_L_Joint"    joint="knee_L_Joint" />
+        <jointpos name="abad_R_Joint"    joint="abad_R_Joint" />
+        <jointpos name="hip_R_Joint"     joint="hip_R_Joint" />
+        <jointpos name="knee_R_Joint"    joint="knee_R_Joint" />
+    </sensor>
+
+</mujoco>

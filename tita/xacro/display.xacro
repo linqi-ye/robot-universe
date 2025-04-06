@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://wiki.ros.org/xacro" name="display">
+  <xacro:arg name="use_tower" default="false" />
+  <xacro:include filename="$(find tita_description)/tita/xacro/materials.xacro"/>
+  <xacro:include filename="$(find tita_description)/tita/xacro/description.xacro" />
+
+  <xacro:if value="$(arg use_tower)">
+    <xacro:include filename="$(find tita_description)/tower/xacro/tower.urdf.xacro" />
+    <joint name="tower_joint" type="fixed">
+      <parent link="base_link" />
+      <child link="tower_base_link" />
+      <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 0.0" />
+    </joint>
+    <xacro:tita_tower />
+  </xacro:if>
+
+  <xacro:description />
+
+</robot>

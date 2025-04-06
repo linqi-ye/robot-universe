@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="right_foot-IMU_remapper" type="multipleanalogsensorsremapper">
+
+  <param name="ThreeAxisGyroscopesNames">
+    (r_foot_front_ft_imu, r_foot_rear_ft_imu)
+  </param>
+  <param name="ThreeAxisLinearAccelerometersNames">
+    (r_foot_front_ft_imu, r_foot_rear_ft_imu)
+  </param>
+  <param name="ThreeAxisMagnetometersNames">
+    (r_foot_front_ft_imu, r_foot_rear_ft_imu)
+  </param>
+  <param name="OrientationSensorsNames">
+    (r_foot_front_ft_imu, r_foot_rear_ft_imu)
+  </param>
+
+    <action phase="startup" level="5" type="attach">
+         <paramlist name="networks">
+             <elem name="FirstIMU"> r_foot_front_ft_sensor_inertial_hardware_device </elem>
+             <elem name="SecondIMU"> r_foot_rear_ft_sensor_inertial_hardware_device </elem>
+         </paramlist>
+     </action>
+    <action phase="shutdown" level="20" type="detach" />
+</device>

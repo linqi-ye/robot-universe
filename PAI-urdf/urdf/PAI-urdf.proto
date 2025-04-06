@@ -1,0 +1,447 @@
+#VRML_SIM R2021a utf8
+# license: Apache License 2.0
+# license url: http://www.apache.org/licenses/LICENSE-2.0
+# This is a proto file for Webots for the PAI-urdf
+# Extracted from: ../protos\PAI-urdf\urdf\PAI-urdf.urdf
+
+PROTO PAI-urdf [
+  field  SFVec3f     translation     0 0 0
+  field  SFRotation  rotation        1 0 0 -1.5708
+  field  SFString    name            "PAI-urdf"  # Is `Robot.name`.
+  field  SFString    controller      "void"      # Is `Robot.controller`.
+  field  MFString    controllerArgs  []          # Is `Robot.controllerArgs`.
+  field  SFString    customData      ""          # Is `Robot.customData`.
+  field  SFBool      supervisor      FALSE       # Is `Robot.supervisor`.
+  field  SFBool      synchronization TRUE        # Is `Robot.synchronization`.
+  field  SFBool      selfCollision   FALSE       # Is `Robot.selfCollision`.
+]
+{
+  Robot {
+    translation IS translation
+    rotation IS rotation
+    controller IS controller
+    controllerArgs IS controllerArgs
+    customData IS customData
+    supervisor IS supervisor
+    synchronization IS synchronization
+    selfCollision IS selfCollision
+    children [
+      Shape {
+        appearance DEF base_link_material PBRAppearance {
+          roughness 1.000000
+          metalness 0
+        }
+        geometry DEF base_link Mesh {
+          url "../protos/PAI-urdf/meshes/base_link.STL"
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 0.000000 0.000000
+          anchor 0.000000 0.075000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "abad-L"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "abad-L_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 0.075000 0.000000
+          children [
+            Shape {
+              appearance DEF left-hip-abad_material PBRAppearance {
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF left-hip-abad Mesh {
+                url "../protos/PAI-urdf/meshes/left-hip-abad.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor 0.049000 0.000000 -0.000500
+              }
+              device [
+                RotationalMotor {
+                  name "Yaw-L"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "Yaw-L_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.049000 0.000000 -0.000500
+                children [
+                  Shape {
+                    appearance DEF left-hip-yaw_material PBRAppearance {
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF left-hip-yaw Mesh {
+                      url "../protos/PAI-urdf/meshes/left-hip-yaw.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 1.000000 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "Pitch-L"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "Pitch-L_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      children [
+                        Shape {
+                          appearance DEF left-hip-pitch_material PBRAppearance {
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF left-hip-pitch Mesh {
+                            url "../protos/PAI-urdf/meshes/left-hip-pitch.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 -0.150000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "Knee-L"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "Knee-L_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 -0.150000
+                            children [
+                              Shape {
+                                appearance DEF left-knee_material PBRAppearance {
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF left-knee Mesh {
+                                  url "../protos/PAI-urdf/meshes/left-knee.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 -1.000000 0.000000
+                                  anchor 0.000000 0.000000 -0.160000
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "Ankle-L"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "Ankle-L_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.000000 0.000000 -0.160000
+                                  children [
+                                    Shape {
+                                      appearance DEF left-ankle_material PBRAppearance {
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF left-ankle Mesh {
+                                        url "../protos/PAI-urdf/meshes/left-ankle.STL"
+                                      }
+                                    }
+                                  ]
+                                  name "left-ankle"
+                                  boundingObject USE left-ankle
+                                  physics Physics {
+                                    density -1
+                                    mass 0.090000
+                                    centerOfMass [ 0.010818 -0.000000 -0.014672 ]
+                                    inertiaMatrix [
+                                      2.760000e-06 2.710700e-05 2.694200e-05
+                                      3.149800e-11 1.046500e-06 3.729700e-13
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "left-knee"
+                            boundingObject USE left-knee
+                            physics Physics {
+                              density -1
+                              mass 0.360000
+                              centerOfMass [ -0.004596 0.012568 -0.063722 ]
+                              inertiaMatrix [
+                                1.194500e-04 1.225300e-04 2.003600e-05
+                                6.407700e-08 3.322500e-07 1.284400e-07
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "left-hip-pitch"
+                      boundingObject USE left-hip-pitch
+                      physics Physics {
+                        density -1
+                        mass 0.200000
+                        centerOfMass [ 0.000000 0.000000 -0.057270 ]
+                        inertiaMatrix [
+                          1.231800e-04 1.292600e-04 6.318600e-06
+                          3.962300e-20 -2.632400e-20 7.227100e-23
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "left-hip-yaw"
+                boundingObject USE left-hip-yaw
+                physics Physics {
+                  density -1
+                  mass 0.650000
+                  centerOfMass [ -0.000496 0.000000 0.003295 ]
+                  inertiaMatrix [
+                    6.775700e-05 6.858100e-05 6.791400e-05
+                    7.955200e-21 -6.395000e-07 9.134600e-21
+                  ]
+                }
+              }
+            }
+          ]
+          name "left-hip-abad"
+          boundingObject USE left-hip-abad
+          physics Physics {
+            density -1
+            mass 0.350000
+            centerOfMass [ 0.041409 0.000000 0.055119 ]
+            inertiaMatrix [
+              3.684100e-05 3.883900e-05 3.627700e-05
+              -2.584000e-22 -6.216200e-07 -1.948200e-21
+            ]
+          }
+        }
+      }
+      HingeJoint {
+        jointParameters HingeJointParameters {
+          axis -1.000000 0.000000 0.000000
+          anchor 0.000000 -0.075000 0.000000
+        }
+        device [
+          RotationalMotor {
+            name "abad-R"
+            maxTorque 10000
+          }
+          PositionSensor {
+            name "abad-R_sensor"
+          }
+        ]
+        endPoint Solid {
+          translation 0.000000 -0.075000 0.000000
+          children [
+            Shape {
+              appearance DEF right-hip-abad_material PBRAppearance {
+                roughness 1.000000
+                metalness 0
+              }
+              geometry DEF right-hip-abad Mesh {
+                url "../protos/PAI-urdf/meshes/right-hip-abad.STL"
+              }
+            }
+            HingeJoint {
+              jointParameters HingeJointParameters {
+                axis 0.000000 0.000000 1.000000
+                anchor 0.049000 0.000000 -0.000500
+              }
+              device [
+                RotationalMotor {
+                  name "Yaw-R"
+                  maxTorque 10000
+                }
+                PositionSensor {
+                  name "Yaw-R_sensor"
+                }
+              ]
+              endPoint Solid {
+                translation 0.049000 0.000000 -0.000500
+                children [
+                  Shape {
+                    appearance DEF right-hip-yaw_material PBRAppearance {
+                      roughness 1.000000
+                      metalness 0
+                    }
+                    geometry DEF right-hip-yaw Mesh {
+                      url "../protos/PAI-urdf/meshes/right-hip-yaw.STL"
+                    }
+                  }
+                  HingeJoint {
+                    jointParameters HingeJointParameters {
+                      axis 0.000000 -1.000000 0.000000
+                    }
+                    device [
+                      RotationalMotor {
+                        name "Pitch-R"
+                        maxTorque 10000
+                      }
+                      PositionSensor {
+                        name "Pitch-R_sensor"
+                      }
+                    ]
+                    endPoint Solid {
+                      children [
+                        Shape {
+                          appearance DEF right-hip-pitch_material PBRAppearance {
+                            roughness 1.000000
+                            metalness 0
+                          }
+                          geometry DEF right-hip-pitch Mesh {
+                            url "../protos/PAI-urdf/meshes/right-hip-pitch.STL"
+                          }
+                        }
+                        HingeJoint {
+                          jointParameters HingeJointParameters {
+                            axis 0.000000 1.000000 0.000000
+                            anchor 0.000000 0.000000 -0.150000
+                          }
+                          device [
+                            RotationalMotor {
+                              name "Knee-R"
+                              maxTorque 10000
+                            }
+                            PositionSensor {
+                              name "Knee-R_sensor"
+                            }
+                          ]
+                          endPoint Solid {
+                            translation 0.000000 0.000000 -0.150000
+                            children [
+                              Shape {
+                                appearance DEF right-knee_material PBRAppearance {
+                                  roughness 1.000000
+                                  metalness 0
+                                }
+                                geometry DEF right-knee Mesh {
+                                  url "../protos/PAI-urdf/meshes/right-knee.STL"
+                                }
+                              }
+                              HingeJoint {
+                                jointParameters HingeJointParameters {
+                                  axis 0.000000 1.000000 0.000000
+                                  anchor 0.000000 0.000000 -0.160000
+                                }
+                                device [
+                                  RotationalMotor {
+                                    name "Ankle-R"
+                                    maxTorque 10000
+                                  }
+                                  PositionSensor {
+                                    name "Ankle-R_sensor"
+                                  }
+                                ]
+                                endPoint Solid {
+                                  translation 0.000000 0.000000 -0.160000
+                                  children [
+                                    Shape {
+                                      appearance DEF right-ankle_material PBRAppearance {
+                                        roughness 1.000000
+                                        metalness 0
+                                      }
+                                      geometry DEF right-ankle Mesh {
+                                        url "../protos/PAI-urdf/meshes/right-ankle.STL"
+                                      }
+                                    }
+                                  ]
+                                  name "right-ankle"
+                                  boundingObject USE right-ankle
+                                  physics Physics {
+                                    density -1
+                                    mass 0.090000
+                                    centerOfMass [ 0.010818 -0.000000 -0.014672 ]
+                                    inertiaMatrix [
+                                      2.760000e-06 2.710700e-05 2.694200e-05
+                                      3.149800e-11 1.046500e-06 3.729700e-13
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                            name "right-knee"
+                            boundingObject USE right-knee
+                            physics Physics {
+                              density -1
+                              mass 0.360000
+                              centerOfMass [ -0.004596 -0.012568 -0.063722 ]
+                              inertiaMatrix [
+                                1.194500e-04 1.225300e-04 2.003600e-05
+                                -6.407700e-08 3.322500e-07 -1.284400e-07
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                      name "right-hip-pitch"
+                      boundingObject USE right-hip-pitch
+                      physics Physics {
+                        density -1
+                        mass 0.200000
+                        centerOfMass [ -0.000000 0.000000 -0.057270 ]
+                        inertiaMatrix [
+                          1.231800e-04 1.292600e-04 6.318600e-06
+                          3.968100e-20 -3.290500e-21 2.887000e-20
+                        ]
+                      }
+                    }
+                  }
+                ]
+                name "right-hip-yaw"
+                boundingObject USE right-hip-yaw
+                physics Physics {
+                  density -1
+                  mass 0.650000
+                  centerOfMass [ -0.000496 0.000000 0.003295 ]
+                  inertiaMatrix [
+                    6.775700e-05 6.858100e-05 6.791400e-05
+                    -1.463100e-21 -6.395000e-07 1.128300e-20
+                  ]
+                }
+              }
+            }
+          ]
+          name "right-hip-abad"
+          boundingObject USE right-hip-abad
+          physics Physics {
+            density -1
+            mass 0.350000
+            centerOfMass [ 0.041409 -0.000000 0.055119 ]
+            inertiaMatrix [
+              3.684100e-05 3.883900e-05 3.627700e-05
+              2.438600e-22 -6.216200e-07 -2.348000e-21
+            ]
+          }
+        }
+      }
+    ]
+    name IS name
+    boundingObject USE base_link
+    physics Physics {
+      density -1
+      mass 1.500000
+      centerOfMass [ 0.069429 0.000000 0.093307 ]
+      inertiaMatrix [
+        2.878700e-03 4.760600e-03 4.302900e-03
+        -6.202800e-19 1.149600e-03 5.627800e-19
+      ]
+    }
+  }
+}

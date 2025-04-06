@@ -1,0 +1,97 @@
+joints:
+  - left_hip_yaw
+  - left_hip_roll
+  - left_hip_pitch
+  - left_knee
+  - left_ankle
+  - neck_pitch
+  - head_pitch
+  - head_yaw
+  - head_roll
+  - left_antenna
+  - right_antenna
+  - right_hip_yaw
+  - right_hip_roll
+  - right_hip_pitch
+  - right_knee
+  - right_ankle
+dof_body_ids: [1, 2, 3, 4, 6, 7, 9, 10, 11, 12, 13, 14, 15]
+dof_offsets: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+# 16*4 if using 6 dof per joint dof_to_obs in compute_duckling_observations
+# dof_obs_size: 96
+# num_obs: 131
+
+dof_obs_size: 16
+num_obs: 51
+
+num_actions: 16
+# 1 + 15 * (3 + 6 + 3 + 3) - 3
+
+motor_efforts:
+  [100, 100, 100, 100, 100, 50, 50, 50, 50, 10, 10, 100, 100, 100, 100, 100]
+#13 + dof_obs_size + 28 + 3 * num_key_bodies # [root_h, root_rot, root_vel, root_ang_vel, dof_pos, dof_vel, key_body_pos]
+num_amp_obs_per_step: 131
+
+friction: 0.0
+angular_damping: 0.0
+armature: 0.0
+thickness: 0.001
+
+# TODO make lists to differentiate motors ?
+# used for custom pd control
+p_gains: 25
+d_gains: 0.6
+max_effort: 23.7
+max_velocity: 30
+
+damping:
+  left_ankle: 1.5
+  left_antenna: 1.5
+  left_hip_pitch: 1.5
+  left_hip_roll: 1.5
+  left_hip_yaw: 1.5
+  left_knee: 1.5
+  neck_pitch: 1.5
+  head_pitch: 1.5
+  head_roll: 1.5
+  head_yaw: 1.5
+  right_ankle: 1.5
+  right_antenna: 1.5
+  right_hip_pitch: 1.5
+  right_hip_roll: 1.5
+  right_hip_yaw: 1.5
+  right_knee: 1.5
+stiffness:
+  left_ankle: 30
+  left_antenna: 3
+  left_hip_pitch: 40
+  left_hip_roll: 40
+  left_hip_yaw: 40
+  left_knee: 35
+  neck_pitch: 10
+  head_pitch: 5
+  head_roll: 5
+  head_yaw: 5
+  right_ankle: 30
+  right_antenna: 3
+  right_hip_pitch: 40
+  right_hip_roll: 40
+  right_hip_yaw: 40
+  right_knee: 35
+init_pos:
+  left_ankle: 0
+  left_antenna: 0
+  left_hip_pitch: 0
+  left_hip_roll: 0
+  left_hip_yaw: 0
+  left_knee: 0
+  neck_pitch: 0
+  head_pitch: 0
+  head_roll: 0
+  head_yaw: 0
+  right_ankle: 0
+  right_antenna: 0
+  right_hip_pitch: 0
+  right_hip_roll: 0
+  right_hip_yaw: 0
+  right_knee: 0

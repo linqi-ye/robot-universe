@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="ergoCubGazeboV1" build="1" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- controlboards -->
+    <device name="torso_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/torso </param>
+        <param name="local"> /wholeBodyDynamics/torso </param>
+    </device>
+
+    <device name="left_arm_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/left_arm </param>
+        <param name="local"> /wholeBodyDynamics/left_arm </param>
+    </device>
+
+    <device name="right_arm_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/right_arm </param>
+        <param name="local"> /wholeBodyDynamics/right_arm </param>
+    </device>
+
+    <device name="left_leg_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/left_leg </param>
+        <param name="local"> /wholeBodyDynamics/left_leg </param>
+    </device>
+
+    <device name="right_leg_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/right_leg </param>
+        <param name="local"> /wholeBodyDynamics/right_leg </param>
+    </device>
+
+    <device name="head_mc" type="remote_controlboard">
+        <param name="remote"> /ergocubSim/head </param>
+        <param name="local"> /wholeBodyDynamics/head </param>
+    </device>
+
+
+    <!-- imu -->
+    <device name="head_inertial_hardware_device" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/head/inertials </param>
+        <param name="local"> /wholeBodyDynamics/imu </param>
+    </device>
+    
+    <device name="waist_inertial_hardware_device" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/waist/inertials </param>
+        <param name="local"> /wholeBodyDynamics/waist_imu </param>
+    </device>
+    
+    <!-- six axis force torque sensors -->
+    <device name="ergocub_left_arm_ft" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/left_arm/FT </param>
+        <param name="local"> /wholeBodyDynamics/left_arm_ft_sensor </param>
+    </device>
+
+    <device name="ergocub_right_arm_ft" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/right_arm/FT </param>
+        <param name="local"> /wholeBodyDynamics/right_arm_ft_sensor </param>
+    </device> 
+
+    <device name="ergocub_left_leg_ft" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/left_leg/FT </param>
+        <param name="local"> /wholeBodyDynamics/left_leg_ft_sensor </param>
+    </device>
+
+    <device name="ergocub_right_leg_ft" type="multipleanalogsensorsclient">
+        <param name="remote"> /ergocubSim/right_leg/FT </param>
+        <param name="local"> /wholeBodyDynamics/right_leg_ft_sensor </param>
+    </device>  
+    
+    <!-- estimators -->
+    <xi:include href="estimators/wbd_ecub_sim.xml" />
+
+</robot>

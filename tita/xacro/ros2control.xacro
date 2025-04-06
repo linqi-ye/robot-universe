@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:macro name="ros2control" params="name ctrl_mode sim_env yaml_path">
+    <xacro:if value="${sim_env == 'webots'}">
+      <webots>
+        <plugin type="webots_ros2_control::Ros2Control" />
+      </webots>
+    </xacro:if>
+    <xacro:if value="${sim_env == 'gazebo'}">
+      <gazebo reference="imu_link">
+        <gravity>true</gravity>
+        <sensor name="imu" type="imu">
+          <always_on>true</always_on>
+          <update_rate>500</update_rate>
+          <!-- <visualize>true</visualize>
+            <topic>__default_topic__</topic>
+            <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+                <topicName>base_imu</topicName>
+                <bodyName>imu_link</bodyName>
+                <updateRateHZ>1000.0</updateRateHZ>
+                <gaussianNoise>0.00</gaussianNoise>
+                <xyzOffset>0 0 0</xyzOffset>
+                <rpyOffset>0 0 0</rpyOffset>
+                <frameName>imu_link</frameName>
+            </plugin>
+            <pose>0 0 0 0 0 0</pose> -->
+        </sensor>
+      </gazebo>
+      <gazebo reference="base">
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="base_link">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="left_leg_1">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="left_leg_2">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="left_leg_3">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="left_leg_4">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="right_leg_1">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="right_leg_2">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="right_leg_3">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+      <gazebo reference="right_leg_4">
+        <self_collide>false</self_collide>
+        <gravity>true</gravity>
+      </gazebo>
+
+      <gazebo>
+        <is_static>true</is_static>
+        <self_collide>true</self_collide>
+      </gazebo>
+
+      <gazebo>
+        <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+          <namespace>tita</namespace>
+          <parameters>$(find ${yaml_path})/config/controllers.yaml</parameters>
+        </plugin>
+      </gazebo>
+
+    </xacro:if>
+
+    <ros2_control name="${name}" type="system">
+      <hardware>
+        <xacro:if value="${sim_env == 'webots'}">
+          <plugin>tita_webots_ros2_control::WebotsBridge</plugin>
+        </xacro:if>
+        <xacro:if value="${sim_env == 'gazebo'}">
+          <plugin>usr_gazebo_ros2_control/GazeboBridge</plugin>
+        </xacro:if>
+        <xacro:if value="${sim_env == 'none'}">
+          <plugin>tita_locomotion::HardwareBridge</plugin>
+          <param name="ctrl_mode">${ctrl_mode}</param>
+        </xacro:if>
+
+      </hardware>
+
+      <joint name="joint_left_leg_1">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_left_leg_2">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">1.3</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_left_leg_3">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">-2.6</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_left_leg_4">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_right_leg_1">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_right_leg_2">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">1.3</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_right_leg_3">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">-2.6</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <joint name="joint_right_leg_4">
+        <command_interface name="position"/>
+        <command_interface name="velocity"/>
+        <command_interface name="effort">
+          <param name="min">-100</param>
+          <param name="max">100</param>
+        </command_interface>
+        <command_interface name="kp"/>
+        <command_interface name="kd"/>
+
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity"/>
+        <state_interface name="effort"/>
+      </joint>
+      <sensor name="imu">
+        <state_interface name="orientation.x"/>
+        <state_interface name="orientation.y"/>
+        <state_interface name="orientation.z"/>
+        <state_interface name="orientation.w"/>
+        <state_interface name="angular_velocity.x"/>
+        <state_interface name="angular_velocity.y"/>
+        <state_interface name="angular_velocity.z"/>
+        <state_interface name="linear_acceleration.x"/>
+        <state_interface name="linear_acceleration.y"/>
+        <state_interface name="linear_acceleration.z"/>
+      </sensor>
+    </ros2_control>
+
+  </xacro:macro>
+
+</robot>

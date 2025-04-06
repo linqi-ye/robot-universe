@@ -1,0 +1,21 @@
+assignedMasses:
+ head   : 1.6902682
+
+assignedInertias:
+
+  - linkName: head
+    xx: 0.0097840569
+    yy: 0.010869342
+    zz: 0.0070099259
+
+rename:
+    # upperbody
+    SIM_ECUB_1-3_CHEST: chest
+    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_L_SHOULDER_1: l_shoulder_pitch
+    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_R_SHOULDER_1: r_shoulder_pitch
+    SIM_ECUB_1-3_CHEST--SIM_HEAD_NECK_1: neck_fixed_joint
+    SIM_ECUB_1-3_CHEST--SIM_ECUB_1-1_HEAD_NECK_2: neck_pitch # It will be fixed
+    SIM_ECUB_1-1_TORSO_2--SIM_ECUB_1-3_CHEST: torso_yaw
+
+
+

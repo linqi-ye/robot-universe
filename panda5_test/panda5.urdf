@@ -1,0 +1,1432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="panda5_test">
+  <link
+    name="base">
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.549 0.2 0.235 1.0" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0.1315 0.017 0.0066"
+        rpy="0 0 0" />
+      <geometry>
+        <box size="1.037 .26 .217"/>  
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="control_joint" type="fixed">
+      <parent link="base"/>
+      <child link="control_link"/>
+      <origin
+        xyz="0.136 0.0166 0.020629"
+        rpy="0 0 0" />
+  </joint>
+
+  <link name="control_link">
+  </link>
+
+  <joint name="base_to_base_inertia" type="fixed">
+      <parent link="base"/>
+      <child link="base_inertia"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+  <link name="base_inertia">
+    <inertial>
+      <origin
+        xyz="0.14478 0.016356 0.017801"
+        rpy="0 0 0" />
+      <mass
+        value="2.6548" />
+      <inertia
+        ixx="0.026123"
+        ixy="-8.0841E-06"
+        ixz="0.00026624"
+        iyy="0.16471"
+        iyz="7.822E-07"
+        izz="0.18256" />
+    </inertial>
+  </link>
+
+  <link
+    name="peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.13425 0.016628 -0.0134"
+        rpy="0 0 0" />
+      <mass
+        value="29.505" />
+      <inertia
+        ixx="0.16252"
+        ixy="6.0236E-11"
+        ixz="0"
+        iyy="1.2136"
+        iyz="0"
+        izz="1.3585" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/peizhong_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+  </link>
+  <joint
+    name="peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_1_Link">
+    <inertial>
+      <origin
+        xyz="0.059247 -0.0029797 -0.00092353"
+        rpy="0 0 0" />
+      <mass
+        value="0.18512" />
+      <inertia
+        ixx="0.00018562"
+        ixy="-2.6592E-06"
+        ixz="2.3147E-07"
+        iyy="0.00045415"
+        iyz="1.6002E-07"
+        izz="0.00029591" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_1_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LF_1_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0.38425 0.13163 0.020629"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="LF_1_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.64"
+      upper="0.80"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LF_1_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.081751 -0.024995 -2.2044E-06"
+        rpy="0 0 0" />
+      <mass
+        value="2.2246" />
+      <inertia
+        ixx="0.0029106"
+        ixy="-2.0063E-11"
+        ixz="-1.7669E-15"
+        iyy="0.0040043"
+        iyz="9.6328E-08"
+        izz="0.0029106" />
+    </inertial>
+  </link>
+  <joint
+    name="LF_1_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF_1_Link" />
+    <child
+      link="LF_1_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_2_Link">
+    <inertial>
+      <origin
+        xyz="-0.009016 -0.018516 -0.082774"
+        rpy="0 0 0" />
+      <mass
+        value="0.47211" />
+      <inertia
+        ixx="0.0044015"
+        ixy="-5.7806E-06"
+        ixz="-0.00011247"
+        iyy="0.0048143"
+        iyz="-5.2882E-05"
+        izz="0.00049692" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_2_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LF_2_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0.081751 0.10375 0"
+      rpy="0.00021197 0.001 0.0001925" />
+    <parent
+      link="LF_1_Link" />
+    <child
+      link="LF_2_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-0.52"
+      upper="2.61"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LF_2_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.0010406 -0.039509 -0.029788"
+        rpy="0 0 0" />
+      <mass
+        value="2.3492" />
+      <inertia
+        ixx="0.0047298"
+        ixy="-1.1181E-08"
+        ixz="0.00013061"
+        iyy="0.0058648"
+        iyz="-5.9783E-10"
+        izz="0.002294" />
+    </inertial>
+  </link>
+  <joint
+    name="LF_2_peizhong_Link"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF_2_Link" />
+    <child
+      link="LF_2_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_3_Link">
+    <inertial>
+      <origin
+        xyz="0.010726 1.5105E-05 -0.13966"
+        rpy="0 0 0" />
+      <mass
+        value="0.12897" />
+      <inertia
+        ixx="0.0015448"
+        ixy="2.101E-08"
+        ixz="9.5832E-05"
+        iyy="0.0015606"
+        iyz="-1.8797E-07"
+        izz="3.7274E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_3_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LF_3_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-2.8395E-05 0 -0.34"
+      rpy="-3.1416 -3.1417 3.1416" />
+    <parent
+      link="LF_2_Link" />
+    <child
+      link="LF_3_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-2.61"
+      upper="-0.52"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LF_3_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.00725 -4.0301E-14 -0.16862"
+        rpy="0 0 0" />
+      <mass
+        value="0.24236" />
+      <inertia
+        ixx="0.0012805"
+        ixy="-8.6066E-17"
+        ixz="3.5795E-20"
+        iyy="0.001265"
+        iyz="-5.0031E-20"
+        izz="2.0848E-05" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0.00725 -4.0301E-14 -0.16862"
+        rpy="0 0 0" />
+      <geometry>
+        <box size=".041 .041 .25"/> 
+      </geometry>
+    </collision>
+  </link>
+    
+  <joint
+    name="LF_3_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LF_3_Link" />
+    <child
+      link="LF_3_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LF_zuduan_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090407 1.3416E-07 -0.015667"
+        rpy="0 0 0" />
+      <mass
+        value="0.098309" />
+      <inertia
+        ixx="3.5722E-05"
+        ixy="-1.1338E-10"
+        ixz="1.2758E-05"
+        iyy="5.0334E-05"
+        iyz="-1.4161E-10"
+        izz="5.0474E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LF_zuduan_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.041"/><!-- <cylinder length='.028' radius="0.02"/> -->
+      </geometry>
+      <material name="">
+        <contact name="foot0"/>
+      </material>
+    </collision>
+  </link>
+  <joint
+    name="LF_zuduan_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0.0042202 0 -0.3386"
+      rpy="0 0 0" />
+    <parent
+      link="LF_3_Link" />
+    <child
+      link="LF_zuduan_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RF_1_Link">
+    <inertial>
+      <origin
+        xyz="0.059247 0.0029797 -0.00092332"
+        rpy="0 0 0" />
+      <mass
+        value="0.18511" />
+      <inertia
+        ixx="0.00018562"
+        ixy="2.6593E-06"
+        ixz="2.3166E-07"
+        iyy="0.00045414"
+        iyz="-1.4607E-07"
+        izz="0.00029591" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_1_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RF_1_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0.38425 -0.098372 0.020629"
+      rpy="-8.807E-05 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="RF_1_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.80"
+      upper="0.64"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RF_1_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.081751 0.024995 -1.3943E-09"
+        rpy="0 0 0" />
+      <mass
+        value="2.2246" />
+      <inertia
+        ixx="0.0029106"
+        ixy="-1.9141E-14"
+        ixz="3.1359E-25"
+        iyy="0.0040043"
+        iyz="-1.9141E-14"
+        izz="0.0029106" />
+    </inertial>
+  </link>
+  <joint
+    name="RF_1_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RF_1_Link" />
+    <child
+      link="RF_1_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RF_2_Link">
+    <inertial>
+      <origin
+        xyz="-0.009016 0.01851 -0.082776"
+        rpy="0 0 0" />
+      <mass
+        value="0.47211" />
+      <inertia
+        ixx="0.0044015"
+        ixy="5.7728E-06"
+        ixz="-0.00011247"
+        iyy="0.0048143"
+        iyz="5.2593E-05"
+        izz="0.00049691" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_2_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RF_2_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0.081751 -0.10375 0"
+      rpy="9.0571E-05 0.001 2.6167E-05" />
+    <parent
+      link="RF_1_Link" />
+    <child
+      link="RF_2_Link" />
+    <axis
+      xyz="0 1 6.6299E-05" />
+    <limit
+      lower="-0.52"
+      upper="2.61"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RF_2_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.0010406 0.039507 -0.029791"
+        rpy="0 0 0" />
+      <mass
+        value="2.3492" />
+      <inertia
+        ixx="0.0047298"
+        ixy="1.9908E-08"
+        ixz="0.00013061"
+        iyy="0.0058648"
+        iyz="-2.3801E-07"
+        izz="0.002294" />
+    </inertial>
+  </link>
+  <joint
+    name="RF_2_peizhong_Link"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RF_2_Link" />
+    <child
+      link="RF_2_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RF_3_Link">
+    <inertial>
+      <origin
+        xyz="0.010726 -2.7864E-05 -0.13966"
+        rpy="0 0 0" />
+      <mass
+        value="0.12897" />
+      <inertia
+        ixx="0.0015448"
+        ixy="-1.2496E-08"
+        ixz="9.5832E-05"
+        iyy="0.0015606"
+        iyz="4.8157E-08"
+        izz="3.7274E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_3_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RF_3_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-2.8393E-05 -2.2719E-05 -0.34"
+      rpy="-3.1414 -3.1417 3.1415" />
+    <parent
+      link="RF_2_Link" />
+    <child
+      link="RF_3_Link" />
+    <axis
+      xyz="0 1 9.1172E-05" />
+    <limit
+      lower="-2.61"
+      upper="-0.52"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RF_3_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.00725 -1.5373E-05 -0.16862"
+        rpy="0 0 0" />
+      <mass
+        value="0.24236" />
+      <inertia
+        ixx="0.0012805"
+        ixy="-5.9337E-16"
+        ixz="-7.4524E-12"
+        iyy="0.001265"
+        iyz="-1.1343E-07"
+        izz="2.0848E-05" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0.00725 -1.5373E-05 -0.16862"
+        rpy="0 0 0" />
+      <geometry>
+        <box size=".041 .041 .25"/> 
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RF_3_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RF_3_Link" />
+    <child
+      link="RF_3_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RF_zuduan_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090407 -1.4654E-06 -0.015667"
+        rpy="0 0 0" />
+      <mass
+        value="0.098309" />
+      <inertia
+        ixx="3.5722E-05"
+        ixy="1.398E-09"
+        ixz="1.2758E-05"
+        iyy="5.0334E-05"
+        iyz="4.8805E-11"
+        izz="5.0474E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RF_zuduan_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.041"/><!-- <cylinder length='.028' radius="0.02"/> -->
+      </geometry>
+      <material name="">
+        <contact name="foot1"/>
+      </material>
+    </collision>
+  </link>
+  <joint
+    name="RF_zuduan_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0.0042202 -3.0871E-05 -0.3386"
+      rpy="0 0 0" />
+    <parent
+      link="RF_3_Link" />
+    <child
+      link="RF_zuduan_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LH_1_Link">
+    <inertial>
+      <origin
+        xyz="-0.059246 -0.0029796 -0.00092358"
+        rpy="0 0 0" />
+      <mass
+        value="0.18511" />
+      <inertia
+        ixx="0.00018562"
+        ixy="2.6593E-06"
+        ixz="-2.3143E-07"
+        iyy="0.00045414"
+        iyz="1.6001E-07"
+        izz="0.00029591" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_1_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LH_1_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11225 0.13163 0.020629"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="LH_1_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.64"
+      upper="0.80"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LH_1_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.081749 -0.024995 -2.201E-06"
+        rpy="0 0 0" />
+      <mass
+        value="2.2246" />
+      <inertia
+        ixx="0.0029106"
+        ixy="2.0063E-11"
+        ixz="1.7668E-15"
+        iyy="0.0040043"
+        iyz="9.6328E-08"
+        izz="0.0029106" />
+    </inertial>
+  </link>
+  <joint
+    name="LH_1_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LH_1_Link" />
+    <child
+      link="LH_1_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LH_2_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090089 -0.018515 -0.082776"
+        rpy="0 0 0" />
+      <mass
+        value="0.47211" />
+      <inertia
+        ixx="0.0044017"
+        ixy="-5.7814E-06"
+        ixz="-0.00011205"
+        iyy="0.0048143"
+        iyz="-5.2879E-05"
+        izz="0.0004968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_2_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LH_2_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.081749 0.10375 0"
+      rpy="0.00016346 0.001 0.0001402" />
+    <parent
+      link="LH_1_Link" />
+    <child
+      link="LH_2_Link" />
+    <axis
+      xyz="-2.9315E-05 1 0" />
+    <limit
+      lower="-0.52"
+      upper="2.61"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LH_2_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.0010373 -0.039508 -0.029788"
+        rpy="0 0 0" />
+      <mass
+        value="2.3492" />
+      <inertia
+        ixx="0.0047297"
+        ixy="-3.3666E-08"
+        ixz="0.00013082"
+        iyy="0.0058648"
+        iyz="2.0624E-09"
+        izz="0.002294" />
+    </inertial>
+  </link>
+  <joint
+    name="LH_2_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LH_2_Link" />
+    <child
+      link="LH_2_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LH_3_Link">
+    <inertial>
+      <origin
+        xyz="0.010726 1.2665E-05 -0.13966"
+        rpy="0 0 0" />
+      <mass
+        value="0.12897" />
+      <inertia
+        ixx="0.0015448"
+        ixy="2.2684E-08"
+        ixz="9.5833E-05"
+        iyy="0.0015606"
+        iyz="-2.1458E-07"
+        izz="3.7275E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_3_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="LH_3_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 -0.34"
+      rpy="-3.1416 -3.1417 -3.1416" />
+    <parent
+      link="LH_2_Link" />
+    <child
+      link="LH_3_Link" />
+    <axis
+      xyz="0 1 1.7472E-05" />
+    <limit
+      lower="-2.61"
+      upper="-0.52"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="LH_3_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.0072501 -2.9461E-06 -0.16862"
+        rpy="0 0 0" />
+      <mass
+        value="0.24236" />
+      <inertia
+        ixx="0.0012805"
+        ixy="1.4503E-14"
+        ixz="8.3496E-10"
+        iyy="0.001265"
+        iyz="-2.1738E-08"
+        izz="2.0848E-05" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0.0072501 -2.9461E-06 -0.16862"
+        rpy="0 0 0" />
+      <geometry>
+        <box size=".041 .041 .25"/> 
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="LH_3_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="LH_3_Link" />
+    <child
+      link="LH_3_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="LH_zuduan_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090407 -1.3958E-07 -0.015667"
+        rpy="0 0 0" />
+      <mass
+        value="0.098309" />
+      <inertia
+        ixx="3.5722E-05"
+        ixy="1.0953E-10"
+        ixz="1.2758E-05"
+        iyy="5.0334E-05"
+        iyz="-1.3916E-10"
+        izz="5.0474E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/LH_zuduan_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.041"/><!-- <cylinder length='.028' radius="0.02"/> -->
+      </geometry>
+      <material name="">
+        <contact name="foot2"/>
+      </material>
+    </collision>
+  </link>
+  <joint
+    name="LH_zuduan_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0.0042204 0 -0.3386"
+      rpy="0 0 0" />
+    <parent
+      link="LH_3_Link" />
+    <child
+      link="LH_zuduan_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RH_1_Link">
+    <inertial>
+      <origin
+        xyz="-0.059246 0.0029798 -0.00092353"
+        rpy="0 0 0" />
+      <mass
+        value="0.18512" />
+      <inertia
+        ixx="0.00018562"
+        ixy="-2.6592E-06"
+        ixz="-2.3147E-07"
+        iyy="0.00045415"
+        iyz="-1.6001E-07"
+        izz="0.00029591" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_1_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RH_1_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.11225 -0.098372 0.020629"
+      rpy="0 0 0" />
+    <parent
+      link="base" />
+    <child
+      link="RH_1_Link" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.80"
+      upper="0.64"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RH_1_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.081749 0.024995 -2.1993E-06"
+        rpy="0 0 0" />
+      <mass
+        value="2.2246" />
+      <inertia
+        ixx="0.0029106"
+        ixy="-2.0064E-11"
+        ixz="1.7652E-15"
+        iyy="0.0040043"
+        iyz="-9.6227E-08"
+        izz="0.0029106" />
+    </inertial>
+  </link>
+  <joint
+    name="RH_1_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RH_1_Link" />
+    <child
+      link="RH_1_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RH_2_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090089 0.01851 -0.082777"
+        rpy="0 0 0" />
+      <mass
+        value="0.47211" />
+      <inertia
+        ixx="0.0044017"
+        ixy="5.7737E-06"
+        ixz="-0.00011204"
+        iyy="0.0048143"
+        iyz="5.259E-05"
+        izz="0.0004968" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_2_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RH_2_Link_joint"
+    type="revolute">
+    <origin
+      xyz="-0.081749 -0.10375 0"
+      rpy="-9.6404E-05 0.001 -0.00013998" />
+    <parent
+      link="RH_1_Link" />
+    <child
+      link="RH_2_Link" />
+    <axis
+      xyz="2.9315E-05 1 -6.632E-05" />
+    <limit
+      lower="-0.52"
+      upper="2.61"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RH_2_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="-0.0010373 0.039506 -0.029791"
+        rpy="0 0 0" />
+      <mass
+        value="2.3492" />
+      <inertia
+        ixx="0.0047297"
+        ixy="4.2406E-08"
+        ixz="0.00013082"
+        iyy="0.0058648"
+        iyz="-2.4062E-07"
+        izz="0.002294" />
+    </inertial>
+  </link>
+  <joint
+    name="RH_2_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RH_2_Link" />
+    <child
+      link="RH_2_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RH_3_Link">
+    <inertial>
+      <origin
+        xyz="0.010726 -2.5424E-05 -0.13966"
+        rpy="0 0 0" />
+      <mass
+        value="0.12897" />
+      <inertia
+        ixx="0.0015448"
+        ixy="-1.4171E-08"
+        ixz="9.5833E-05"
+        iyy="0.0015606"
+        iyz="7.4772E-08"
+        izz="3.7274E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_3_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+<!--     <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_3_Link.STL" />
+      </geometry>
+    </collision> -->
+  </link>
+  <joint
+    name="RH_3_Link_joint"
+    type="revolute">
+    <origin
+      xyz="0 -2.3082E-05 -0.34"
+      rpy="-3.1414 -3.1417 3.1415" />
+    <parent
+      link="RH_2_Link" />
+    <child
+      link="RH_3_Link" />
+    <axis
+      xyz="0 1 7.37E-05" />
+    <limit
+      lower="-2.61"
+      upper="-0.52"
+      effort="202.8375"
+      velocity="18" />
+      <dynamics rotor_inertia="0.0495" damping="0.01" friction="0.2"/>
+  </joint>
+  <link
+    name="RH_3_peizhong_Link">
+    <inertial>
+      <origin
+        xyz="0.0072501 -1.2445E-05 -0.16887"
+        rpy="0 0 0" />
+      <mass
+        value="0.24236" />
+      <inertia
+        ixx="0.0012805"
+        ixy="6.1148E-14"
+        ixz="8.2852E-10"
+        iyy="0.001265"
+        iyz="-9.1692E-08"
+        izz="2.0848E-05" />
+    </inertial>
+    <collision>
+      <origin
+        xyz="0.0072501 -1.2445E-05 -0.16887"
+        rpy="0 0 0" />
+      <geometry>
+        <box size=".041 .041 .25"/> 
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RH_3_peizhong_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="RH_3_Link" />
+    <child
+      link="RH_3_peizhong_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="RH_zuduan_Link">
+    <inertial>
+      <origin
+        xyz="-0.0090407 -1.1916E-06 -0.015667"
+        rpy="0 0 0" />
+      <mass
+        value="0.098309" />
+      <inertia
+        ixx="3.5722E-05"
+        ixy="1.1751E-09"
+        ixz="1.2758E-05"
+        iyy="5.0334E-05"
+        iyz="4.6361E-11"
+        izz="5.0474E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://meshes/RH_zuduan_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <sphere radius="0.041"/><!-- <cylinder length='.028' radius="0.02"/> -->
+      </geometry>
+      <material name="">
+        <contact name="foot3"/>
+      </material>
+    </collision>
+  </link>
+  <joint
+    name="RH_zuduan_Link_joint"
+    type="fixed">
+    <origin
+      xyz="0.0042204 -2.4955E-05 -0.3386"
+      rpy="0 0 0" />
+    <parent
+      link="RH_3_Link" />
+    <child
+      link="RH_zuduan_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

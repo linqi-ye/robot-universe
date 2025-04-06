@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="torso-mc_remapper" type="controlboardremapper">
+    <paramlist name="networks">
+        <elem name="torso_joints">(  0 2 0 2 )</elem>
+    </paramlist>
+    <param name="joints"> 3			</param>
+    <action phase="startup" level="5" type="attach">
+        <paramlist name="networks">
+            <elem name="torso_joints">  torso_hardware_device </elem>
+        </paramlist>
+    </action>
+    <action phase="shutdown" level="20" type="detach" />
+</device>

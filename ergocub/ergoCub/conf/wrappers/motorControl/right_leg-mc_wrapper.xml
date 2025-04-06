@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+    
+<device xmlns:xi="http://www.w3.org/2001/XInclude" name="right_leg-mc_nws_yarp" type="controlBoard_nws_yarp">
+    <param name="name"> ${portprefix}/right_leg </param>
+    <param name="period">0.01</param>
+    <action phase="startup" level="10" type="attach">
+        <param name="device"> right_leg-mc_remapper </param>
+    </action>
+    <action phase="shutdown" level="15" type="detach" />
+</device>

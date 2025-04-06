@@ -1,0 +1,99 @@
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.70.0 commit date:2014-04-10, commit time:11:49, hash:f93bc76</authoring_tool>
+    </contributor>
+    <created>2014-06-06T13:18:35</created>
+    <modified>2014-06-06T13:18:35</modified>
+    <unit meter="1" name="meter" />
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_images />
+  <library_effects>
+    <effect id="Material_017-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <phong>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <ambient>
+              <color sid="ambient">0.8 0.8 0.8 1</color>
+            </ambient>
+            <diffuse>
+              <color sid="diffuse">0.8 0.8 0.8 1</color>
+            </diffuse>
+            <specular>
+              <color sid="specular">0 0 0 1</color>
+            </specular>
+            <shininess>
+              <float sid="shininess">6</float>
+            </shininess>
+            <index_of_refraction>
+              <float sid="index_of_refraction">1</float>
+            </index_of_refraction>
+          </phong>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="Material_017-material" name="Material_017">
+      <instance_effect url="#Material_017-effect" />
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="ShapeIndexedFaceS_036-Geometry-mesh" name="ShapeIndexedFaceS_036-Geometry">
+      <mesh>
+        <source id="ShapeIndexedFaceS_036-Geometry-mesh-positions">
+          <float_array count="126" id="ShapeIndexedFaceS_036-Geometry-mesh-positions-array">-0.002849996 0 -0.02749997 0.002849996 -9.6e-4 -0.02730995 0.002849996 0 -0.02749997 -0.002849996 -0.002499997 -0.02499997 -0.002849996 -0.002309978 -0.02595996 -0.002849996 0.001339972 -0.02722996 0.002849996 0.001339972 -0.02722996 0.002849996 -0.002499997 -0.02499997 0.002849996 -0.002309978 -0.02595996 -0.002849996 -9.6e-4 -0.02730995 0.002849996 -0.001769959 -0.02676999 -0.002849996 -0.001769959 -0.02676999 0.002849996 0.002469956 -0.02647 -0.002849996 0.002469956 -0.02647 0.002849996 0.003229975 -0.02533996 -0.002849996 0.003229975 -0.02533996 -0.002849996 0.003499984 -0.02399998 0.002849996 0.003499984 -0.02399998 -0.002849996 -0.002499997 -0.003999948 0.002849996 -0.002499997 -0.003999948 -0.002849996 0.003499984 0 0.002849996 0.003499984 0 -0.002849996 -0.003229975 0.001339972 -0.002849996 -0.002879977 -0.002089977 0.002849996 -0.001339972 0.003229975 0.002849996 -0.002469956 0.002469956 0.002849996 -0.003229975 0.001339972 0.002849996 -0.002879977 -0.002089977 -0.002849996 -0.002469956 0.002469956 -0.002849996 -0.001339972 0.003229975 -0.002849996 -0.003499984 0 0.002849996 -0.003499984 0 0.002849996 -0.003229975 -0.001339972 -0.002849996 -0.003229975 -0.001339972 -0.002849996 0.002989947 0.001239955 0.002849996 0.002989947 0.001239955 -0.002849996 0 0.003499984 -0.002849996 0.002469956 0.002469956 -0.002849996 0.001339972 0.003229975 0.002849996 0 0.003499984 0.002849996 0.001339972 0.003229975 0.002849996 0.002469956 0.002469956</float_array>
+          <technique_common>
+            <accessor count="42" source="#ShapeIndexedFaceS_036-Geometry-mesh-positions-array" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="ShapeIndexedFaceS_036-Geometry-mesh-normals">
+          <float_array count="126" id="ShapeIndexedFaceS_036-Geometry-mesh-normals-array">0.6657003 -0.2848598 -0.6896573 -0.6655477 0.001281738 -0.7463302 0.6655477 0.001281738 -0.7463302 -0.6657003 -0.6896573 -0.2848598 -0.6857814 -0.7242958 -0.07098603 -0.6656392 0.2874538 -0.6886502 0.6857814 -0.7242958 -0.07098603 0.6656392 0.2874538 -0.6886502 0.6657003 -0.6896573 -0.2848598 -0.6657003 -0.2848598 -0.6896573 0.6654866 -0.5277566 -0.5277566 -0.6654866 -0.5277566 -0.5277566 0.6663106 0.5272683 -0.5272683 -0.6663106 0.5272683 -0.5272683 0.6656392 0.6886502 -0.2874538 -0.6656392 0.6886502 -0.2874538 0.6854152 0.7245094 -0.07226783 -0.6854152 0.7245094 -0.07226783 -0.7298502 -0.6802881 -0.06698811 0.7298502 -0.6802881 -0.06698811 -0.6659444 0.7318034 0.1445966 0.6659444 0.7318034 0.1445966 -0.7350993 -0.6442763 -0.2110049 -0.6656392 -0.6886502 0.2874538 0.6656392 -0.2874538 0.6886502 0.6663106 -0.5272683 0.5272683 0.6656392 -0.6886502 0.2874538 0.7350993 -0.6442763 -0.2110049 -0.6663106 -0.5272683 0.5272683 -0.6656392 -0.2874538 0.6886502 -0.665212 -0.7466353 0 0.665212 -0.7466353 0 0.6813563 -0.6953032 -0.2286446 -0.6813563 -0.6953032 -0.2286446 0.7059847 0.6536149 0.2725608 -0.7059847 0.6536149 0.2725608 -0.665212 0 0.7466353 -0.6656392 0.2874538 0.6886502 -0.6481521 0.5876034 0.4843288 0.665212 0 0.7466353 0.6656392 0.2874538 0.6886502 0.6481521 0.5876034 0.4843288</float_array>
+          <technique_common>
+            <accessor count="42" source="#ShapeIndexedFaceS_036-Geometry-mesh-normals-array" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="ShapeIndexedFaceS_036-Geometry-mesh-vertices">
+          <input semantic="POSITION" source="#ShapeIndexedFaceS_036-Geometry-mesh-positions" />
+        </vertices>
+        <polylist count="80" material="Material_017-material">
+          <input offset="0" semantic="VERTEX" source="#ShapeIndexedFaceS_036-Geometry-mesh-vertices" />
+          <input offset="1" semantic="NORMAL" source="#ShapeIndexedFaceS_036-Geometry-mesh-normals" />
+          <vcount>3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 </vcount>
+          <p>1 0 0 1 2 2 0 1 4 3 3 4 0 1 3 4 5 5 7 6 2 2 6 7 8 8 2 2 7 6 8 8 1 0 2 2 4 3 0 1 9 9 2 2 0 1 5 5 6 7 2 2 5 5 9 9 0 1 1 0 10 10 1 0 8 8 9 9 11 11 4 3 1 0 10 10 9 9 7 6 6 7 12 12 12 12 6 7 13 13 5 5 3 4 13 13 6 7 5 5 13 13 10 10 11 11 9 9 10 10 8 8 11 11 7 6 12 12 14 14 13 13 3 4 15 15 12 12 13 13 15 15 14 14 12 12 15 15 8 8 4 3 11 11 8 8 7 6 4 3 7 6 3 4 4 3 17 16 14 14 16 17 7 6 14 14 17 16 14 14 15 15 16 17 15 15 3 4 16 17 16 17 3 4 18 18 7 6 19 19 3 4 7 6 17 16 19 19 17 16 16 17 20 20 21 21 17 16 20 20 16 17 23 22 22 23 24 24 17 16 21 21 16 17 18 18 23 22 25 25 17 16 24 24 26 26 17 16 25 25 27 27 17 16 26 26 16 17 22 23 28 28 16 17 28 28 29 29 16 17 29 29 20 20 19 19 17 16 27 27 19 19 18 18 3 4 19 19 27 27 18 18 27 27 23 22 18 18 23 22 30 30 22 23 31 31 27 27 26 26 32 32 27 27 31 31 23 22 33 33 30 30 27 27 32 32 23 22 32 32 33 33 23 22 32 32 31 31 33 33 31 31 30 30 33 33 35 34 21 21 34 35 24 24 21 21 35 34 20 20 36 36 34 35 21 21 20 20 34 35 20 20 29 29 36 36 31 31 26 26 30 30 26 26 22 23 30 30 34 35 38 37 37 38 24 24 35 34 39 39 39 39 35 34 40 40 40 40 35 34 41 41 34 35 36 36 38 37 35 34 34 35 37 38 41 41 35 34 37 38 26 26 25 25 22 23 25 25 28 28 22 23 25 25 24 24 28 28 40 40 41 41 38 37 41 41 37 38 38 37 24 24 29 29 28 28 24 24 39 39 29 29 39 39 40 40 36 36 40 40 38 37 36 36 39 39 36 36 29 29</p>
+        </polylist>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_controllers />
+  <library_visual_scenes>
+    <visual_scene id="Scene_025" name="Scene.025">
+      <node id="ShapeIndexedFaceS_036" name="ShapeIndexedFaceS_036" type="NODE">
+        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <instance_geometry url="#ShapeIndexedFaceS_036-Geometry-mesh">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Material_017-material" target="#Material_017-material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene_025" />
+  </scene>
+</COLLADA>

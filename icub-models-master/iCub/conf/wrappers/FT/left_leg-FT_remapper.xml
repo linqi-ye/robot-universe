@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE devices PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+
+    <device xmlns:xi="http://www.w3.org/2001/XInclude" name="left_leg-FT_remapper" type="multipleanalogsensorsremapper">
+        <param name="SixAxisForceTorqueSensorsNames">
+          (l_leg_ft l_foot_ft)
+        </param>
+        <action phase="startup" level="5" type="attach">
+            <paramlist name="networks">
+                <elem name="left_leg_ft_sensor">  icub_left_leg_ft </elem>
+                <elem name="left_foot_ft_sensor">  icub_left_foot_ft </elem>
+            </paramlist>
+        </action>
+
+        <action phase="shutdown" level="20" type="detach" />
+    </device>

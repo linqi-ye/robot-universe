@@ -1,0 +1,1 @@
+includes: [../ergocub1_1/base_1_1.yaml, base_1_3.yaml, ..\common\gazebo_addon.yaml, ..\common\minContacts_addon.yaml]

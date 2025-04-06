@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="PAI-urdf">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.069429 6.1599E-18 0.093307"
+        rpy="0 0 0" />
+      <mass
+        value="1.5" />
+      <inertia
+        ixx="0.0028787"
+        ixy="-6.2028E-19"
+        ixz="0.0011496"
+        iyy="0.0047606"
+        iyz="5.6278E-19"
+        izz="0.0043029" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left-hip-abad">
+    <inertial>
+      <origin
+        xyz="0.041409 0 0.055119"
+        rpy="0 0 0" />
+      <mass
+        value="0.35" />
+      <inertia
+        ixx="3.6841E-05"
+        ixy="-2.584E-22"
+        ixz="-6.2162E-07"
+        iyy="3.8839E-05"
+        iyz="-1.9482E-21"
+        izz="3.6277E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-abad.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-abad.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="abad-L"
+    type="continuous">
+    <origin
+      xyz="0 0.075 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left-hip-abad" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="left-hip-yaw">
+    <inertial>
+      <origin
+        xyz="-0.00049584 2.8866E-15 0.0032955"
+        rpy="0 0 0" />
+      <mass
+        value="0.65" />
+      <inertia
+        ixx="6.7757E-05"
+        ixy="7.9552E-21"
+        ixz="-6.395E-07"
+        iyy="6.8581E-05"
+        iyz="9.1346E-21"
+        izz="6.7914E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Yaw-L"
+    type="continuous">
+    <origin
+      xyz="0.049 0 -0.0005"
+      rpy="0 0 0" />
+    <parent
+      link="left-hip-abad" />
+    <child
+      link="left-hip-yaw" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="left-hip-pitch">
+    <inertial>
+      <origin
+        xyz="6.5226E-16 2.3315E-15 -0.05727"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="0.00012318"
+        ixy="3.9623E-20"
+        ixz="-2.6324E-20"
+        iyy="0.00012926"
+        iyz="7.2271E-23"
+        izz="6.3186E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-hip-pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pitch-L"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="left-hip-yaw" />
+    <child
+      link="left-hip-pitch" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left-knee">
+    <inertial>
+      <origin
+        xyz="-0.0045962 0.012568 -0.063722"
+        rpy="0 0 0" />
+      <mass
+        value="0.36" />
+      <inertia
+        ixx="0.00011945"
+        ixy="6.4077E-08"
+        ixz="3.3225E-07"
+        iyy="0.00012253"
+        iyz="1.2844E-07"
+        izz="2.0036E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee-L"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.15"
+      rpy="0 0 0" />
+    <parent
+      link="left-hip-pitch" />
+    <child
+      link="left-knee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="left-ankle">
+    <inertial>
+      <origin
+        xyz="0.010818 -1.9984E-08 -0.014672"
+        rpy="0 0 0" />
+      <mass
+        value="0.09" />
+      <inertia
+        ixx="2.76E-06"
+        ixy="3.1498E-11"
+        ixz="1.0465E-06"
+        iyy="2.7107E-05"
+        iyz="3.7297E-13"
+        izz="2.6942E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-ankle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/left-ankle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle-L"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.16"
+      rpy="0 0 0" />
+    <parent
+      link="left-knee" />
+    <child
+      link="left-ankle" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right-hip-abad">
+    <inertial>
+      <origin
+        xyz="0.041409 -2.7756E-17 0.055119"
+        rpy="0 0 0" />
+      <mass
+        value="0.35" />
+      <inertia
+        ixx="3.6841E-05"
+        ixy="2.4386E-22"
+        ixz="-6.2162E-07"
+        iyy="3.8839E-05"
+        iyz="-2.348E-21"
+        izz="3.6277E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-abad.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-abad.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="abad-R"
+    type="continuous">
+    <origin
+      xyz="0 -0.075 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right-hip-abad" />
+    <axis
+      xyz="-1 0 0" />
+  </joint>
+  <link
+    name="right-hip-yaw">
+    <inertial>
+      <origin
+        xyz="-0.00049584 4.3021E-16 0.0032955"
+        rpy="0 0 0" />
+      <mass
+        value="0.65" />
+      <inertia
+        ixx="6.7757E-05"
+        ixy="-1.4631E-21"
+        ixz="-6.395E-07"
+        iyy="6.8581E-05"
+        iyz="1.1283E-20"
+        izz="6.7914E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-yaw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-yaw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Yaw-R"
+    type="continuous">
+    <origin
+      xyz="0.049 0 -0.0005"
+      rpy="0 0 0" />
+    <parent
+      link="right-hip-abad" />
+    <child
+      link="right-hip-yaw" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="right-hip-pitch">
+    <inertial>
+      <origin
+        xyz="-3.5388E-16 6.5226E-16 -0.05727"
+        rpy="0 0 0" />
+      <mass
+        value="0.2" />
+      <inertia
+        ixx="0.00012318"
+        ixy="3.9681E-20"
+        ixz="-3.2905E-21"
+        iyy="0.00012926"
+        iyz="2.887E-20"
+        izz="6.3186E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-pitch.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-hip-pitch.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Pitch-R"
+    type="continuous">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="right-hip-yaw" />
+    <child
+      link="right-hip-pitch" />
+    <axis
+      xyz="0 -1 0" />
+  </joint>
+  <link
+    name="right-knee">
+    <inertial>
+      <origin
+        xyz="-0.0045962 -0.012568 -0.063722"
+        rpy="0 0 0" />
+      <mass
+        value="0.36" />
+      <inertia
+        ixx="0.00011945"
+        ixy="-6.4077E-08"
+        ixz="3.3225E-07"
+        iyy="0.00012253"
+        iyz="-1.2844E-07"
+        izz="2.0036E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-knee.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-knee.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Knee-R"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.15"
+      rpy="0 0 0" />
+    <parent
+      link="right-hip-pitch" />
+    <child
+      link="right-knee" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="right-ankle">
+    <inertial>
+      <origin
+        xyz="0.010818 -1.9984E-08 -0.014672"
+        rpy="0 0 0" />
+      <mass
+        value="0.09" />
+      <inertia
+        ixx="2.76E-06"
+        ixy="3.1498E-11"
+        ixz="1.0465E-06"
+        iyy="2.7107E-05"
+        iyz="3.7297E-13"
+        izz="2.6942E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-ankle.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://PAI-urdf/meshes/right-ankle.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Ankle-R"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.16"
+      rpy="0 0 0" />
+    <parent
+      link="right-knee" />
+    <child
+      link="right-ankle" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+</robot>

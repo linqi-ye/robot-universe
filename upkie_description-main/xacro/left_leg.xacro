@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<robot name="upkie" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="left_leg">
+        <!-- Left leg -->
+
+        <!-- Left hip -->
+
+        <link name="left_hip_qdd100_stator">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_stator.stl" />
+                </geometry>
+                <material name="black" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0.015" />
+                <geometry>
+                    <cylinder length="0.03" radius="0.05" />
+                </geometry>
+            </collision>
+            <!-- mass guessed from spec -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0.015"
+                mass="0.47"
+                radius="0.05" length="0.03" />
+        </link>
+
+        <joint name="left_hip_qdd100_stator_fix" type="fixed">
+            <origin rpy="-1.5707963267948966 0 0" xyz="0.0 0.085 -0.064" />
+            <parent link="torso" />
+            <child link="left_hip_qdd100_stator" />
+        </joint>
+
+        <link name="left_hip_qdd100_rotor">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_rotor.stl" />
+                </geometry>
+                <material name="black" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+                <geometry>
+                    <cylinder length="0.005" radius="0.023" />
+                </geometry>
+            </collision>
+            <!-- mass guessed from spec -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 -0.0025"
+                mass="0.015"
+                radius="0.023" length="0.005" />
+        </link>
+
+        <joint name="left_hip" type="revolute">
+            <parent link="left_hip_qdd100_stator" />
+            <child link="left_hip_qdd100_rotor" />
+            <origin rpy="0 0 0" xyz="0 0 0.0292" />
+            <!-- negative z-axis: search "moteus-direction-configuration" -->
+            <axis xyz="0 0 -1" />
+            <limit effort="16.0" lower="-1.26" upper="1.26" velocity="28.8" />
+        </joint>
+
+        <link name="left_hip_horn">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_horn.stl" />
+                </geometry>
+                <material name="black" />
+            </visual>
+            <collision>
+                <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.025" />
+                <geometry>
+                    <cylinder length="0.09" radius="0.025" />
+                </geometry>
+            </collision>
+            <!-- mass measured with screws -->
+            <xacro:cylinder_inertia
+                rpy="0 1.5707963267948966 0" xyz="0 0 0.025"
+                mass="0.05267"
+                radius="0.025" length="0.09" />
+        </link>
+
+        <joint name="left_hip_horn_fix" type="fixed">
+            <parent link="left_hip_qdd100_rotor" />
+            <child link="left_hip_horn" />
+            <origin rpy="0 0 1.5707963267948966" xyz="0 0 0" />
+        </joint>
+
+        <!-- Left femur -->
+
+        <link name="left_femur">
+            <visual>
+                <geometry>
+                    <cylinder length="0.25" radius="0.011" />
+                </geometry>
+                <material name="light_wood" />
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.26" radius="0.012" />
+                </geometry>
+                <material name="light_wood" />
+            </collision>
+            <!-- mass measured on average over four wooden sticks -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="0.056"
+                radius="0.012" length="0.026" />
+        </link>
+
+        <joint name="left_femur_fix" type="fixed">
+            <parent link="left_hip_qdd100_rotor" />
+            <child link="left_femur" />
+            <origin rpy="1.5707963267948966 0 0" xyz="0 0.07 0.025" />
+        </joint>
+
+        <!-- Left knee -->
+
+        <joint name="left_knee_stator_fix" type="fixed">
+            <parent link="left_femur" />
+            <child link="left_knee_stator" />
+            <origin rpy="0 0 -1.5707963267948966" xyz="0 0.042 -0.098" />
+        </joint>
+
+        <link name="left_knee_stator">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/knee_stator.stl" />
+                </geometry>
+                <material name="terracotta_light" />
+            </visual>
+            <collision>
+                <origin rpy="0 1.5707963267948966 0" xyz="0.03 0 0" />
+                <geometry>
+                    <cylinder length="0.06" radius="0.05" />
+                </geometry>
+            </collision>
+            <!-- mass based on filament estimate from Prusa Slicer -->
+            <xacro:cylinder_inertia
+                rpy="0 1.5707963267948966 0" xyz="0.03 0 0"
+                mass="0.09874"
+                radius="0.05" length="0.06" />
+        </link>
+
+        <link name="left_knee_qdd100_stator">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_stator.stl" />
+                </geometry>
+                <material name="black" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0.015" />
+                <geometry>
+                    <cylinder length="0.03" radius="0.05" />
+                </geometry>
+            </collision>
+            <!-- mass guessed from spec -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0.015"
+                mass="0.47"
+                radius="0.05" length="0.03" />
+        </link>
+
+        <joint name="left_knee_qdd100_stator_fix" type="fixed">
+            <parent link="left_knee_stator" />
+            <child link="left_knee_qdd100_stator" />
+            <origin rpy="-1.5707963267948966 0 1.5707963267948966" xyz="0 0 0" />
+        </joint>
+
+        <joint name="left_knee" type="revolute">
+            <parent link="left_knee_qdd100_stator" />
+            <child link="left_knee_qdd100_rotor" />
+            <origin rpy="0 0 0" xyz="0 0 0.0292" />
+            <!-- negative z-axis: search "moteus-direction-configuration" -->
+            <axis xyz="0 0 -1" />
+            <limit effort="16.0" lower="-2.51" upper="2.51" velocity="28.8" />
+        </joint>
+
+        <link name="left_knee_qdd100_rotor">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_rotor.stl" />
+                </geometry>
+                <material name="black" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 -0.0025" />
+                <geometry>
+                    <cylinder length="0.005" radius="0.023" />
+                </geometry>
+            </collision>
+            <!-- mass guessed from spec -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 -0.0025"
+                mass="0.015"
+                radius="0.023" length="0.005" />
+        </link>
+
+        <link name="left_knee_horn">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/qdd100_horn.stl" />
+                </geometry>
+                <material name="terracotta_light" />
+            </visual>
+            <collision>
+                <origin rpy="0 1.5707963267948966 0" xyz="0 0 0.025" />
+                <geometry>
+                    <cylinder length="0.09" radius="0.025" />
+                </geometry>
+            </collision>
+            <!-- mass measured with screws -->
+            <xacro:cylinder_inertia
+                rpy="0 1.5707963267948966 0" xyz="0 0 0.025"
+                mass="0.05267"
+                radius="0.025" length="0.09" />
+        </link>
+
+        <joint name="left_knee_horn_fix" type="fixed">
+            <parent link="left_knee_qdd100_rotor" />
+            <child link="left_knee_horn" />
+            <origin rpy="0 0 1.5707963267948966" xyz="0 0 0" />
+        </joint>
+
+        <!-- Left tibia -->
+
+        <link name="left_tibia">
+            <visual>
+                <geometry>
+                    <cylinder length="0.25" radius="0.011" />
+                </geometry>
+                <material name="light_wood" />
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.26" radius="0.012" />
+                </geometry>
+                <material name="light_wood" />
+            </collision>
+            <!-- mass measured on average over four wooden sticks -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="0.056"
+                radius="0.012" length="0.026" />
+        </link>
+
+        <joint name="left_tibia_fix" type="fixed">
+            <parent link="left_knee_qdd100_rotor" />
+            <child link="left_tibia" />
+            <origin rpy="1.5707963267948966 3.141592653589793 0" xyz="0 0.07 0.025" />
+        </joint>
+
+        <!-- Left ankle -->
+
+        <link name="left_ankle_base">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/ankle_stator.stl" />
+                </geometry>
+                <material name="chalky_blue" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0.002 0.0275" />
+                <geometry>
+                    <box size="0.092 0.068 0.056" />
+                </geometry>
+            </collision>
+            <!-- mass measured with screws -->
+            <xacro:box_inertia
+                rpy="0 0 0" xyz="0 0.002 0.0275"
+                mass="0.07863"
+                len_x="0.092" len_y="0.068" len_z="0.056" />
+        </link>
+
+        <joint name="left_ankle_base_fix" type="fixed">
+            <parent link="left_tibia" />
+            <child link="left_ankle_base" />
+            <origin rpy="1.5707963267948966 0 0" xyz="0 0.034 -0.105" />
+        </joint>
+
+        <link name="left_ankle_plate">
+            <visual>
+                <geometry>
+                    <box size="0.08 0.045 0.003" />
+                </geometry>
+                <material name="light_gray" />
+            </visual>
+            <collision>
+                <geometry>
+                    <box size="0.09 0.046 0.004" />
+                </geometry>
+            </collision>
+            <!-- mass is a pure guess (^_^") -->
+            <xacro:box_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="0.02"
+                len_x="0.09" len_y="0.046" len_z="0.004" />
+        </link>
+
+        <joint name="left_ankle_plate_fix" type="fixed">
+            <parent link="left_ankle_base" />
+            <child link="left_ankle_plate" />
+            <origin rpy="0 0 0" xyz="0 0 -0.0015" />
+        </joint>
+
+        <link name="left_ankle_mj5208_stator">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/mj5208_stator.stl" />
+                </geometry>
+                <material name="mj5208_stator" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0.01" />
+                <geometry>
+                    <cylinder length="0.018" radius="0.03" />
+                </geometry>
+            </collision>
+            <!-- mass measured was 242.1 [g], minus 20 [g] for the plate, minus 50 [g] for the rotor -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0.01"
+                mass="0.1721"
+                radius="0.03" length="0.018" />
+        </link>
+
+        <joint name="left_ankle_mj5208_stator_fix" type="fixed">
+            <parent link="left_ankle_plate" />
+            <child link="left_ankle_mj5208_stator" />
+            <origin rpy="3.141592653589793 0 0" xyz="0 0 -0.0015" />
+        </joint>
+
+        <xacro:virtual_link name="left_anchor" />
+
+        <joint name="left_anchor_fix" type="fixed">
+            <parent link="left_ankle_mj5208_stator" />
+            <child link="left_anchor" />
+            <origin rpy="1.5707963267948966 3.141592653589793 0" xyz="0 0.0545 0.05" />
+        </joint>
+
+        <link name="left_ankle_mj5208_rotor">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/mjbots/mj5208_rotor.stl" />
+                </geometry>
+                <material name="mj5208_rotor" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0.015" />
+                <geometry>
+                    <cylinder length="0.016" radius="0.034" />
+                </geometry>
+            </collision>
+            <!-- mass is a pure guess -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0.015"
+                mass="0.05"
+                radius="0.034" length="0.016" />
+        </link>
+
+        <joint name="left_wheel" type="revolute">
+            <parent link="left_ankle_mj5208_stator" />
+            <child link="left_ankle_mj5208_rotor" />
+            <origin rpy="0 0 0" xyz="0 0 0" />
+            <!-- negative z-axis: search "moteus-direction-configuration" -->
+            <axis xyz="0 0 -1" />
+            <limit effort="1.7" velocity="111.0" />
+        </joint>
+
+        <!-- Left wheel -->
+
+        <link name="left_wheel_hub">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/wheel_hub.stl" />
+                </geometry>
+                <material name="terracotta_light" />
+            </visual>
+            <collision>
+                <origin rpy="0 0 0" xyz="0 0 0.0125" />
+                <geometry>
+                    <cylinder length="0.025" radius="0.039" />
+                </geometry>
+            </collision>
+            <!-- mass measured with hub adapter -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0.0125"
+                mass="0.0454"
+                radius="0.039" length="0.025" />
+        </link>
+
+        <joint name="left_wheel_hub_fix" type="fixed">
+            <parent link="left_ankle_mj5208_rotor" />
+            <child link="left_wheel_hub" />
+            <origin rpy="0 0 0" xyz="0 0 0.0251" />
+        </joint>
+
+        <link name="left_wheel_tire">
+            <visual>
+                <geometry>
+                    <mesh filename="package://upkie_description/meshes/wheel_tire/wheel_tire.stl" />
+                </geometry>
+                <material name="dark_gray" />
+            </visual>
+            <collision>
+                <geometry>
+                    <cylinder length="0.04" radius="0.05" />
+                </geometry>
+            </collision>
+            <!-- mass measured on a real robot -->
+            <xacro:cylinder_inertia
+                rpy="0 0 0" xyz="0 0 0"
+                mass="0.08715"
+                radius="0.05" length="0.04" />
+            <contact>
+                <lateral_friction value="1.0" />
+                <rolling_friction value="0.01" />
+                <stiffness value="30000" />
+                <damping value="1000" />
+            </contact>
+        </link>
+
+        <joint name="left_wheel_fix" type="fixed">
+            <parent link="left_wheel_hub" />
+            <child link="left_wheel_tire" />
+            <origin rpy="0 0 0" xyz="0 0 0.0209" />
+        </joint>
+
+        <xacro:virtual_link name="left_contact" />
+
+        <joint name="left_contact_fix" type="fixed">
+            <parent link="left_wheel_tire" />
+            <child link="left_contact" />
+            <!-- contact target is a bit inside to avoid collisions with its box -->
+            <!-- tangent contact surface would be xyz="0 0.05 0" -->
+            <origin rpy="1.5707963267948966 0 0" xyz="0 0.047 0" />
+        </joint>
+
+        <xacro:virtual_link name="left_wheel_center" />
+
+        <joint name="left_wheel_center_fix" type="fixed">
+            <parent link="left_wheel_tire" />
+            <child link="left_wheel_center" />
+            <origin rpy="1.5707963267948966 3.141592653589793 0" xyz="0 0 0" />
+        </joint>
+    </xacro:macro>
+</robot>

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>jvrc_description</name>
+  <version>1.0.4</version>
+  <description>Description package for the JVRC-1 robot</description>
+
+  <author>Fumio Kanehiro</author>
+  <author>Kin'ichi Watanabe</author>
+  <author>Pierre Gergondet</author>
+  <author>Shin'ichiro Nakaoka</author>
+  <author>Shizuko Hattori</author>
+  <author>Stéphane Caron</author>
+  <author>Yosuke Matsusaka</author>
+
+  <!-- One maintainer tag required, multiple allowed, one person per tag -->
+  <maintainer email="stephane.caron@normalesup.org">Stéphane Caron</maintainer>
+
+  <!-- One license tag required, multiple allowed, one license per tag -->
+  <!-- Commonly used license strings: -->
+  <!--   BSD, MIT, Boost Software License, GPLv2, GPLv3, LGPLv2.1, LGPLv3 -->
+  <license>BSD</license>
+
+  <url>https://github.com/robot-descriptions/jvrc_description</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>urdf</exec_depend>
+  <exec_depend>xacro</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

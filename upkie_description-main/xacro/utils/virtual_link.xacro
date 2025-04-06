@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<robot name="utils" xmlns:xacro="http://ros.org/wiki/xacro">
+    <xacro:macro name="virtual_link" params="name">
+        <link name="${name}">
+            <!-- virtual link: https://upkie.github.io/upkie/kinematics.html#virtual-links -->
+            <visual>
+                <geometry>
+                    <box size="0 0 0" />
+                </geometry>
+            </visual>
+            <inertial>
+                <mass value="0.001" />
+                <origin rpy="0 0 0" xyz="0 0 0" />
+                <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0" />
+            </inertial>
+        </link>
+    </xacro:macro>
+</robot>

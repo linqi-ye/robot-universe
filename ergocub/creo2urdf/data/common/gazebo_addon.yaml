@@ -1,0 +1,194 @@
+assignedInertias:
+  # This is due to https://github.com/robotology/icub-models/issues/33
+  - linkName: torso_1
+    xx: 0.0074060860
+    yy: 0.0059470733
+    zz: 0.0031780111
+  - linkName: realsense
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_shoulder_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_forearm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_wrist_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_hand_pinkie_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_shoulder_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_forearm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_wrist_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_wrist_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_palm
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_thumb_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_index_3
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_middle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_ring_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_hand_pinkie_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_ankle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_ankle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_foot_front
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: l_foot_rear
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_ankle_1
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_ankle_2
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_foot_front
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01
+  - linkName: r_foot_rear
+    xx: 0.01
+    yy: 0.01
+    zz: 0.01

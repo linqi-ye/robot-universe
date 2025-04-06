@@ -1,0 +1,18 @@
+<?xml version='1.0'?>
+<sdf version='@ICUB_MODELS_SDF_VERSION@'>
+  <model name="iCub_feet_fixed">
+    <include>
+      <uri>model://@ROBOT_NAME@</uri>
+    </include>
+
+    <joint name="fixed_left" type="fixed">
+      <parent>world</parent>
+      <child>iCub::l_foot</child>
+    </joint>
+
+    <joint name="fixed_right" type="fixed">
+      <parent>world</parent>
+      <child>iCub::r_foot</child>
+    </joint>
+  </model>
+</sdf>

@@ -1,0 +1,15 @@
+
+<launch>
+  <!--arg
+    name="model" />
+  <param
+    name="robot_description"
+    textfile="$(find panda5_test)/urdf/panda5.urdf" /-->
+
+  <!--node
+    name="robot_state_publisher"
+    pkg="robot_state_publisher"
+    type="robot_state_publisher" /-->
+  
+    <node pkg="panda5_test" type="panda5_view" name="panda5_view" output="screen"/>
+</launch>

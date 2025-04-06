@@ -1,0 +1,36 @@
+name: pip installation CI Workflow
+
+on:
+  push:
+  pull_request:
+  schedule:
+  # * is a special character in YAML so you have to quote this string
+  # Execute a "nightly" build at 2 AM UTC
+  - cron:  '0 2 * * *'
+
+jobs:
+  build-with-conda-dependencies:
+    name: '[pip:${{ matrix.os }}-python${{ matrix.python-version }}]'
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.8', '3.9', '3.10', 'pypy-3.8']
+        os: [ubuntu-20.04, macos-latest, windows-2019]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Display Python version
+      run: python --version
+
+    - name: Installation
+      run: pip install .[test]
+
+    - name: Test with pytest
+      run: pytest

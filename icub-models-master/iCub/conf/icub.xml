@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE robot PUBLIC "-//YARP//DTD yarprobotinterface 3.0//EN" "http://www.yarp.it/DTD/yarprobotinterfaceV3.0.dtd">
+
+<robot name="iCubGazeboV3" build="1" portprefix="/icubSim" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <devices>
+
+    <!-- motor controllers wrappers -->
+    <xi:include href="wrappers/motorControl/left_arm-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/right_arm-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/left_leg-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/right_leg-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/head-mc_wrapper.xml" />
+    <xi:include href="wrappers/motorControl/torso-mc_wrapper.xml" />
+
+    <xi:include href="wrappers/motorControl/left_arm-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/right_arm-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/left_leg-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/right_leg-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/head-mc_remapper.xml" />
+    <xi:include href="wrappers/motorControl/torso-mc_remapper.xml" />
+    <!--  ANALOG SENSORS FT -->
+    <xi:include href="wrappers/FT/left_leg-FT_wrapper.xml" />
+    <xi:include href="wrappers/FT/right_leg-FT_wrapper.xml" />
+    <xi:include href="wrappers/FT/left_leg-FT_remapper.xml" />
+    <xi:include href="wrappers/FT/right_leg-FT_remapper.xml" />
+    <xi:include href="wrappers/FT/left_arm-FT_wrapper.xml" />
+    <xi:include href="wrappers/FT/right_arm-FT_wrapper.xml" />
+
+    <!-- INERTIAL SENSOR-->
+    <xi:include href="wrappers/inertials/head-inertials_wrapper.xml" />
+    <xi:include href="wrappers/inertials/left_arm-inertials_wrapper.xml" />
+    <xi:include href="wrappers/inertials/right_arm-inertials_wrapper.xml" />
+    <xi:include href="wrappers/inertials/alljoints-inertials_remapper.xml" />
+    <xi:include href="wrappers/inertials/alljoints-inertials_wrapper.xml" />
+    <!--  NOT USED RIGHT NOW
+    <xi:include href="wrappers/inertials/waist-inertials_wrapper.xml" /> -->    
+    </devices>
+</robot>
